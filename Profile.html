@@ -1,0 +1,213 @@
+<html>
+    <head>
+        <style>
+            body{
+                
+            }
+            div{
+                border: 2px solid red;
+            }
+            div.tabs{
+                display: flex;
+            }
+            a.home{
+                margin: 20px;
+            }
+            a.park{
+                margin: 20px;
+            }
+            a.profile{
+                margin-top: 20px;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            textarea.search{
+                margin-top: 20px;
+                margin-right: 10px;
+                margin-left: auto;
+                border-radius: 61px;
+                height: 20px;
+                resize: none;
+            }
+            div.content{
+                display: flex;
+            }
+            div.profile{
+                position: sticky;
+                top: 50px;
+                margin-left: 20px;
+                margin-top: 20px;
+                width: 20%;
+                height: auto;
+                min-height: 300px;
+                max-height: 500px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            div.profilename{
+                font-size: 1rem;
+                margin-bottom: 2px;
+            }
+            div.profilepic{
+                margin-top: 10px;
+                border-radius: 50%;
+                height: 100px;
+                width: 100px;
+                margin-bottom: 3px;
+            }
+            div.ratings{
+                display: flex;
+                column-gap: 2px;
+                margin-bottom: 5px;
+            }
+            img.star-lined{
+                width: 10px;
+                height: 10px;
+            }
+            img.star-colored{
+                width: 1rem;
+            }
+            img.phoneicon{
+                width: 20px;
+            }
+            div.contact{
+                display: flex;
+                column-gap: 5px;
+            }
+            div.contactno{
+
+            }
+            div.bio{
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+            div.active{
+                margin-top: auto;
+                align-self: center;
+            }
+            div.spots{
+                margin-top: 20px;
+                margin-right: 20px;
+                margin-left: auto;
+                width: 70%;
+            }
+            div.SpotsTitle{
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            div.spotshosted{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                column-gap: 30px;
+                margin-bottom: 20px;
+            }
+            div.spotsdisplay{
+                width: 30%;
+                border-radius: 20%;
+            }
+            .message {
+                background-color:#44c767;
+                border-radius:13px;
+                border:1px solid #18ab29;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-size:17px;
+                padding:5px 40px;
+                text-decoration:none;
+                margin-top: 2px;
+            }
+            .message:hover {
+                background-color:#5cbf2a;
+            }
+
+            img.spot{
+                width: 100%;
+                height: 100%;
+                border-radius: 20%;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="tabs">
+            <a class="home">HOME</a>
+            <a class="park">PARK</a>
+            <textarea class="search"></textarea>
+            <a class="profile">Juan Dela Cruz</a>
+        </div>
+        <div class="content">
+            <div class="profile">
+                <div class="profilepic">
+
+                </div>
+                <div class="profilename">
+                    Gabriel Muriel
+                </div>
+                <div class="ratings">
+                    <img src="coloredstar.png" class="star-colored">
+                    <img src="coloredstar.png" class="star-colored">
+                    <img src="coloredstar.png" class="star-colored">
+                    <img src="coloredstar.png" class="star-colored">
+                    <img src="linedstar.png" class="star-lined">
+                </div>
+                <div class="contact">
+                    <img src="contacticon.png" class="phoneicon">
+                    <div class="contactno">+123456</div>
+                </div>
+                <div class="bio">
+                    you need spot ba? cuz pare chong  I gotchu pare chong see my slots thanks my G, sheeeeeeesh.
+                </div>
+                <div class="active">
+                    Active 6 days ago
+                </div>
+                <button class="message">
+                    Message
+                </button>
+            </div>
+            <div class="spots">
+                <div class="SpotsTitle">
+                    SPOTS
+                </div>
+                <div class="spotshosted">
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                </div>
+                <div class="spotshosted">
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                </div>
+                <div class="spotshosted">
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                    <div class="spotsdisplay">
+                        <img src="host spot sample 1.png" class="spot">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

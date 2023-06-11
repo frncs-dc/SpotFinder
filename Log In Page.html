@@ -1,0 +1,232 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+
+        <style>
+            body, html {
+                --main-font: 'Josefin Sans', sans-serif;
+                height: 100%;
+                width: 100%;
+                padding: 0;
+                margin-top: 0;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            div.main-container{
+                background-image: url('login background.jpg');
+                height: 100%;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                margin: 0;
+            }
+
+            div.main-container{
+                display: flex;
+                margin: auto;
+            }
+
+            div.left-side{
+                background-color: rgba(45, 155, 62, 0.65);
+                flex: 1;
+                padding-left: 50px;
+                padding-right: 350px;
+            }
+
+            div.right-side{
+                background-color: rgba(10, 110, 25, 0.75);
+                flex: 1;
+                padding-left: 200px;
+                padding-right: 200px;
+            }
+
+            div.detail-container{
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                border-radius: 10px;
+            }
+
+            button[type=button]{
+                background-color: #235325;
+                border: none;
+                color: white;
+                padding: 15px 30px;
+                text-decoration: none;
+                font-size: 1.5625rem;
+                cursor: pointer;
+                border-radius: 10px;
+                font-size: 1.6rem;
+                font-family: var(--main-font);
+            }
+
+            div.Reg-button{
+                text-align: center;
+                margin: auto;
+                padding-top: 5%;
+            }
+
+            h1{
+                font-size: 5rem;
+                text-align: center;
+                color: #ffffff;
+                font-family: var(--main-font);
+                font-style: italic;
+                padding-left: 0;
+                padding-right: 0;
+                width: 100%;
+            }
+            
+            div.register-text{
+                font-size: 4.5rem;
+                text-align: center;
+                color: #ffffff;
+                font-weight: bold;
+                margin-bottom: 3%;
+                font-family: var(--main-font);
+            }
+
+            div.name-details{
+                font-size: 1.5625rem;
+                color: #ffffff;
+                margin-bottom: 3%;
+                font-family: var(--main-font);
+            }
+            
+            div.email-details{
+                font-size: 1.5625rem;
+                color: #ffffff;
+                margin-bottom: 3%;
+                font-family: var(--main-font);
+            }
+
+            div.password-details{
+                font-size: 1.5625rem;
+                color: #ffffff;
+                margin-bottom: 3%;
+                font-family: var(--main-font);
+            }
+
+            div.confirm-details{
+                font-size: 1.5625rem;
+                color: #ffffff;
+                margin-bottom: 3%;
+                font-family: var(--main-font);
+            }
+            div.policy{
+                font-size: 1.5625rem;
+                color: #ffffff;
+                font-family: var(--main-font);
+            }
+
+            div.existing-account{
+                font-size: 1.5625rem;
+                color: #ffffff;
+                font-family: var(--main-font);
+                margin-top: 3%;
+                text-align: center;
+            }
+
+            a{
+                text-decoration: none;
+                color:rgb(255, 255, 255);
+            }
+
+            div.parking-text{
+                font-size: 8rem;
+                color: #ffffff;
+                font-family: var(--main-font);
+                width: 100%;
+                bottom: 15%;
+                position: fixed;
+                font-style: italic;
+                margin-bottom: 1.5%;
+            }
+
+            div.foryou-text{
+                font-size: 8rem;
+                color: #ffffff;
+                font-family: var(--main-font);
+                width: 100%;
+                bottom: 0%;
+                position: fixed;
+                font-style: italic;
+                margin-bottom: 2.5%;
+            }
+
+        </style>
+
+    </head>
+
+
+    <body>
+        <div class = main-container>
+
+            <div class = left-side>
+                <div class = parking-text> Parking. </div>
+                <div class = foryou-text> Just for you. </div>
+            </div>
+
+            <div class = right-side>
+
+                <h1> SPOT FINDER </h1>
+
+                <div class = register-text>
+                    REGISTER
+                </div>
+
+                <div class="detail-container">
+
+                    <div class = name-details>
+                        <label for="Enter-name"><b>Username</b></label>
+                        <br>
+                        <input type="text" name="Enter-name" required>
+                    </div>
+
+                    <div class = email-details>
+                        <label for="Enter-email"><b>Email</b></label>
+                        <br>
+                        <input type="text" name="Enter-email" required>
+                    </div>
+                    
+                    <div class = password-details>
+                        <label for="Enter-password"><b>Password</b></label>
+                        <br>
+                        <input type="password" name="Enter-password" required>
+                    </div>  
+
+                    <div class = confirm-details>
+                        <label for="Confirm-password"><b>Confirm Password</b></label>
+                        <br>
+                        <input type="password" name="Confirm-password" required>
+                    </div>
+                    
+                    <div class = policy>By registering, you are agreeing to our <a href ="#"> <b>Terms of Use</b> </a> and <a href ="#"><b>Privacy Policy</b></a>.</div>
+
+                    <div class = Reg-button>
+                        <button type="button"> REGISTER </button>
+                    </div>
+
+                    <div class = existing-account>
+                        Already have an account? <a href ="#"><b>Login</b></a>
+                    </div>
+                    
+                </div>
+
+            </div>
+            
+        </div>
+        
+    </body>
+
+</html>

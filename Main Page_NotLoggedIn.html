@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SPOT FINDER</title>
+        <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                --main-font:'Josefin Sans', sans-serif;
+            }
+
+            header{
+                background-image: url('homepage.jpg');
+                background-size: cover;
+                background-position: center;   
+                font-family: var(--main-font);    
+            }
+            
+
+            #header-top{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background-color: rgb(18, 134, 9,.7);
+            }
+
+            a{
+                color: white;
+                text-decoration: none;
+            }
+
+            #logo {
+                font-weight: bold;
+                font-size: 24px;
+                color: rgb(255, 255, 255);
+            }
+
+            #links {
+                display: flex;
+                gap: 10px;
+            }
+
+            #search-bar {
+                font-family: var(--main-font);
+                margin-right: 10px;
+                border-radius: 5px;
+            }
+
+            #Title-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: rgb(18, 134, 9,.7);
+                padding: 20px;
+                color: white;
+                
+            }
+
+            #Title {
+                align-self: center;
+                font-size: larger;
+                font-style: italic;
+            }
+
+            #description {
+                align-self: center;
+                text-align: center;
+            }
+
+            div.recommend {
+                align-self: left;
+                font-family: var(--main-font);
+            }
+
+            #recommend-text {
+                font-weight: bold;
+            }
+
+            div.cards-section {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 20px;
+                font-family: var(--main-font);
+            }
+
+            .card {
+                background-color: #03882f;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                height: 280px;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+
+            <div id="header-top">
+
+                <div id="logo">
+                    <a href="#">Home</a> |
+                    <a href="#">Park</a>
+                </div>
+
+                <div id="links">
+                    <input type="text" id="search-bar" placeholder="Search">
+                    <a href="Log In Page.html">Register/Login</a>
+                </div>
+
+            </div>
+
+            <div id="Title-section">
+
+                <div id="Title"> <!-- title of the project -->
+                    <h1>SPOT FINDER</h1>
+                </div>
+
+                <div id="description"> <!-- brief description of the project -->
+                    <p>blah blah blah blah blah blah </p>
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="recommend">
+
+            <div id="recommend-text">
+                <h2>RECOMMENDATIONS FOR YOU:</h2>
+            </div>
+
+        </div>
+
+        <div class="cards-section">
+
+            <div class="card">
+                <h2>Parking Spot 1</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 2</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 3</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 4</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 5</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 6</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 7</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+            <!-- Repeat the card structure as needed -->
+        </div>
+
+        <!-- Rest of your content here -->
+
+    </body>
+</html>

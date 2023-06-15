@@ -2,8 +2,9 @@
 <html>
     <head>
         <title>SPOT FINDER</title>
-        <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,700&display=swap');
+
             body {
                 margin: 0;
                 padding: 0;
@@ -16,14 +17,39 @@
                 background-position: center;   
                 font-family: var(--main-font);    
             }
-            
-
-            #header-top{
+            div.tabs{
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px;
+                font-weight: lighter;
+                color: white;
                 background-color: rgb(18, 134, 9,.7);
+            }
+            a.home{
+                margin: 20px;
+            }
+            a.park{
+                margin: 20px;
+            }
+            a.profile{
+                margin-top: 20px;
+                margin-right: 5px;
+                margin-left: 10px;
+            }
+            img.profile{
+                margin-top: 20px;
+                height: 15px;
+            }
+            img.logout{
+                margin-top: 20px;
+                height: 15px;
+                margin-right: 20px;
+            }
+            textarea.search{
+                margin-top: 20px;
+                margin-right: 10px;
+                margin-left: auto;
+                border-radius: 61px;
+                height: 20px;
+                resize: none;
             }
 
             a{
@@ -75,6 +101,7 @@
             }
 
             #recommend-text {
+                margin-left: 20px;
                 font-weight: bold;
             }
 
@@ -100,18 +127,13 @@
     <body>
         <header>
 
-            <div id="header-top">
-
-                <div id="logo">
-                    <a href="#">Home</a> |
-                    <a href="#">Park</a>
-                </div>
-
-                <div id="links">
-                    <input type="text" id="search-bar" placeholder="Search">
-                    <a href="Log In Page.html">Register/Login</a>
-                </div>
-
+            <div class="tabs">
+                <a class="home">HOME</a>
+                <a class="park">PARK</a>
+                <textarea class="search"></textarea>
+                <img src="profile.png" class="profile">
+                <a class="profile">Juan Dela Cruz</a>
+                <img src="logout.png" class="logout">
             </div>
 
             <div id="Title-section">

@@ -11,6 +11,10 @@
                 --main-font:'Josefin Sans', sans-serif;
             }
 
+            /* div{
+                border: 1px solid red;
+            } */
+
             header{
                 background-image: url('customersupport.jpg');
                 background-size: cover;
@@ -76,56 +80,83 @@
             }
 
             #Title-section {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
                 background-color: rgb(18, 134, 9,.7);
-                padding: 20px;
                 color: white;
-                
-            }
-
-            #Title {
-                align-self:flex-start;
-                margin-top: auto;
-                font-size: larger;
+                font-size: 3rem;
                 font-style: italic;
+                text-align: left;
+                padding-top: 1rem;
+                padding-left: 20px;
+                padding-bottom: 5px;
+                vertical-align: bottom;
             }
 
-            #description {
-                align-self: center;
-                text-align: center;
-            }
-
-            div.recommend {
+            div.feelfree {
                 align-self: left;
                 font-family: var(--main-font);
-            }
-
-            #recommend-text {
-                margin-left: 20px;
-                padding-top: 20px;
+                padding-top: 40px;
                 font-size: 2rem;
                 font-weight: bold;
                 font-style: italic;
             }
+            
+            div.contain-support{
+                display: flex;
+            }
 
-            div.cards-section {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 20px;
-                padding: 20px;
+            div.customersupport{
+                display: fleX;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 1rem;
+                width: 50%;
+            }
+            input.email, input.subject, textarea.message,input.send{
+                margin-top: 10px;
+                border-radius: 10px;
+                width: 100%;
+                height: 20px;
+                resize: none;
+                padding-left: 10px;
+                border: none;
+                box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+            }
+
+            input.send{
+                border-radius: 5px;
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            textarea.message{
+                height: 100px;
+            }
+            div.aboutus{
+                display: flex;
+                flex-direction: column;
+                align-self: flex-start;
+                height: fit-content;
+                margin-top: 40px;
+                margin-left: 40px;
+                margin-right: auto;
+                border-radius: 20px;
+                width: 20%;
+                box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+            }
+            div.text-aboutus, div.body-aboutus{
+                margin: 20px;
                 font-family: var(--main-font);
             }
 
-            .card {
-                background-color: #03882f;
-                border-radius: 10px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                height: 280px;
-                color: white;
+            div.text-aboutus{
+                margin-bottom: 0px;
             }
+
+            div.text-aboutus{
+                font-weight: bold;
+                font-size: larger;
+            }
+            
         </style>
     </head>
 
@@ -142,61 +173,30 @@
             </div>
 
             <div id="Title-section">
-
-                <div id="Title"> <!-- title of the project -->
-                    <h1>Customer Support</h1>
-                </div>
-
+                Customer Support
             </div>
 
         </header>
 
-        <div class="recommend">
-            <div id="recommend-text">
-                Feel free to contact us.
+
+        <div class="contain-support">
+            <div class="customersupport">
+                <div class="feelfree">
+                    Feel free to contact us.
+                </div>
+                <input class="email" placeholder="EMAIL">
+                <input class="subject" placeholder="SUBJECT">
+                <textarea class="message" placeholder="MESSAGE"></textarea>
+                <input type="button" class="send" value="SEND">
+            </div>
+            <div class="aboutus">
+                <div class="text-aboutus">about the developers.</div>
+                <div class="body-aboutus">
+                    A group of 2nd Year Undergraduates taking Computer Science at De La Salle University - Manila who aims to make parking easier and more accessible.
+                </div>
+                
             </div>
         </div>
-
-        <div class="cards-section">
-
-            <div class="card">
-                <h2>Parking Spot 1</h2>
-                <p>Description of the parking spot.</p>
-            </div>
-
-            <div class="card">
-                <h2>Parking Spot 2</h2>
-                <p>Description of the parking spot.</p>
-            </div>
-
-            <div class="card">
-                <h2>Parking Spot 3</h2>
-                <p>Description of the parking spot.</p>
-            </div>
-
-            <div class="card">
-                <h2>Parking Spot 4</h2>
-                <p>Description of the parking spot.</p>
-            </div>
-
-            <div class="card">
-                <h2>Parking Spot 5</h2>
-                <p>Description of the parking spot.</p>
-            </div>
-
-            <div class="card">
-                <h2>Parking Spot 6</h2>
-                <p>Description of the parking spot.</p>
-            </div>
-
-            <div class="card">
-                <h2>Parking Spot 7</h2>
-                <p>Description of the parking spot.</p>
-            </div>
-            <!-- Repeat the card structure as needed -->
-        </div>
-
-        <!-- Rest of your content here -->
 
     </body>
 </html>

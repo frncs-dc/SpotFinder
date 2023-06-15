@@ -11,9 +11,9 @@
                 --main-font:'Josefin Sans', sans-serif;
             }
 
-            /* div{
+            div{
                 border: 1px solid red;
-            } */
+            }
 
             header{
                 background-image: url('customersupport.jpg');
@@ -111,25 +111,45 @@
                 margin-left: 1rem;
                 width: 50%;
             }
-            input.email, input.subject, textarea.message,input.send{
+            div.inputs{
+                width: 100%;
+            }
+            input.email, input.subject, textarea.message{
+                font-family: var(--main-font);
                 margin-top: 10px;
                 border-radius: 10px;
-                width: 100%;
+                width: 90%;
                 height: 20px;
                 resize: none;
                 padding-left: 10px;
                 border: none;
                 box-shadow: 3px 3px 3px rgba(66,66,66,.28);
             }
+            div.buttons{
+                display: flex;
+                width: 100%;
+                column-gap: 5px;
+            }
+            input.send, input.cancel{
+                font-family: var(--main-font);
+                margin-top: 10px;
+                border-radius: 8px;
+                width: 30%;
+                height: 20px;
+                box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+                color: white;
+                font-family: var(--main-font);
+            }
 
             input.send{
-                border-radius: 5px;
-                width: 50%;
-                margin-left: auto;
-                margin-right: auto;
+                background-color: green;
+            }
+            input.cancel{
+                background-color: red;
             }
             textarea.message{
                 height: 100px;
+                font-family: var(--main-font);
             }
             div.aboutus{
                 display: flex;
@@ -184,10 +204,15 @@
                 <div class="feelfree">
                     Feel free to contact us.
                 </div>
-                <input class="email" placeholder="EMAIL">
-                <input class="subject" placeholder="SUBJECT">
-                <textarea class="message" placeholder="MESSAGE"></textarea>
-                <input type="button" class="send" value="SEND">
+                <div class="inputs">
+                    <input class="email" placeholder="EMAIL">
+                    <input class="subject" placeholder="SUBJECT">
+                    <textarea class="message" placeholder="MESSAGE"></textarea>
+                </div>
+                <div class="buttons">
+                    <input type="button" class="send" value="SEND">
+                    <input type="button" class="cancel" value="CANCEL">
+                </div>
             </div>
             <div class="aboutus">
                 <div class="text-aboutus">about the developers.</div>

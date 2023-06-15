@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SPOT FINDER</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,700&display=swap');
+
+            body {
+                margin: 0;
+                padding: 0;
+                --main-font:'Josefin Sans', sans-serif;
+            }
+
+            header{
+                background-image: url('customersupport.jpg');
+                background-size: cover;
+                background-position: center;   
+                font-family: var(--main-font);    
+            }
+            div.tabs{
+                display: flex;
+                font-weight: lighter;
+                color: white;
+                background-color: rgb(18, 134, 9,.7);
+            }
+            a.home{
+                margin: 20px;
+            }
+            a.park{
+                margin: 20px;
+            }
+            a.profile{
+                margin-top: 18px;
+                margin-right: 5px;
+                margin-left: 10px;
+            }
+            img.profile{
+                margin-top: 18px;
+                height: 15px;
+            }
+            img.logout{
+                margin-top: 18px;
+                height: 15px;
+                margin-right: 20px;
+                margin-left: 3px;
+            }
+            textarea.search{
+                margin-top: 15px;
+                margin-right: 10px;
+                margin-left: auto;
+                border-radius: 61px;
+                height: 20px;
+                resize: none;
+            }
+
+            a{
+                color: white;
+                text-decoration: none;
+            }
+
+            #logo {
+                font-weight: bold;
+                font-size: 24px;
+                color: rgb(255, 255, 255);
+            }
+
+            #links {
+                display: flex;
+                gap: 10px;
+            }
+
+            #search-bar {
+                font-family: var(--main-font);
+                margin-right: 10px;
+                border-radius: 5px;
+            }
+
+            #Title-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: rgb(18, 134, 9,.7);
+                padding: 20px;
+                color: white;
+                
+            }
+
+            #Title {
+                align-self:flex-start;
+                margin-top: auto;
+                font-size: larger;
+                font-style: italic;
+            }
+
+            #description {
+                align-self: center;
+                text-align: center;
+            }
+
+            div.recommend {
+                align-self: left;
+                font-family: var(--main-font);
+            }
+
+            #recommend-text {
+                margin-left: 20px;
+                padding-top: 20px;
+                font-size: 2rem;
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            div.cards-section {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 20px;
+                font-family: var(--main-font);
+            }
+
+            .card {
+                background-color: #03882f;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                height: 280px;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+
+            <div class="tabs">
+                <a class="home">HOME</a>
+                <a class="park">PARK</a>
+                <textarea class="search"></textarea>
+                <img src="profile.png" class="profile">
+                <a class="profile">Juan Dela Cruz</a>
+                <img src="logout.png" class="logout">
+            </div>
+
+            <div id="Title-section">
+
+                <div id="Title"> <!-- title of the project -->
+                    <h1>Customer Support</h1>
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="recommend">
+            <div id="recommend-text">
+                Feel free to contact us.
+            </div>
+        </div>
+
+        <div class="cards-section">
+
+            <div class="card">
+                <h2>Parking Spot 1</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 2</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 3</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 4</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 5</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 6</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+
+            <div class="card">
+                <h2>Parking Spot 7</h2>
+                <p>Description of the parking spot.</p>
+            </div>
+            <!-- Repeat the card structure as needed -->
+        </div>
+
+        <!-- Rest of your content here -->
+
+    </body>
+</html>

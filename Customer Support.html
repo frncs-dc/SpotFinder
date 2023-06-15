@@ -8,12 +8,13 @@
             body {
                 margin: 0;
                 padding: 0;
+                background-color: #F3F3F3;
                 --main-font:'Josefin Sans', sans-serif;
             }
 
-            div{
+            /* div{
                 border: 1px solid red;
-            }
+            } */
 
             header{
                 background-image: url('customersupport.jpg');
@@ -27,10 +28,7 @@
                 color: white;
                 background-color: rgb(18, 134, 9,.7);
             }
-            a.home{
-                margin: 20px;
-            }
-            a.park{
+            a.tab{
                 margin: 20px;
             }
             a.profile{
@@ -84,68 +82,73 @@
                 color: white;
                 font-size: 3rem;
                 font-style: italic;
-                text-align: left;
+                text-align: center;
                 padding-top: 1rem;
                 padding-left: 20px;
                 padding-bottom: 5px;
                 vertical-align: bottom;
             }
 
+            div.containercontent{
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
             div.feelfree {
-                align-self: left;
+                align-self: center;
                 font-family: var(--main-font);
-                padding-top: 40px;
-                font-size: 2rem;
+                padding-top: 10px;
+                font-size: 2.5rem;
                 font-weight: bold;
                 font-style: italic;
             }
-            
-            div.contain-support{
-                display: flex;
+
+            img.contactpic{
+                margin-top: 10px;
+                height: 350px;
+                align-self: center;
             }
 
             div.customersupport{
                 display: fleX;
                 flex-direction: column;
-                align-items: flex-start;
-                margin-left: 1rem;
+                align-self: center;
+                align-items: center;
                 width: 50%;
-            }
-            div.inputs{
-                width: 100%;
             }
             input.email, input.subject, textarea.message{
                 font-family: var(--main-font);
                 margin-top: 10px;
                 border-radius: 10px;
-                width: 90%;
+                width: 100%;
                 height: 20px;
                 resize: none;
-                padding-left: 10px;
+                /* padding-left: 10px; */
                 border: none;
                 box-shadow: 3px 3px 3px rgba(66,66,66,.28);
             }
-            div.buttons{
-                display: flex;
-                width: 100%;
-                column-gap: 5px;
-            }
             input.send, input.cancel{
                 font-family: var(--main-font);
-                margin-top: 10px;
                 border-radius: 8px;
-                width: 30%;
+                width: 100%;
                 height: 20px;
                 box-shadow: 3px 3px 3px rgba(66,66,66,.28);
                 color: white;
                 font-family: var(--main-font);
+                border: none;
             }
 
             input.send{
-                background-color: green;
+                margin-top: 30px;
+                background-color: #0C360C;
             }
             input.cancel{
-                background-color: red;
+                margin-top: 10px;
+                background-color: #B43C2C;
             }
             textarea.message{
                 height: 100px;
@@ -154,13 +157,13 @@
             div.aboutus{
                 display: flex;
                 flex-direction: column;
-                align-self: flex-start;
+                background-color: white;
                 height: fit-content;
                 margin-top: 40px;
-                margin-left: 40px;
+                margin-left: auto;
                 margin-right: auto;
                 border-radius: 20px;
-                width: 20%;
+                width: 60%;
                 box-shadow: 3px 3px 3px rgba(66,66,66,.28);
             }
             div.text-aboutus, div.body-aboutus{
@@ -168,11 +171,12 @@
                 font-family: var(--main-font);
             }
 
-            div.text-aboutus{
-                margin-bottom: 0px;
+            div.body-aboutus{
+                padding-right: 30px;
             }
 
             div.text-aboutus{
+                margin-bottom: 0px;
                 font-weight: bold;
                 font-size: larger;
             }
@@ -184,11 +188,12 @@
         <header>
 
             <div class="tabs">
-                <a class="home">HOME</a>
-                <a class="park">PARK</a>
+                <a class="tab" href="index.html">HOME</a>
+                <a class="tab">PARK</a>
+                <a class="tab" href="Customer Support.html">CONTACT</a>
                 <textarea class="search"></textarea>
                 <img src="profile.png" class="profile">
-                <a class="profile">Juan Dela Cruz</a>
+                <a class="profile" href="Profile.html">Juan Dela Cruz</a>
                 <img src="logout.png" class="logout">
             </div>
 
@@ -198,30 +203,24 @@
 
         </header>
 
-
-        <div class="contain-support">
+        <div class="containercontent">
+            <img src="contact_pic.png" class="contactpic">
             <div class="customersupport">
                 <div class="feelfree">
                     Feel free to contact us.
                 </div>
-                <div class="inputs">
-                    <input class="email" placeholder="EMAIL">
-                    <input class="subject" placeholder="SUBJECT">
-                    <textarea class="message" placeholder="MESSAGE"></textarea>
-                </div>
-                <div class="buttons">
-                    <input type="button" class="send" value="SEND">
-                    <input type="button" class="cancel" value="CANCEL">
-                </div>
-            </div>
-            <div class="aboutus">
-                <div class="text-aboutus">about the developers.</div>
-                <div class="body-aboutus">
-                    A group of 2nd Year Undergraduates taking Computer Science at De La Salle University - Manila who aims to make parking easier and more accessible.
-                </div>
-                
+                <input class="email" placeholder="EMAIL">
+                <input class="subject" placeholder="SUBJECT">
+                <textarea class="message" placeholder="MESSAGE"></textarea>
+                <input type="button" class="send" value="SEND">
+                <input type="button" class="cancel" value="CANCEL">
             </div>
         </div>
-
+        <div class="aboutus">
+            <div class="text-aboutus">about the developers.</div>
+            <div class="body-aboutus">
+                A group of 2nd Year Undergraduates taking Computer Science at De La Salle University - Manila who aims to make parking easier and more accessible.
+            </div>
+        </div>
     </body>
 </html>

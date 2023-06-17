@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SPOT FINDER</title>
+        <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                --main-font:'Josefin Sans', sans-serif;
+                background-color: #f3f3f3;
+            }
+
+            header{
+                background-image: url('analytics.jpg');
+                background-size: cover;
+                background-position: center;   
+                font-family: var(--main-font);
+            }
+
+            #HOME, #park, #profile{
+                color: white;
+                text-decoration: none;
+                font-family: var(--main-font);
+            }
+
+            #search-bar {
+                width: 10rem;
+                height: 1.1rem;
+                border-radius: 10px;
+            }
+
+            div.header-bar{
+                display: flex;
+                background-color: rgb(18, 134, 9,.25);
+            }
+
+            div.header-left {
+                flex: 1;
+                flex-basis: auto;
+                margin: auto;
+                font-family: var(--main-font);
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            #park{
+                padding: 2rem;
+            }
+
+            /*div{ border: 1px solid red}*/
+
+            div.header-right {
+                flex-basis: auto;
+                margin: auto;
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            .profile{
+                width: 17px;
+                height: 17px;
+                margin: auto;
+            }
+
+            #Title-section {
+                display: flex;
+                background-color: rgb(18, 134, 9,.25);
+                padding-left: 0.5rem;
+                color: white;
+                position: relative;
+            }
+
+            #Title {
+                font-size: larger;
+                font-style: italic;
+                font-family: var(--main-font);
+            }
+
+            div.main-container{
+                margin: auto;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            div.left-texts{
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                margin-top: 1rem;
+                font-family: var(--main-font);
+                font-weight: bold;
+            }
+
+
+            div.left-side{
+                width: 20%;
+                height: 22%;
+                background-color: #ffffff;
+                box-shadow: 3px 3px 5px #aaaaaa;
+                margin-right: 2rem;
+                margin-top: 1.25rem;
+                border: 1px solid;
+                border-color: rgba(0, 0, 0, 0.25);
+                position: fixed;
+            }
+
+            div.right-side{
+                flex: 1;
+                margin-left: 25%;
+            }
+
+            hr{
+                margin: 0;
+            }
+
+            div.totals-report{
+                background-color: #ffffff;
+                box-shadow: 3px 3px 5px #aaaaaa;
+                padding-left: 1rem;
+                border-radius: 5px;
+                border: 1px solid;
+                border-color: rgba(0, 0, 0, 0.25);
+                margin-right: 2rem;
+                display: flex;
+                font-family: var(--main-font);
+            }
+            
+            div.nested-totals{
+                margin: auto;
+            }
+
+            div.peakhrs-report{
+                background-color: #ffffff;
+                box-shadow: 3px 3px 5px #aaaaaa;
+                padding-left: 1rem;
+                border-radius: 5px;
+                border: 1px solid;
+                border-color: rgba(0, 0, 0, 0.25);
+                margin-right: 2rem;
+                font-family: var(--main-font);
+            }
+
+            div.slot-border-report1{
+                background-color: #ffffff;
+                box-shadow: 3px 3px 5px #aaaaaa;
+                padding-left: 1rem;
+                border-radius: 5px;
+                border: 1px solid;
+                border-color: rgba(0, 0, 0, 0.25);
+                margin-right: 2rem;
+            }
+            div.slot-report1{
+                display: flex;
+                font-family: var(--main-font);
+            }
+
+            div.nested-slot-report1{
+                margin-top: auto;
+                margin-bottom: auto;
+                flex: 1;
+            }
+
+            div.nested2-slot-report1{
+                margin-top: auto;
+                margin-bottom: auto;
+                flex: 1;
+            }
+
+            div.slot-border-report2{
+                background-color: #ffffff;
+                box-shadow: 3px 3px 5px #aaaaaa;
+                padding-left: 1rem;
+                border-radius: 5px;
+                border: 1px solid;
+                border-color: rgba(0, 0, 0, 0.25);
+                margin-right: 2rem;
+            }
+            div.slot-report2{
+                display: flex;
+                font-family: var(--main-font);
+            }
+            div.nested-slot-report2{
+                margin-top: auto;
+                margin-bottom: auto;
+                flex: 1;
+            }
+            div.nested2-slot-report2{
+                margin-top: auto;
+                margin-bottom: auto;
+                flex: 1;
+            }
+
+            div.slot-title{
+                font-family: var(--main-font);
+                font-weight: bold;
+                font-size: larger;
+                margin-top: 1rem;
+            }
+
+            div.income-report{
+                background-color: #ffffff;
+                box-shadow: 3px 3px 5px #aaaaaa;
+                padding-left: 1rem;
+                border-radius: 5px;
+                border: 1px solid;
+                border-color: rgba(0, 0, 0, 0.25);
+                margin-right: 2rem;
+                font-family: var(--main-font);
+            }
+
+            div.nested-income-report{
+                margin-right: 2rem;
+                display: flex;
+            }
+            div.nested2-income-report{
+                margin: auto;
+            }
+            
+            #monthly-income-link{
+                color: black;
+                font-size: 0.75rem;
+                text-decoration: underline;
+            }
+
+            div.right-titles{
+                font-weight: bold;
+                font-family: var(--main-font);
+                margin-top: 1.25rem;
+                margin-bottom: 0.5rem;
+                font-size: x-large;
+            }
+           
+            .peakhrs-report img {
+                margin: 1rem;
+                height: 6rem;
+                width: 85%;
+            }
+
+            .slot-report1 img{
+                margin: 1rem;
+                padding-right: 10rem;
+                height: 6rem;
+                width: 30%;
+            }
+
+            .slot-report2 img{
+                margin: 1rem;
+                height: 6rem;
+                padding-right: 10rem;
+                width: 30%;
+            }
+            
+            .nested-income-report img{
+                margin: 1rem;
+                height: 7rem;
+                padding-right: 8rem;
+                width: 30%;
+            }
+
+            p{
+                line-height: 40%;
+            }
+
+            #left-links{
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-family: var(--main-font);
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+
+            <div class="header-bar">
+                <div class="header-left"><a id = "HOME" href="#">HOME</a> <a id = "park" href="#"> PARK</a></div>
+                <div class="header-right"><input type="text" id="search-bar"></div>
+                
+                <div class="header-right">
+                    <img class = "profile" src="profile.png" />
+                    <a id = "profile" href="#"> Juan Dela Cruz</a> 
+                </div>
+            </div>
+
+            <div id="Title-section">
+
+                <div id="Title">
+                    <h1>Report and Analytics</h1>
+                </div>
+
+            </div>
+
+        </header>
+
+        
+        <div class = "main-container">
+
+            <!--LEFT SIDE-->
+            <div class = "left-side">
+
+                <div class = "left-texts"> <a id = "left-links" href="#Totals">Totals</a></div>
+
+                <hr>
+
+                <div class = "left-texts"> <a id = "left-links" href="#general-info"> General Information </a></div>
+                <div class = "left-texts"> Hobbies </a></div>
+                <div class = "left-texts"> Education </a></div>
+
+                <hr>
+
+                <div class = "left-texts"> <a id = "left-links" href="#parking-slots">Your parking slots</a></div>
+
+                <hr>
+
+                <div class = "left-texts"> <a id = "left-links" href="#income">Income </a></div>
+                
+                <hr>
+            </div>
+
+
+            <!--RIGHT SIDE-->
+            <div class = "right-side">
+
+                <div class = "right-titles"> Totals </div>
+                
+                <div class = "totals-report" id = "Totals">
+                    <dl>
+                        <dt>Parking Slots Hosted:</dt>
+                        <dt>Customers:</dt>
+                        <dt>Reviews:</dt>
+                    </dl>
+                    <div class = "nested-totals">
+                        <dt>15</dt>
+                        <dt>15</dt>
+                        <dt>15</dt>
+                    </div>
+                </div>
+
+                <div class = "right-titles" id = "general-info">Overall Customer Peak Hours</div>
+
+                <div class = "peakhrs-report">
+                    <img src="gray.png">
+                </div>
+
+                <div class = "right-titles">Your parking slots</div>
+
+                <div class = "slot-border-report1" id = "parking-slots">
+                    <div class = "slot-title">Host Parking 1</div>
+                    <div class = "slot-report1">
+                    
+                        <div class = "nested-slot-report1">
+                            <dl>
+                                <dt>Customers:</dt>
+                                <dt>Reviews:</dt>
+                                <dt>Average Monthly Income:</dt>
+                            </dl>
+                        </div>
+                        
+                        <div class = "nested2-slot-report1">
+                            <dt>15</dt>
+                            <dt>15</dt>
+                            <dt>Php 12,000</dt>
+                        </div>
+                        <img src="gray.png">
+                    </div>
+                </div>
+
+                <br>
+
+                <div class = "slot-border-report2">
+                    <div class = "slot-title">Host Parking 1</div>
+                    <div class = "slot-report2">
+                        <div class = "nested-slot-report2">
+                            <dl>
+                                <dt>Customers:</dt>
+                                <dt>Reviews:</dt>
+                                <dt>Average Monthly Income:</dt>
+                            </dl>
+                        </div>
+
+                        <div class = "nested2-slot-report2">
+                            <dt>15</dt>
+                            <dt>15</dt>
+                            <dt>Php 12,000</dt>
+                        </div>
+                        <img src="gray.png">
+                    </div>  
+                </div>
+                
+
+                <div class = "right-titles" id = "income">Income</div>
+                <div class = "income-report">
+                    <p><b>Overall Income: </b>Php 26, 500.98</p>
+                    
+                    <p><b>Total Monthly Income: </b>Php 26,500.98</p>
+                
+                    <a href="#" id = "monthly-income-link">SEE ALL MONTHLY INCOME HERE</a>
+                    
+                    <div class = "nested-income-report">
+                        <dl>
+                            <dt>Host Parking 1</dt>
+                            <dt>Host Parking 1</dt>
+                            <dt>Host Parking 1</dt>
+                            <dt>Host Parking 1</dt>
+                            <dt>Host Parking 1</dt>
+                            <dt>Host Parking 1</dt>
+                        </dl>
+                        <div class = "nested2-income-report">
+                            <dt>5,000</dt>
+                            <dt>5,000</dt>
+                            <dt>5,000</dt>
+                            <dt>5,000</dt>
+                            <dt>5,000</dt>
+                            <dt>5,000</dt>
+                        </div>
+                        <img src="gray.png">
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SPOT FINDER</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,700&display=swap');
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #F3F3F3;
+                --main-font:'Josefin Sans', sans-serif;
+                font-family: var(--main-font);
+            }
+
+            div{
+                border: 1px solid red;
+            }
+
+            header{
+                background-image: url('customersupport.jpg');
+                background-size: cover;
+                background-position: center;   
+                font-family: var(--main-font);    
+            }
+            div.tabs{
+                display: flex;
+                font-weight: lighter;
+                color: white;
+                background-color: rgb(18, 134, 9,.7);
+            }
+            a.tab{
+                margin: 20px;
+            }
+            a.profile{
+                margin-top: 18px;
+                margin-right: 5px;
+                margin-left: 10px;
+            }
+            img.profile{
+                margin-top: 18px;
+                height: 15px;
+            }
+            img.logout{
+                margin-top: 18px;
+                height: 15px;
+                margin-right: 20px;
+                margin-left: 3px;
+            }
+            textarea.search{
+                margin-top: 15px;
+                margin-right: 10px;
+                margin-left: auto;
+                border-radius: 61px;
+                height: 20px;
+                resize: none;
+            }
+
+            a{
+                color: white;
+                text-decoration: none;
+            }
+
+            #logo {
+                font-weight: bold;
+                font-size: 24px;
+                color: rgb(255, 255, 255);
+            }
+
+            #links {
+                display: flex;
+                gap: 10px;
+            }
+
+            #search-bar {
+                font-family: var(--main-font);
+                margin-right: 10px;
+                border-radius: 5px;
+            }
+
+            #Title-section {
+                background-color: rgb(18, 134, 9,.7);
+                color: white;
+                font-size: 3rem;
+                font-style: italic;
+                text-align: center;
+                padding-top: 1rem;
+                padding-left: 20px;
+                padding-bottom: 5px;
+                vertical-align: bottom;
+            }
+
+            div.maincontainer{
+                display: flex;
+                margin-top: 30px;
+                column-gap: 5px;
+            }
+
+            div.instructions, div.mapeditor{
+                display: flex;
+                flex-direction: column;
+            }
+
+            div.mapeditor{
+                width: 70%;
+            }
+            
+            div.instructions{
+                width: 30%;
+            }
+            
+            div.instructions_title{
+                font-weight: 800;
+                font-style: italic;
+                font-size: larger;
+            }
+
+            div.mapdetails{
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 4px;
+                width: 90%;
+                align-self: center;
+                align-items: center;
+            }
+            input.name{
+                border-bottom: 1px solid black;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                margin-top: 5px;
+                width: 90%;
+            }
+            select.type{
+                width: 90%;
+            }
+            div.square{
+                width: 20px;
+                height: 20px;
+                border: 1px solid black;
+                background-color: gray;
+            }
+            div.maprow{
+                display: flex;
+                justify-content: center;
+                column-gap: 3px;
+            }
+            div.buttons{
+                align-self: center;
+                display: flex;
+                margin-top: 20px;
+                column-gap: 10px;
+            }
+            input.send, input.cancel{
+                border-radius: 8px;
+                width: 20%;
+                height: 20px;
+                box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+                color: white;
+                font-family: var(--main-font);
+                border: none;
+                background-color: #0C360C;
+                padding-bottom: 2px;
+                padding-top: 5px;
+
+            }
+
+            input.send:hover, input.cancel:hover{
+                background-color: #04AA04;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+
+            <div class="tabs">
+                <a class="tab" href="index.html">HOME</a>
+                <a class="tab">PARK</a>
+                <a class="tab" href="Customer Support.html">CONTACT</a>
+                <textarea class="search"></textarea>
+                <img src="profile.png" class="profile">
+                <a class="profile" href="Profile.html">Juan Dela Cruz</a>
+                <img src="logout.png" class="logout">
+            </div>
+
+            <div id="Title-section">
+                Host your parking slot.
+            </div>
+        </header>
+
+        
+        <div class="maincontainer">
+            <div class="instructions">
+                <div class="instructions_title">
+                    How to Use Map Editor
+                </div>
+                Model your parking slots in a table.
+                <ol>
+                    <li>
+                        Choose how many columns and rows are needed.
+                    </li>
+                    <li>
+                        Click each square to label them as a parking slot, obstacle or empty space.
+                    </li>
+                    <li>
+                        Input necessary details.
+                    </li>
+                </ol>
+                <div class="mapdetails">
+                    <input class="name" type="text" placeholder="NAME">
+                    <select class="type">
+                        <option>CHOOSE A TYPE</option>
+                        <option>PARKING SLOT</option>
+                        <option>PATH</option>
+                        <option>EXIT</option>
+                        <option>ENTRANCE</option>
+                        <option>OBSTACLE</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mapeditor">
+                <div class="buttons">
+                    <input type="text" placeholder="COLUMNS">
+                    <input type="text" placeholder="ROWS">
+                    <input class="send" type="button" value="ENTER">
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="maprow">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="buttons">
+            <input class="cancel" type="submit" value="EXIT">
+            <input class="send" type="button" value="SAVE">
+        </div>
+    </body>
+</html>

@@ -10,6 +10,7 @@
                 padding: 0;
                 background-color: #F3F3F3;
                 --main-font:'Josefin Sans', sans-serif;
+                font-family: var(--main-font);
             }
 
             div{
@@ -133,11 +134,53 @@
             div.formscontainer{
                 margin-top: 20px;
                 display: flex;
+                width: 70%;
+                border: 3px solid;
+                align-self: center;
+            }
+            div.columnforms{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+                align-items: center;
             }
             div.indivforms{
                 display: flex;
-                flex-direction: column;
-                width: 50%;
+            }
+
+            input.amount{
+                box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+                border: none;
+            }
+            input.hours{
+                box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+                border: none;
+            }
+            input.send, input.cancel{
+                border-radius: 8px;
+                width: 20%;
+                height: 20px;
+                box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+                color: white;
+                font-family: var(--main-font);
+                border: none;
+                background-color: #0C360C;
+                padding-bottom: 2px;
+                padding-top: 5px;
+
+            }
+
+            input.send:hover, input.cancel:hover{
+                background-color: #04AA04;
+            }
+
+            div.buttons{
+                align-self: center;
+                width: 70%;
+                display: flex;
+                margin-top: 20px;
+                column-gap: 10px;
             }
         </style>
     </head>
@@ -193,14 +236,40 @@
                     </div>
                 </div>
             </div>
+
             <div class="formscontainer">
-                <div class="indivforms">
-hey
+                <div class="columnforms">
+                    <div class="indivforms">
+                        <input type="checkbox"> 
+                            FLAT RATE
+                    </div>
+                    <div class="indivforms">
+                        <input class="amount" type="text" placeholder="AMOUNT">
+                    </div>
+                    <div class="indivforms">
+                        <input class="hours" type="text" placeholder="HOURS">
+                    </div>
                 </div>
-                <div class="indivforms">
-   hey                 
+                <div class="columnforms">
+                    <div class="indivforms">
+                        <input type="checkbox"> 
+                            HOURLY RATE
+                    </div>
+                    <div class="indivforms">
+                        <input class="amount" type="text" placeholder="AMOUNT">
+                    </div>
+                    <div class="indivforms">
+                        <input class="hours" type="text" placeholder="HOURS">
+                    </div>
                 </div>
             </div>
+            <div class="buttons">
+            
+                <input class="cancel" type="submit" value="PREV">
+                <input class="send" type="button" value="SUBMIT">
+            </div>
         </div>
+
+        
     </body>
 </html>

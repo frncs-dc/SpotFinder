@@ -2,212 +2,14 @@
 <html>
     <head>
         <title>SPOT FINDER</title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,700&display=swap');
-
-            body {
-                margin: 0;
-                padding: 0;
-                background-color: #F3F3F3;
-                --main-font:'Josefin Sans', sans-serif;
-            }
-
-            header{
-                background-image: url('analytics.jpg');
-                background-size: cover;
-                background-position: center; 
-                font-family: var(--main-font);    
-            }
-            div.tabs{
-                display: flex;
-                font-weight: lighter;
-                color: white;
-                background-color: rgb(18, 134, 9,.7);
-            }
-            a.tab{
-                margin: 20px;
-            }
-            a.profile{
-                margin-top: 18px;
-                margin-right: 5px;
-                margin-left: 10px;
-            }
-            img.profile{
-                margin-top: 18px;
-                height: 15px;
-            }
-            img.logout{
-                margin-top: 18px;
-                height: 15px;
-                margin-right: 20px;
-                margin-left: 3px;
-            }
-            textarea.search{
-                margin-top: 15px;
-                margin-right: 10px;
-                margin-left: auto;
-                border-radius: 61px;
-                height: 20px;
-                resize: none;
-            }
-
-            a{
-                color: white;
-                text-decoration: none;
-            }
-
-            #logo {
-                font-weight: bold;
-                font-size: 24px;
-                color: rgb(255, 255, 255);
-            }
-
-            #links {
-                display: flex;
-                gap: 10px;
-            }
-
-            #search-bar {
-                font-family: var(--main-font);
-                margin-right: 10px;
-                border-radius: 5px;
-            }
-
-            #Title-section {
-                background-color: rgb(18, 134, 9,.7);
-                color: white;
-                font-size: 3rem;
-                font-style: italic;
-                text-align: center;
-                padding-top: 1rem;
-                padding-left: 20px;
-                padding-bottom: 5px;
-                vertical-align: bottom;
-            }
-
-            div.maincontainer{
-                display: flex;
-                flex-direction: column;
-                margin-top: 30px;
-            }
-            div.titlescontainer{
-                display: flex;
-                justify-content: center;
-            }
-            div.title{
-                display: flex;
-                flex-direction: column;
-                width: 33%;
-                align-items: center;
-            }
-            div.outercircle, div.current{
-                height: 60px;
-                width: 60px;
-                display: flex;
-                border-radius: 50%;
-                margin-top: 10px;
-            }
-            div.current{
-                border: 1px solid black;
-            }
-            div.circle1{
-                height: 48px;
-                width: 48px;
-                border-radius: 50%;
-                display: flex;
-                align-self: center;
-                margin-left: auto;
-                margin-right: auto;
-                background-color: #70FE85;
-            }
-            div.circle{
-                height: 48px;
-                width: 48px;
-                border-radius: 50%;
-                display: flex;
-                align-self: center;
-                margin-left: auto;
-                margin-right: auto;
-                background-color: #43784B;
-            }
-            div.circle-text{
-                text-align: center;
-                align-self: center;
-                margin-left: auto;
-                margin-right: auto;
-                font-weight: bold;
-            }
-
-            div.formscontainer{
-                display: flex;
-            }
-
-            div.forms1{
-                display: flex;
-                flex-direction: column;
-                width: 70%;
-                margin-left: 8rem;
-                margin-right: 2rem;
-
-            }
-            div.forms2{
-                display: flex;
-                flex-direction: column;
-                width: 50%;
-                margin-right: 8rem;
-            }
-
-            div.indivforms{
-                margin-left: 8rem;
-                margin-right: 8rem;
-            }
-            
-            input[type=text]{
-                width: 100%;
-                padding: 12px 20px;
-                margin-top: 8px;
-                margin-bottom: 8px;
-                display: inline-block;
-                border: 1px solid #ccc;
-                box-sizing: border-box;
-                border-radius: 10px;
-                font-weight: bold;
-                font-family: var(--main-font);
-                box-shadow: 2px 2px 5px #aaaaaa;
-                font-size: 1rem;
-            }
-
-            button[type=button]{
-                background-color: #235325;
-                border: none;
-                color: white;
-                padding: 12px 20px;
-                text-decoration: none;
-                font-size: 1.5625rem;
-                cursor: pointer;
-                border-radius: 10px;
-                font-size: 1.6rem;
-                font-family: var(--main-font);
-            }
-
-            div.Reg-button{
-                margin-left: 8rem;
-                padding-top: 2%;
-                display: flex;
-            }
-            #btn1{
-                margin-right: 1rem;
-                padding-right: 1.5rem;
-                padding-left: 1.5rem;
-            }
-            
-        </style>
+        <link rel="stylesheet" href="CSS/host_page1_style.css">
     </head>
 
     <body>
         <header>
 
-            <div class="tabs">
+            <!--Just Tabs-->
+            <div id="host_page1_tabs">
                 <a class="tab" href="index.html">HOME</a>
                 <a class="tab">PARK</a>
                 <a class="tab" href="Customer Support.html">CONTACT</a>
@@ -217,16 +19,24 @@
                 <img src="logout.png" class="logout">
             </div>
 
+            <!--Title-->
             <div id="Title-section">
                 Host your parking slot.
             </div>
         </header>
 
+        <!--Body-->
         <div class="maincontainer">
+
+            <!--Contains Description of Steps-->
             <div class="titlescontainer">
+
+                <!--1st Step-->
                 <div class="title">
                     Basic Details
-                    <div class="outercircle">
+                    <!--Current Step-->
+                    <div class="current">
+
                         <div class="circle1">
                             <div class="circle-text">
                                 1
@@ -234,6 +44,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!--2nd Step-->
                 <div class="title">
                     Parking Details
                     <div class="outercircle">
@@ -244,9 +56,11 @@
                         </div>
                     </div>
                 </div>
+
+                <!--3rd Step-->
                 <div class="title">
                     Payment Details
-                    <div class="current">
+                    <div class="outercircle">
                         <div class="circle">
                             <div class="circle-text">
                                 3
@@ -256,9 +70,12 @@
                 </div>
             </div>
 
+            <!--Individual Form Inputs-->
             <div class = "indivforms">
                 <input type="text" name="Enter-name" placeholder="NAME" required>
             </div>
+
+            <!--Multi-Form Inputs-->
             <div class="formscontainer">
                 <div class="forms1">
                     <input type="text" name="Enter-region" placeholder="REGION" required>
@@ -267,12 +84,15 @@
                     <input type="text" name="Enter-city" placeholder="CITY" required>                
                 </div>
             </div>
+
+            <!--Individual Form Inputs-->
             <div class = "indivforms">
                 <input type="text" name="Enter-name" placeholder="ADDRESS" required>
             </div>
         </div>
 
-        <div class = Reg-button>
+        <!--Navigation Buttons-->
+        <div class = navigation-buttons>
             <button type="button" id = btn1> EXIT </button>
             <button type="button" id = btn2> NEXT </button>
         </div>

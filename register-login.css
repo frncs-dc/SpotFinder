@@ -142,12 +142,6 @@ div.confirm-details{
     margin-bottom: 3%;
     font-family: var(--main-font);
 }
-div.policy{
-    font-size: 1.25rem;
-    color: #ffffff;
-    font-family: var(--main-font);
-    text-align: center;
-}
  
 div.existing-account{
     font-size: 1.25rem;
@@ -173,4 +167,3 @@ div.parking-text{
     padding-left: 20%;
     padding-right: 10%;
 }
-

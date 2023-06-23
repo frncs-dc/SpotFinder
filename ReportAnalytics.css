@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    --main-font:'Josefin Sans', sans-serif;
+    background-color: #f3f3f3;
+}
+
+header{
+    background-image: url('../analytics.jpg');
+    background-size: cover;
+    background-position: center;   
+    font-family: var(--main-font);
+}
+
+#HOME, #park, #profile{
+    color: white;
+    text-decoration: none;
+    font-family: var(--main-font);
+}
+
+#search-bar {
+    width: 10rem;
+    height: 1.1rem;
+    border-radius: 10px;
+}
+
+div.header-bar{
+    display: flex;
+    background-color: rgb(18, 134, 9,.25);
+}
+
+div.header-left {
+    flex: 1;
+    flex-basis: auto;
+    margin: auto;
+    font-family: var(--main-font);
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+#park{
+    padding: 2rem;
+}
+
+/*div{ border: 1px solid red}*/
+
+div.header-right {
+    flex-basis: auto;
+    margin: auto;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.profile{
+    width: 17px;
+    height: 17px;
+    margin: auto;
+}
+
+#Title-section {
+    display: flex;
+    background-color: rgb(18, 134, 9,.25);
+    padding-left: 0.5rem;
+    color: white;
+    position: relative;
+}
+
+#Title {
+    font-size: larger;
+    font-style: italic;
+    font-family: var(--main-font);
+}
+
+div.main-container{
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div.left-texts{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 1rem;
+    font-family: var(--main-font);
+    font-weight: bold;
+}
+
+
+div.left-side{
+    width: 20rem;
+    height: 13rem;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px #aaaaaa;
+    margin-right: 2rem;
+    margin-top: 1.25rem;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    position: fixed;
+}
+
+div.right-side{
+    flex: 1;
+    margin-left: 25%;
+}
+
+hr{
+    margin: 0;
+}
+
+div.totals-report{
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px #aaaaaa;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    margin-right: 2rem;
+    display: flex;
+    font-family: var(--main-font);
+}
+
+div.nested-totals{
+    margin: auto;
+}
+
+div.peakhrs-report{
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px #aaaaaa;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    margin-right: 2rem;
+    font-family: var(--main-font);
+}
+
+div.slot-border-report1{
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px #aaaaaa;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    margin-right: 2rem;
+}
+div.slot-report1{
+    display: flex;
+    font-family: var(--main-font);
+}
+
+div.nested-slot-report1{
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 1;
+}
+
+div.nested2-slot-report1{
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 1;
+}
+
+div.slot-border-report2{
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px #aaaaaa;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    margin-right: 2rem;
+}
+div.slot-report2{
+    display: flex;
+    font-family: var(--main-font);
+}
+div.nested-slot-report2{
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 1;
+}
+div.nested2-slot-report2{
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 1;
+}
+
+div.slot-title{
+    font-family: var(--main-font);
+    font-weight: bold;
+    font-size: larger;
+    margin-top: 1rem;
+}
+
+div.income-report{
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px #aaaaaa;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    margin-right: 2rem;
+    font-family: var(--main-font);
+}
+
+div.nested-income-report{
+    margin-right: 2rem;
+    display: flex;
+}
+div.nested2-income-report{
+    margin: auto;
+}
+
+#monthly-income-link{
+    color: black;
+    font-size: 0.75rem;
+    text-decoration: underline;
+}
+
+div.right-titles{
+    font-weight: bold;
+    font-family: var(--main-font);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-size: x-large;
+}
+
+.peakhrs-report img {
+    margin: 1rem;
+    height: 6rem;
+    width: 85%;
+}
+
+.slot-report1 img{
+    margin: 1rem;
+    padding-right: 10rem;
+    height: 6rem;
+    width: 30%;
+}
+
+.slot-report2 img{
+    margin: 1rem;
+    height: 6rem;
+    padding-right: 10rem;
+    width: 30%;
+}
+
+.nested-income-report img{
+    margin: 1rem;
+    height: 7rem;
+    padding-right: 8rem;
+    width: 30%;
+}
+
+p{
+    line-height: 40%;
+}
+
+#left-links{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: var(--main-font);
+}

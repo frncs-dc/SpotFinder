@@ -76,7 +76,7 @@ div.Park-profile {
     margin-left: 25px;
     margin-top: 20px;
     width: 20%;
-    height: 350px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,10 +94,11 @@ div.Park-profile {
 
 .profilepic {
     margin-top: 20px;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    border-radius:10px;
+    max-height: 280px;
+    max-width: 280px;
     margin-bottom: 3px;
+    object-fit: cover;
 }
 
 div.bio {
@@ -132,7 +133,7 @@ button.message {
     color: #ffffff;
     padding: 5px 40px;
     text-decoration: none;
-    margin-top: 2px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 

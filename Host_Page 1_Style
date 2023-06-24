@@ -8,7 +8,7 @@ body {
 }
 
 header{
-    background-image: url('..//analytics.jpg');
+    background-image: url('analytics.jpg');
     background-size: cover;
     background-position: center; 
     font-family: var(--main-font);    
@@ -176,7 +176,21 @@ input[type=text]{
     font-size: 1rem;
 }
 
-button[type=button]{
+input.prev{
+    background-color: #235325;
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    font-size: 1.5625rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-family: var(--main-font);
+    margin-right: 1rem;
+}
+
+input.next{
     background-color: #235325;
     border: none;
     color: white;
@@ -189,11 +203,16 @@ button[type=button]{
     font-family: var(--main-font);
 }
 
+input.send:hover, input.cancel:hover{
+    background-color: #04AA04;
+}
+
 div.navigation-buttons{
     margin-left: 8rem;
     padding-top: 2%;
     display: flex;
 }
+
 #btn1{
     margin-right: 1rem;
     padding-right: 1.5rem;

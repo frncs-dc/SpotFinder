@@ -141,6 +141,42 @@
         .desccontainer{
             display: flex;
             flex-direction: column;
+            height: fit-content;
+            margin-top: auto;
+            margin-bottom: auto;
+            row-gap: 20px;
+        }
+
+        button.green, button.white{
+            border-radius: 10px;
+            font-family: var(--main-font);
+            padding: 10px 15px 10px 15px;
+            border: none;
+
+        }
+        button.green{
+            background-color: aliceblue;
+            margin-left: 15px;
+            color: #075526;
+        }
+
+        button.white{
+            background-color: #075526;
+            margin-right: 15px;
+            color: aliceblue;
+        }
+
+        button.white:hover, button.green:hover{
+            background-color: #63cb8d;
+            color: black;
+        }
+        
+        .green-text{
+            margin-left: 10px;
+        }
+
+        .white-text{
+            margin-right: 10px;
         }
     </style>
     <body>
@@ -171,12 +207,24 @@
                 <div class="section-title-host">
                     PARK AT YOUR OWN CONVENIENCE!
                 </div>
+                <div class="green-text">
+                    "Save time and hassle with our convenient and secure parking spaces available for you."
+                </div>
+                <div>
+                    <button class="green">Log-in/Register now to find a spot!</button>
+                </div>
             </div>
         </div>
         <div class="section-white">
             <div class="desccontainer">
                 <div class="section-title-park">
                     HOST YOUR PARKING SLOT!
+                </div>
+                <div class="white-text">
+                    "Become a parking hero by sharing your available parking spot with others through our website and help ease the parking woes in your community."
+                </div>
+                <div>
+                    <button class="white">Host your parking slot now!</button>
                 </div>
             </div>
             <img src="hostsection.jpg" class="section-image-white">
@@ -187,6 +235,14 @@
                 <div class="section-title-park">
                     CONTACT US
                 </div>
+                <div class="green-text">
+                    "Effortlessly reserve your parking spot with our user-friendly website and never stress about finding parking again-
+                     Don't hesitate to reach out for assistance!"
+                </div>
+                <div>
+                    <button class="green">Contact us!</button>
+                </div>
             </div>
         </div>
+    </body>
 </html>

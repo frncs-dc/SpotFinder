@@ -104,6 +104,7 @@
         }
         .section-white{
             color:#075526;
+            text-align: right;
         }
         .section-white{
             background-color: white;
@@ -115,23 +116,36 @@
         .section-image-green, .section-image-white{
             width: 45%;
             height: 90%;
-            border-radius: 5%;
+            border-radius: 32px;
             margin: auto;
         }
         .section-image-green{
-            
         }
         .section-image-white{
-
         }
         
-        .section-title{
+        .section-title-park{
             font-family: var(--main-font);
             font-weight: bolder;
             font-size: 64px;
-            align-self: flex-end;
-            margin: auto;
             padding: 10px;
+        }
+        .section-title-host{
+            font-family: var(--main-font);
+            font-weight: bolder;
+            font-size: 64px;
+            padding: 10px;
+        }
+        .section-title-contact{
+            font-family: var(--main-font);
+            font-weight: bolder;
+            font-size: 64px;
+            padding: 10px;
+        }
+
+        .desccontainer{
+            display: flex;
+            flex-direction: column;
         }
     </style>
     <body>
@@ -157,21 +171,27 @@
             </div>
         </div>
         <div class="section-green">
-            <img src="temp.png" class="section-image-green">
-            <div class="section-title">
-                PARK AT YOUR OWN CONVENIENCE!
+            <img src="parksection.jpg" class="section-image-green">
+            <div class="desccontainer">
+                <div class="section-title-host">
+                    PARK AT YOUR OWN CONVENIENCE!
+                </div>
             </div>
         </div>
         <div class="section-white">
-            <div class="section-title">
-                HOST YOUR PARKING SLOT!
+            <div class="desccontainer">
+                <div class="section-title-park">
+                    HOST YOUR PARKING SLOT!
+                </div>
             </div>
-            <img src="temp.png" class="section-image-white">
+            <img src="hostsection.jpg" class="section-image-white">
         </div>
         <div class="section-contact">
-            <img src="temp.png" class="section-image-green">
-            <div class="section-title">
-                CONTACT US
+            <img src="contactsection.jpg" class="section-image-green">
+            <div class="desccontainer">
+                <div class="section-title-contact">
+                    CONTACT US
+                </div>
             </div>
         </div>
 </html>

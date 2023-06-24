@@ -6,7 +6,10 @@ body {
     margin: 0%;
     padding: 0%;
 }
-
+a{
+    color: white;
+    text-decoration: none;
+}
 header {
     background-color: #075526;
     font-family: 'Josefin Sans', sans-serif;
@@ -20,11 +23,7 @@ header {
     color: white;
 }
 
-a.home {
-    margin: 20px;
-}
-
-a.park {
+a.tab{
     margin: 20px;
 }
 
@@ -41,6 +40,21 @@ a.profile {
     border-radius: 61px;
     height: 20px;
     resize: none;
+}
+
+a.profile{
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+img.profile{
+    margin-top: 20px;
+    height: 15px;
+}
+img.logout{
+    margin-top: 20px;
+    height: 15px;
+    margin-right: 20px;
 }
 
 div.content {

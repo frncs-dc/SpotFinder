@@ -176,7 +176,7 @@ img.spot {
 }
 
 #Activity {
-    margin-left: 30px;
+    margin-left: 20px;
     font-size: 11px;
 }
 
@@ -233,4 +233,8 @@ img.spot {
 
 a.proflink{
     color: black;
+}
+
+.host-body{
+    display: flex;
 }

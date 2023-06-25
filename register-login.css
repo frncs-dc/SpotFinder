@@ -26,11 +26,13 @@ div.left-side{
     background-color: rgba(45, 155, 62, 0.65);
     flex: 1;
     background-size: cover;
+    height: 100%;
 }
 
 div.right-side{
     flex: 1;
     background-color: rgba(10, 110, 25, 0.75);
+    height: 100%;
 }
 
 div.detail-container{
@@ -163,7 +165,7 @@ div.parking-text{
     font-style: italic;
     padding-left: auto;
     padding-right: auto;
-    margin-top: 75%;
-    padding-left: 20%;
+    margin-top: 50%;
+    padding-left: 10%;
     padding-right: 10%;
 }

@@ -1,192 +1,417 @@
 <html>
     <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F3F3F3;
+            --main-font:'Josefin Sans', sans-serif;
+            font-family: var(--main-font);
+        }
+
+        div{
+            border: 1px solid red;
+        }
+
+        header{
+            background-image: url('customersupport.jpg');
+            background-size: cover;
+            background-position: center;   
+            font-family: var(--main-font);    
+        }
+        div.tabs{
+            display: flex;
+            font-weight: lighter;
+            color: white;
+            background-color: rgb(18, 134, 9,.7);
+        }
+        a.tab{
+            margin: 20px;
+        }
+        a.profile{
+            margin-top: 18px;
+            margin-right: 5px;
+            margin-left: 10px;
+        }
+        img.profile{
+            margin-top: 18px;
+            height: 15px;
+        }
+        img.logout{
+            margin-top: 18px;
+            height: 15px;
+            margin-right: 20px;
+            margin-left: 3px;
+        }
+        textarea.search{
+            margin-top: 15px;
+            margin-right: 10px;
+            margin-left: auto;
+            border-radius: 61px;
+            height: 20px;
+            resize: none;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+        #logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: rgb(255, 255, 255);
+        }
+
+        #links {
+            display: flex;
+            gap: 10px;
+        }
+
+        #search-bar {
+            font-family: var(--main-font);
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        #Title-section {
+            background-color: rgb(18, 134, 9,.7);
+            color: white;
+            font-size: 3rem;
+            font-style: italic;
+            text-align: center;
+            padding-top: 1rem;
+            padding-left: 20px;
+            padding-bottom: 5px;
+            vertical-align: bottom;
+        }
+        div.title{
+
+        }
+        div.bodycontainer{
+            display: flex;
+            flex-direction: row;;
+        }
+        div.mapdetails{
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+            width: fit-content;
+            height: fit-content;
+            align-items: center;
+            background-color: #f5ffee;
+            padding: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        div.mapeditor{
+            margin-left: auto;
+            margin-top: 20px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
         div.maprow{
             display: flex;
             justify-content: center;
             column-gap: 3px;
             margin-top: 3px;
-            }
-        div.square{
-            width: 20px;
-            height: 20px;
+            margin-bottom: auto;
+        }
+        button.square{
+            width: 40px;
+            height: 40px;
             border: 1px solid black;
             background-color: gray;
         }
-        div.square:hover, div.square:active{
+        button.square:hover{
             background-color: green;
+        }
+        button.square:focus{
+            background-color: green;
+        }
+
+        .details{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            margin-left: auto;
+        }
+
+        .legends{
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        .rowlegend{
+            display: flex;
+            height: fit-content;
+            align-items: center;
+        }
+        
+        .occupiedlegend, .availablelegend, .pathlegend{
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+        }
+        .occupiedlegend{
+            background-color: rgb(141, 54, 54);
+        }
+
+        .availablelegend{
+            background-color: gray;
+        }
+
+        .pathlegend{
+            background-color: wheat;
+            border-color: 1px solid black;
+        }
+
+        input.reserve,
+        input.exit {
+            border-radius: 8px;
+            height: 40px;
+            box-shadow: 3px 3px 3px rgba(66, 66, 66, 0.28);
+            color: white;
+            font-family: var(--main-font);
+            border: none;
+            background-color: #0C360C;
+            padding: 5px;
+            font-size: 24px;
+        }
+
+        input.reserve{
+            margin-top: 10px;
+        }
+
+        input.exit{
+            margin-top: 5px;
+        }
+
+        input.reserve:hover,
+        input.exit:hover {
+            background-color: #04AA04;
         }
     </style>
     <body>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        </div>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        </div>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        </div>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        </div>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        </div>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        </div>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        </div>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        </div>
-        <div class="maprow">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+        <header>
+
+            <div class="tabs">
+                <a class="tab" href="index.html">HOME</a>
+                <a class="tab" href="park.html">PARK</a>
+                <a class="tab" href="Customer Support.html">CONTACT</a>
+                <textarea class="search"></textarea>
+                <img src="profile.png" class="profile">
+                <a class="profile" href="Profile.html">Juan Dela Cruz</a>
+                <img src="logout.png" class="logout">
+            </div>
+
+            <div id="Title-section">
+                Reserve Your Slot
+            </div>
+
+        </header>
+        <div class="bodycontainer">
+            <div class="details">
+                <div class="legends">
+                    <div class="rowlegend">
+                        <div class="occupiedlegend"></div> Occupied
+                    </div>
+                    <div class="rowlegend">
+                        <div class="availablelegend"></div> Available
+                    </div>
+                    <div class="rowlegend">
+                        <div class="pathlegend"></div> Path/Road/Walkway
+                    </div>
+                </div>
+                <div class="mapdetails">
+                    STATUS: AVAILABLE <br>
+                    NAME: A1 <br>
+                    COST: Php 90.00 <br>
+                    M.O.P.: Over the Counter <br>
+                </div>
+                <input type="submit" class="reserve" value="Reserve"></input>
+                <input type="submit" class="exit" value="Cancel"></input>
+            </div>
+            <div class="mapeditor">
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+                <div class="maprow">
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                    <button class="square"></button>
+                </div>
+            </div>
         </div>
     </body>
 </html>

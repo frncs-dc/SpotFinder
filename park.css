@@ -120,6 +120,7 @@ div.cards-section {
   height: 280px;
   color: white;
   align-items: center;
+  text-align: center;
 }
 
 .cardimg{

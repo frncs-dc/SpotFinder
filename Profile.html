@@ -7,9 +7,6 @@
                 background-color: #075526;
                 font-family: 'Josefin Sans', sans-serif;
             }
-            /* div{
-                border: 2px solid red;
-            } */
             a{
                 color: white;
                 text-decoration: none;
@@ -52,7 +49,8 @@
                 top: 50px;
                 margin-left: 25px;
                 margin-top: 20px;
-                width: 20%;
+                margin-right: 50px;
+                width: 30%;
                 height: fit-content;
                 display: flex;
                 flex-direction: column;
@@ -60,6 +58,7 @@
                 background-color: #ffffff;
                 border-radius: 61px;
                 text-align: center;
+                padding: 15px;
             }
             div.profilename{
                 font-size: 2rem;
@@ -111,7 +110,7 @@
                 margin-top: 20px;
                 margin-right: 20px;
                 margin-left: auto;
-                width: 70%;
+                width: auto;
                 row-gap: 20px;
                 display: flex;
                 flex-direction: column;
@@ -132,7 +131,7 @@
                 margin-bottom: 20px;
             }
             div.spotsdisplay{
-                width: 70%;
+                width: auto;
                 border-radius: 32px;
             }
             div.spotsdesc{
@@ -143,7 +142,8 @@
                 font-size: 30px;
             }
             button.message {
-                width: fit-content;
+                width: 80%;
+                height: 20%;
                 font-size: 1rem;
                 background-color:#0C360C;
                 border-radius:13px;
@@ -151,16 +151,16 @@
                 display:inline-block;
                 cursor:pointer;
                 color:#ffffff;
-                padding:5px 40px;
+                padding:5px 20px;
                 text-decoration:none;
                 margin-top: 2px;
-                margin-bottom: 20px;
+                margin-bottom: 5px;
             }
             button.message:hover {
                 background-color:#5cbf2a;
                 font-size: 1rem;
+                box-shadow: 21px 26px 22px -16px rgba(0,0,0,0.4);
             }
-
             img.spot{
                 width: 100%;
                 height: 400px;
@@ -172,8 +172,51 @@
                 box-shadow: 21px 26px 22px -16px rgba(0,0,0,0.4);
             }
 
-            /* TODO: ADD DIV LEFTSIDE, HISTORY */
+            div.rightpanel{
+                position: sticky;
+                margin: 20px;
+                top: 50px;
+                height: fit-content;
+                width: fit-content;
+                background-color: white;
+                border-radius: 32px;
+                text-align: center;
+                padding: 20px;
+            }
 
+            div.reservations{
+                text-align: left;
+            }
+
+            div.titlereservation{
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            div.subtitle{
+                font-size: 16px;
+                font-weight: bold;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+
+            .reserved{
+                color: black;
+                margin-bottom: 2px;
+            }
+            
+            div.reservebody{
+                display: flex;
+                flex-direction: column;
+                margin-left: 15px;
+            }
+
+            div.details{
+                color: #017110;
+                margin-left: 10px;
+            }
         </style>
     </head>
 
@@ -188,33 +231,26 @@
             <a href="Log In Page.html"><img src="logout.png" class="logout"></a>
         </div>
         <div class="content">
-            <!-- FIXME: LAYOUT OF LEFTSIDE -->
-            <div class="leftside">
-                <div class="profile"> 
-                    <img src="sample.png" class="profilepic">
-                    <div class="profilename">
-                        Juan Dela Cruz
-                    </div>
-                    <div class="ratings">
-                        <img src="coloredstar.png" class="star-colored">
-                        <img src="coloredstar.png" class="star-colored">
-                        <img src="coloredstar.png" class="star-colored">
-                        <img src="coloredstar.png" class="star-colored">
-                        <img src="linedstar.png" class="star-lined">
-                    </div>
-                    <div class="contact">
-                        <img src="contacticon.png" class="phoneicon">
-                        <div class="contactno">+123456</div>
-                    </div>
-                    <div class="bio">
-                        you need spot ba? cuz pare chong  I gotchu pare chong see my slots thanks my G, sheeeeeeesh.
-                    </div>
-                    <button class="message" onclick="location.href='host-form page 1.html'">Post a Host Spot</button>
-                    <button class="message" onclick="location.href='ReportAnalytics.html'">View Statistics</button>
+            <div class="profile"> 
+                <img src="sample.png" class="profilepic">
+                <div class="profilename">
+                    Juan Dela Cruz
                 </div>
-                <div class="history">
-                    <!-- TODO: ADD HISTORY LAYOUT -->
+                <div class="ratings">
+                    <img src="coloredstar.png" class="star-colored">
+                    <img src="coloredstar.png" class="star-colored">
+                    <img src="coloredstar.png" class="star-colored">
+                    <img src="coloredstar.png" class="star-colored">
+                    <img src="linedstar.png" class="star-lined">
                 </div>
+                <div class="contact">
+                    <img src="contacticon.png" class="phoneicon">
+                    <div class="contactno">+123456</div>
+                </div>
+                <div class="bio">
+                    you need spot ba? cuz pare chong  I gotchu pare chong see my slots thanks my G, sheeeeeeesh.
+                </div>
+                <button class="message" onclick="location.href='host-form page 1.html'">Post a Host Spot</button>
             </div>
             <div class="spots">
                 <div class="SpotsTitle">
@@ -260,7 +296,35 @@
                         <a href="Host-Posting-Sample10.html"><img src="HostPost5img.jpg" class="spot"></a>
                     </div>
                 </div>
-
+                
+            </div>
+            <div class="rightpanel">
+                <button class="message" onclick="location.href='ReportAnalytics.html'">View Statistics</button>
+                <hr>
+                <div class="reservations">
+                    <div class="titlereservation">
+                        RESERVATIONS
+                    </div>
+                    <div class="current">
+                        <div class="subtitle">
+                            CURRENT
+                        </div>
+                        <div class="reservebody">
+                            <a class="reserved" href="Host-Posting-Sample1.html">Samantha Parking Space. <div class="details">10:00AM-11:00AM. June 30, 2023.</div></a>
+                        </div>
+                        
+                    </div>
+                    <div class="past">
+                        <div class="subtitle">
+                            PREVIOUS
+                        </div>
+                        <div class="reservebody">
+                            <a class="reserved" href="Host-Posting-Sample2.html">Jennifer Parking Space. <div class="details">10:00AM-11:00AM. May 20, 2023.</div></a>
+                            <a class="reserved" href="Host-Posting-Sample4.html">Christopher Parking Space. <div class="details">10:00AM-11:00AM. March 30, 2023.</div></a> 
+                            <a class="reserved" href="Host-Posting-Sample5.html">love and peace Parking Space. <div class="details">10:00AM-11:00AM. March 20, 2023.</div></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

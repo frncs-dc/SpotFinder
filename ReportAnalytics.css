@@ -12,46 +12,44 @@ header{
     font-family: var(--main-font);
 }
 
-#HOME, #park, #profile{
+a{
     color: white;
     text-decoration: none;
-    font-family: var(--main-font);
 }
-
-#search-bar {
-    width: 10rem;
-    height: 1.1rem;
-    border-radius: 10px;
-}
-
-div.header-bar{
+div.tabs{
     display: flex;
-    background-color: rgb(18, 134, 9,.25);
+    font-weight: lighter;
+    color: white;
 }
-
-div.header-left {
-    flex: 1;
-    flex-basis: auto;
-    margin: auto;
-    font-family: var(--main-font);
-    font-size: 1rem;
-    padding: 1rem;
+a.tab{
+    margin: 20px;
 }
-
-#park{
-    padding: 2rem;
+a.profile{
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+img.profile{
+    margin-top: 20px;
+    height: 15px;
+}
+img.logout{
+    margin-top: 20px;
+    height: 15px;
+    margin-right: 20px;
+}
+textarea.search{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: auto;
+    border-radius: 61px;
+    height: 20px;
+    resize: none;
 }
 
 /*div{ border: 1px solid red}*/
 
-div.header-right {
-    flex-basis: auto;
-    margin: auto;
-    font-size: 1rem;
-    padding: 1rem;
-}
-
-.profile{
+div.profile{
     width: 17px;
     height: 17px;
     margin: auto;
@@ -59,10 +57,11 @@ div.header-right {
 
 #Title-section {
     display: flex;
-    background-color: rgb(18, 134, 9,.25);
+    background-color: #075526;
     padding-left: 0.5rem;
     color: white;
     position: relative;
+    margin-left: 1rem;
 }
 
 #Title {
@@ -90,7 +89,7 @@ div.left-texts{
 
 div.left-side{
     width: 20rem;
-    height: 13rem;
+    height: 9rem;
     background-color: #ffffff;
     box-shadow: 3px 3px 5px #aaaaaa;
     margin-right: 2rem;

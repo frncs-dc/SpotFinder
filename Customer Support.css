@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F3F3F3;
+    --main-font:'Josefin Sans', sans-serif;
+}
+
+/* div{
+    border: 1px solid red;
+} */
+
+header{
+    background-image: url('customersupport.jpg');
+    background-size: cover;
+    background-position: center;   
+    font-family: var(--main-font);    
+}
+div.tabs{
+    display: flex;
+    font-weight: lighter;
+    color: white;
+    background-color: rgb(18, 134, 9,.7);
+}
+a.tab{
+    margin: 20px;
+}
+a.profile{
+    margin-top: 18px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+img.profile{
+    margin-top: 18px;
+    height: 15px;
+}
+img.logout{
+    margin-top: 18px;
+    height: 15px;
+    margin-right: 20px;
+    margin-left: 3px;
+}
+textarea.search{
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: auto;
+    border-radius: 61px;
+    height: 20px;
+    resize: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+#links {
+    display: flex;
+    gap: 10px;
+}
+
+#search-bar {
+    font-family: var(--main-font);
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+#Title-section {
+    background-color: rgb(18, 134, 9,.7);
+    color: white;
+    font-size: 3rem;
+    font-style: italic;
+    text-align: center;
+    padding-top: 1rem;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    vertical-align: bottom;
+}
+
+div.containercontent{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.feelfree {
+    align-self: center;
+    font-family: var(--main-font);
+    padding-top: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+img.contactpic{
+    margin-top: 10px;
+    height: 350px;
+    align-self: center;
+}
+
+div.customersupport{
+    display: fleX;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 50%;
+}
+input.email, input.subject, textarea.message{
+    font-family: var(--main-font);
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 20px;
+    resize: none;
+    /* padding-left: 10px; */
+    border: none;
+    box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+}
+input.send, input.cancel{
+    font-family: var(--main-font);
+    border-radius: 8px;
+    width: 100%;
+    height: 20px;
+    box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+    color: white;
+    font-family: var(--main-font);
+    border: none;
+}
+
+input.send{
+    margin-top: 30px;
+    background-color: #0C360C;
+}
+input.cancel{
+    margin-top: 10px;
+    background-color: #B43C2C;
+}
+textarea.message{
+    height: 100px;
+    font-family: var(--main-font);
+}
+div.aboutus{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: fit-content;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    width: 60%;
+    box-shadow: 3px 3px 3px rgba(66,66,66,.28);
+}
+div.text-aboutus, div.body-aboutus{
+    margin: 20px;
+    font-family: var(--main-font);
+}
+
+div.body-aboutus{
+    padding-right: 30px;
+}
+
+div.text-aboutus{
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: larger;
+}

@@ -133,6 +133,7 @@ div.peakhrs-report{
     border-color: rgba(0, 0, 0, 0.25);
     margin-right: 2rem;
     font-family: var(--main-font);
+    text-align: center;
 }
 
 div.slot-border-report1{
@@ -207,8 +208,17 @@ div.nested-income-report{
     margin-right: 2rem;
     display: flex;
 }
+
+div.nested1-income-report{
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 1;
+}
+
 div.nested2-income-report{
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 1;
 }
 
 #monthly-income-link{
@@ -226,9 +236,10 @@ div.right-titles{
 }
 
 .peakhrs-report img {
-    margin: 1rem;
-    height: 6rem;
-    width: 85%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 20rem;
+    width: 25rem;
 }
 
 .slot-report1 img{
@@ -247,9 +258,9 @@ div.right-titles{
 
 .nested-income-report img{
     margin: 1rem;
-    height: 7rem;
     padding-right: 8rem;
-    width: 30%;
+    height: 15rem;
+    width: 25rem;
 }
 
 p{

@@ -245,7 +245,7 @@ div.right-titles{
 .slot-report1 img{
     margin: 1rem;
     padding-right: 10rem;
-    height: 6rem;
+    height: fit-content;
     width: 30%;
 }
 
@@ -271,4 +271,8 @@ p{
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-family: var(--main-font);
+}
+
+.parking-graph{
+    height: 250px;
 }

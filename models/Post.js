@@ -1,40 +1,52 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-const UserSchema = new Schema({
+const PostSchema = new Schema({
   username: {
     type: String,
     required: true,
     unique: true
   },
-  email: {
+  name: {
     type: String,
     required: true
   },
-  lastname: {
+  address__region: {
     type: String,
     required: true
   },
-  firstname: {
+  address__city: {
     type: String,
     required: true
   },
-  password: {
+  address: {
     type: String,
-    required: true,
+    required: true
   },
-  rating: {
+  isAssignedParking: {
+    type: Boolean,
+    required: true
+  },
+  total_capacity: {
     type: int,
     required: true
   },
-  profilepictue: {
-    type: Image,
+  floors: {
+    type: int,
     required: true
   },
-  bio: {
-    type: String,
+  isCarSupported: {
+    type: Boolean,
     required: true
-  }
+  },
+  isMotorSupported: {
+    type: Boolean,
+    required: true
+  },
+  isBikeSupported: {
+    type: Boolean,
+    required: true
+  },
 });
 
 module.exports = mongoose.model('User', UserSchema);

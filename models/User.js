@@ -24,7 +24,7 @@ const UserSchema = new Schema({
     required: true,
   },
   rating: {
-    type: int,
+    type: Number,
     required: true
   },
   profilepictue: {

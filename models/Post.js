@@ -1,3 +1,4 @@
+const { Decimal128 } = require('mongodb');
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -8,6 +9,14 @@ const PostSchema = new Schema({
     unique: true
   },
   name: {
+    type: String,
+    required: true
+  },
+  post__picture: {
+    type: Image,
+    required: true
+  },
+  post__description: {
     type: String,
     required: true
   },
@@ -28,11 +37,11 @@ const PostSchema = new Schema({
     required: true
   },
   total_capacity: {
-    type: int,
+    type: Number,
     required: true
   },
   floors: {
-    type: int,
+    type: Number,
     required: true
   },
   isCarSupported: {
@@ -47,6 +56,34 @@ const PostSchema = new Schema({
     type: Boolean,
     required: true
   },
+  map_file: {
+    type: File,
+    required: true
+  },
+  isFlatRate: {
+    type: Boolean,
+    required: true
+  },
+  flat__amount: {
+    type: Decimal128,
+    required: true
+  },
+  flat__hours: {
+    type: Number,
+    required: true
+  },
+  isFlatRate: {
+    type: Boolean,
+    required: true
+  },
+  flat__amount: {
+    type: Decimal128,
+    required: true
+  },
+  flat__hours: {
+    type: Number,
+    required: true
+  }
 });
 
 module.exports = mongoose.model('User', UserSchema);

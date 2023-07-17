@@ -57,7 +57,9 @@ const PostSchema = new Schema({
     required: true
   },
   map_file: {
-    type: File,
+    filename: String,
+    data: Buffer,
+    contentType: String,
     required: true
   },
   isFlatRate: {

@@ -13,8 +13,8 @@ const PostSchema = new Schema({
     required: true
   },
   post__picture: {
-    type: Image,
-    required: true
+    data: Buffer,
+    contentType: String
   },
   post__description: {
     type: String,

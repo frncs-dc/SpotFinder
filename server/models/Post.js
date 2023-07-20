@@ -56,10 +56,12 @@ const PostSchema = new Schema({
     type: Boolean,
     required: true
   },
-  map_file: {
-    type: File,
+  /*map_file: {
+    filename: String,
+    data: Buffer,
+    contentType: String,
     required: true
-  },
+  },*/
   isFlatRate: {
     type: Boolean,
     required: true

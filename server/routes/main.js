@@ -138,9 +138,9 @@ router.get('/park', (req, res) => {
   });
 });
 
-router.get('/Log In Page', (req, res) => {
-  res.render('Log In Page', {
-    currentRoute: '/Log In Page'
+router.get('/LogInPage', (req, res) => {
+  res.render('LogInPage', {
+    currentRoute: '/LogInPage'
   });
 });
 

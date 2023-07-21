@@ -51,6 +51,6 @@ app.get('/park', (req, res) => {
   res.render('park');
 });
 
-app.get('/Log In Page', (req, res) => {
-  res.render('Log In Page');
+app.get('/LogInPage', (req, res) => {
+  res.render('LogInPage');
 });

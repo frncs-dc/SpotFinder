@@ -138,6 +138,12 @@ router.get('/park', (req, res) => {
   });
 });
 
+router.get('/Log In Page', (req, res) => {
+  res.render('Log In Page', {
+    currentRoute: '/Log In Page'
+  });
+});
+
 
 // function insertPostData () {
 //   Post.insertMany([

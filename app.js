@@ -46,3 +46,11 @@ app.use('/', require('./server/routes/admin'));
 app.listen(PORT, ()=> {
   console.log(`App listening on port ${PORT}`);
 });
+
+app.get('/park', (req, res) => {
+  res.render('park');
+});
+
+app.get('/Log In Page', (req, res) => {
+  res.render('Log In Page');
+});

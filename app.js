@@ -52,5 +52,5 @@ app.get('/park', (req, res) => {
 });
 
 app.get('/LogInPage', (req, res) => {
-  res.render('LogInPage');
+  res.render('Log In Page');
 });

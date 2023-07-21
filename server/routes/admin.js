@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
 
+current_user = null;
 
 /**
  * 
@@ -82,25 +83,25 @@ router.post('/admin', async (req, res) => {
  * GET /
  * Admin Dashboard
 */
-router.get('/dashboard', authMiddleware, async (req, res) => {
-  try {
-    const locals = {
-      title: 'Dashboard',
-      description: 'Simple Blog created with NodeJs, Express & MongoDb.'
-    }
+// router.get('/dashboard', authMiddleware, async (req, res) => {
+//   try {
+//     const locals = {
+//       title: 'Dashboard',
+//       description: 'Simple Blog created with NodeJs, Express & MongoDb.'
+//     }
 
-    const data = await Post.find();
-    res.render('admin/dashboard', {
-      locals,
-      data,
-      layout: adminLayout
-    });
+//     const data = await Post.find();
+//     res.render('admin/dashboard', {
+//       locals,
+//       data,
+//       layout: adminLayout
+//     });
 
-  } catch (error) {
-    console.log(error);
-  }
+//   } catch (error) {
+//     console.log(error);
+//   }
 
-});
+// });
 
 
 /**
@@ -249,13 +250,16 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
       if(!user) {
         return res.status(401).json( { message: 'Invalid credentials' } );
       }
-  
+      
       const isPasswordValid = await bcrypt.compare(password, user.password);
   
       if(!isPasswordValid) {
         return res.status(401).json( { message: 'Invalid credentials' } );
-      }
-  
+      } 
+
+      res.render('park',{
+        current_user: user
+      })
       const token = jwt.sign({ userId: user._id}, jwtSecret );
       res.cookie('token', token, { httpOnly: true });
       res.redirect('/park');
@@ -291,5 +295,6 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
+router.render
 
 module.exports = router;

@@ -133,8 +133,12 @@ router.get('/profile', (req, res) => {
 });
 
 router.get('/park', (req, res) => {
+
+  current_user = req.session.current_user;
+
   res.render('park', {
     currentRoute: '/park'
+  }, { current_user
   });
 });
 

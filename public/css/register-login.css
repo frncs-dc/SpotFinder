@@ -45,7 +45,28 @@ div.login-detail-container{
     margin-right: 10rem;
 }
 
-input[type=text], input[type=password] {
+input[type=submit]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 30px;
+}
+input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 30px;
+}
+
+input[type=text]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

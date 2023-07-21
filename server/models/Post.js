@@ -18,7 +18,7 @@ const PostSchema = new Schema({
   },
   post__description: {
     type: String,
-    required: true
+    required: true 
   },
   address__region: {
     type: String,

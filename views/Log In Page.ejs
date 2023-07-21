@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="register-login.css">
+        <link rel="stylesheet" href="/css/register-login.css">
     </head>
 
     <body>
@@ -16,22 +16,15 @@
             <div class = right-side>
 
                 <!--Title Header-->
-                <h1> SPOT FINDER </h1>
+                <div class = login-title> SPOT FINDER </div>
 
                 <!--Register Subheader-->
-                <div class = register-text>
-                    REGISTER
+                <div class = login-text>
+                    LOGIN
                 </div>
 
                 <!--Main Container For All Details-->
-                <div class="detail-container">
-
-                    <!--Name-->
-                    <div class = name-details>
-                        <label for="Enter-name"><b>Username</b></label>
-                        <br>
-                        <input type="text" name="Enter-name" required>
-                    </div>
+                <div class="login-detail-container">
 
                     <!--Email-->
                     <div class = email-details>
@@ -46,24 +39,15 @@
                         <br>
                         <input type="password" name="Enter-password" required>
                     </div>  
-
-                    <!--Confirm-->
-                    <div class = confirm-details>
-                        <label for="Confirm-password"><b>Confirm Password</b></label>
-                        <br>
-                        <input type="password" name="Confirm-password" required>
-                    </div>
-
-                    <!--Register Button-->
-                    <div class = Reg-button>
-                        <button type="button" onclick="location.href='profile.html'"> REGISTER </button>
-                    </div>
-
-                    <!--Existing Account-->
-                    <div class = existing-account>
-                        Already have an account? <a href ="Log In Page.html"><b>Login</b></a>
-                    </div>
                     
+                    <!--Login Button-->
+                    <div class = reg-button>
+                        <button type="button" onclick="location.href='profile.html'"> LOGIN </button>
+                    </div>
+
+                    <div class = existing-account>
+                        Don't have an account? <a href ="register.html"><b>Register</b></a>
+                    </div>
                 </div>
 
             </div>

@@ -120,9 +120,15 @@ router.post('/search', async (req, res) => {
  * GET /
  * About
 */
-router.get('/about', (req, res) => {
-  res.render('about', {
-    currentRoute: '/about'
+router.get('/register', (req, res) => {
+  res.render('register', {
+    currentRoute: '/register'
+  });
+});
+
+router.get('/profile', (req, res) => {
+  res.render('profile', {
+    currentRoute: '/profile'
   });
 });
 

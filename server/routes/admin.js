@@ -242,9 +242,9 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
 
   router.post('/LogInPage', async (req, res) => {
     try {
-      const { username, password } = req.body;
+      const { email, password } = req.body;
       
-      const user = await User.findOne( { username } );
+      const user = await User.findOne( { email } );
   
       if(!user) {
         return res.status(401).json( { message: 'Invalid credentials' } );
@@ -258,7 +258,7 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
   
       const token = jwt.sign({ userId: user._id}, jwtSecret );
       res.cookie('token', token, { httpOnly: true });
-      res.redirect('/dashboard');
+      res.redirect('/park');
   
     } catch (error) {
       console.log(error);

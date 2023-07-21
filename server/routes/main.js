@@ -132,6 +132,12 @@ router.get('/profile', (req, res) => {
   });
 });
 
+router.get('/park', (req, res) => {
+  res.render('park', {
+    currentRoute: '/park'
+  });
+});
+
 
 // function insertPostData () {
 //   Post.insertMany([

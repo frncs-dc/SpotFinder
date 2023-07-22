@@ -162,4 +162,10 @@ router.get('/index', (req, res) => {
   });
 });
 
+router.get('/Customer-Support', (req, res) => {
+  res.render('Customer-Support', {
+    currentRoute: '/Customer-Support'
+  });
+});
+
 module.exports = router;

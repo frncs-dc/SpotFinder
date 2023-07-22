@@ -29,6 +29,9 @@ a.profile{
     margin-right: 5px;
     margin-left: 10px;
 }
+.hidden {
+    display: none;
+  }
 img.profile{
     margin-top: 18px;
     height: 15px;

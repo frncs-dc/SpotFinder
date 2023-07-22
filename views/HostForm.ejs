@@ -96,26 +96,27 @@
             <div class="maincontainer">
                 <div class="columnforms">
                     <div class="indivforms">
-                        <input id="isFlatRate" type="checkbox"> 
-                            FLAT RATE
+                      <input id="isFlatRate" type="checkbox"> 
+                      FLAT RATE
                     </div>
-                    <div class="indivforms">
-                        <input id="flatAmt" class="amount" type="text" placeholder="AMOUNT">
+                    <div id="flatRateFields" class="indivforms hidden">
+                      <input id="flatAmt" class="amount" type="text" placeholder="AMOUNT">
                     </div>
-                    <div class="indivforms">
-                        <input id="flatHours" class="hours" type="text" placeholder="HOURS">
+                    <div id="flatHoursFields" class="indivforms hidden">
+                      <input id="flatHours" class="hours" type="text" placeholder="HOURS">
                     </div>
                 </div>
+                
                 <div class="columnforms">
                     <div class="indivforms">
-                        <input id="isHourRate" type="checkbox"> 
-                            HOURLY RATE
+                    <input id="isHourRate" type="checkbox"> 
+                    HOURLY RATE
                     </div>
-                    <div class="indivforms">
-                        <input id="isHourAmt" class="amount" type="text" placeholder="AMOUNT">
+                    <div id="hourRateFields" class="indivforms hidden">
+                    <input id="isHourAmt" class="amount" type="text" placeholder="AMOUNT">
                     </div>
-                    <div class="indivforms">
-                        <input id="isHourHours" class="hours" type="text" placeholder="HOURS">
+                    <div id="hourHoursFields" class="indivforms hidden">
+                    <input id="isHourHours" class="hours" type="text" placeholder="HOURS">
                     </div>
                 </div>
             </div>
@@ -126,6 +127,41 @@
                 <input class="next" onclick="location.href='Host-Form Page 2.html'" type="submit" value="NEXT">
             </div>
         </form>
-
+        <script>
+            function toggleFields(fieldName) {
+              const fieldElement = document.getElementById(fieldName);
+              if (fieldElement) {
+                fieldElement.classList.toggle('hidden');
+              }
+            }
+      
+            // Get references to the checkboxes
+            const isFlatRate = document.getElementById('isFlatRate');
+            const isHourRate = document.getElementById('isHourRate');
+      
+            // Get references to the fields
+            const flatRateFields = document.getElementById('flatRateFields');
+            const flatAmt = document.getElementById('flatAmt');
+            const flatHours = document.getElementById('flatHours');
+            const hourRateFields = document.getElementById('hourRateFields');
+            const hourAmt = document.getElementById('isHourAmt');
+            const hourHours = document.getElementById('isHourHours');
+      
+            isFlatRate.addEventListener('change', () => {
+              if (isFlatRate.checked) {
+                flatRateFields.classList.remove('hidden');
+              } else {
+                flatRateFields.classList.add('hidden');
+              }
+            });
+      
+            isHourRate.addEventListener('change', () => {
+              if (isHourRate.checked) {
+                hourRateFields.classList.remove('hidden');
+              } else {
+                hourRateFields.classList.add('hidden');
+              }
+            });
+          </script>
     </body>
 </html>

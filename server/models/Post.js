@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const PostSchema = new Schema({
   username: {
     type: String,
-    required: true,
     unique: true
   },
   name: {
@@ -18,7 +17,6 @@ const PostSchema = new Schema({
   },
   post__description: {
     type: String,
-    required: true 
   },
   address__region: {
     type: String,
@@ -46,15 +44,12 @@ const PostSchema = new Schema({
   },
   isCarSupported: {
     type: Boolean,
-    required: true
   },
   isMotorSupported: {
     type: Boolean,
-    required: true
   },
   isBikeSupported: {
     type: Boolean,
-    required: true
   },
   /*map_file: {
     filename: String,
@@ -62,29 +57,17 @@ const PostSchema = new Schema({
     contentType: String,
     required: true
   },*/
-  isFlatRate: {
-    type: Boolean,
-    required: true
-  },
   flat__amount: {
-    type: Decimal128,
-    required: true
+    type: Decimal128
   },
   flat__hours: {
-    type: Number,
-    required: true
+    type: Number
   },
-  isFlatRate: {
-    type: Boolean,
-    required: true
+  hourly__amount: {
+    type: Decimal128
   },
-  flat__amount: {
-    type: Decimal128,
-    required: true
-  },
-  flat__hours: {
-    type: Number,
-    required: true
+  hourly__hours: {
+    type: Number
   }
 });
 

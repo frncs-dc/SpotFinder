@@ -256,14 +256,15 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
       if(!isPasswordValid) {
         return res.status(401).json( { message: 'Invalid credentials' } );
       } 
-
+      res.render('park',{
+        current_user: user
+      })
       const token = jwt.sign({ userId: user._id}, jwtSecret );
       res.cookie('token', token, { httpOnly: true });
-      current_user = user;
-      // res.render('park',{
-      //   current_user: current_user
-      // });
-      res.redirect('/park');
+      res.render('park',{
+        current_user: user
+      });
+      // res.redirect('/park');
   
     } catch (error) {
       console.log(error);

@@ -130,16 +130,16 @@ const authMiddleware = (req, res, next ) => {
   router.post('/HostForm', async (req, res) => {
 
     if(req.body.flat__amount === ''){
-      const flat__amount = 0;
+      flat__amount = 0;
     }
     if(req.body.flat__hours === ''){
-      const flat__hours = 0;
+      flat__hours = 0;
     }
     if(req.body.hour__amount === ''){
-      const hour__amount = 0;
+      hour__amount = 0;
     }
     if(req.body.hour__hours === ''){
-      const hour__hours = 0;
+      hour__hours = 0;
     }
 
     try {

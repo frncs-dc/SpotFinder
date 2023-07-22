@@ -81,26 +81,11 @@ const authMiddleware = (req, res, next ) => {
   });
 
 
-  router.post('/Profile', async (req, res) => {
-    try {
-      const { username, email, password } = req.body;
-      const hashedPassword = await bcrypt.hash(password, 10);
-
-      try {
-        const user = await User.create({ username, email, password:hashedPassword});
-        res.redirect('/park');
-      } catch (error) {
-        if(error.code === 11000) {
-          res.redirect('/LogInPage')
-        }
-       
-      }
-
-    } catch (error) {
-      console.log(error);
-    }
+  router.get('/HostForm', async (req, res) => {
+    res.render('HostForm', {
+      current_user: current_user
+    });
   });
-
 
   router.get('/park', async (req, res) => {
     res.render('park',{

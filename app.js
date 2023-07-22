@@ -58,3 +58,7 @@ app.get('/LogInPage', (req, res) => {
 app.get('/Profile', (req, res) => {
   res.render('Profile');
 });
+
+app.get('/HostForm', (req, res) => {
+  res.render('HostForm');
+});

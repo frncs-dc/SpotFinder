@@ -156,4 +156,10 @@ router.get('/HostForm', (req, res) => {
   });
 });
 
+router.get('/index', (req, res) => {
+  res.render('index', {
+    currentRoute: '/index'
+  });
+});
+
 module.exports = router;

@@ -126,19 +126,15 @@ router.get('/register', (req, res) => {
   });
 });
 
-router.get('/profile', (req, res) => {
-  res.render('profile', {
-    currentRoute: '/profile'
-  });
-});
+// router.get('/profile', (req, res) => {
+//   res.render('Profile', {
+//     currentRoute: '/profile'
+//   });
+// });
 
 router.get('/park', (req, res) => {
-
-  current_user = req.session.current_user;
-
   res.render('park', {
     currentRoute: '/park'
-  }, { current_user
   });
 });
 
@@ -147,8 +143,6 @@ router.get('/LogInPage', (req, res) => {
     currentRoute: '/LogInPage'
   });
 });
-
-
 // function insertPostData () {
 //   Post.insertMany([
 //     {

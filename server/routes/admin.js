@@ -257,19 +257,30 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
         return res.status(401).json( { message: 'Invalid credentials' } );
       } 
 
-
       const token = jwt.sign({ userId: user._id}, jwtSecret );
       res.cookie('token', token, { httpOnly: true });
-      res.render('park',{
-        current_user: user
-      });
-      // res.redirect('/park');
+      current_user = user;
+      // res.render('park',{
+      //   current_user: current_user
+      // });
+      res.redirect('/park');
   
     } catch (error) {
       console.log(error);
     }
   });
 
+  router.get('/park', async (req, res) => {
+    res.render('park',{
+        current_user: current_user
+      });
+  });
+
+  router.get('/Profile', async (req, res) => {
+    res.render('Profile', {
+      current_user: current_user
+    })
+  });
 /**
  * DELETE /
  * Admin - Delete Post

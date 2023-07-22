@@ -54,3 +54,7 @@ app.get('/park', (req, res) => {
 app.get('/LogInPage', (req, res) => {
   res.render('Log In Page');
 });
+
+app.get('/Profile', (req, res) => {
+  res.render('Profile');
+});

@@ -150,5 +150,10 @@ router.get('/LogInPage', (req, res) => {
   });
 });
 
+router.get('/HostForm', (req, res) => {
+  res.render('HostForm', {
+    currentRoute: '/HostForm'
+  });
+});
 
 module.exports = router;

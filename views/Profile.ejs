@@ -6,9 +6,9 @@
 
     <body>
         <div class="tabs">
-            <a class="tab" href="Index.html">HOME</a>
-            <a class="tab" href="park.html">PARK</a>
-            <a class="tab" href="Customer Support.html">CONTACT</a>
+            <a class="tab" onclick="location.href='/index'"">HOME</a>
+            <a class="tab" onclick="location.href='/PARKING'">PARK</a>
+            <a class="tab" onclick="location.href='/Customer Support'">CONTACT</a>
             <input type="text" class="search"></input>
             <img src="/img/profile.png" class="profile">
             <a class="profile" href="/Profile"><%= current_user.username %></a>

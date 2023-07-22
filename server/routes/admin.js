@@ -261,10 +261,8 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
       })
       const token = jwt.sign({ userId: user._id}, jwtSecret );
       res.cookie('token', token, { httpOnly: true });
-      res.render('park',{
-        current_user: user
-      });
-      // res.redirect('/park');
+      
+      res.redirect('/park');
   
     } catch (error) {
       console.log(error);

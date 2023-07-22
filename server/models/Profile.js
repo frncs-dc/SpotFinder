@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 
 const Schema = mongoose.Schema;
-const UserSchema = new Schema({
+const ProfileSchema = new Schema({
   username: {
     type: String,
     required: true,
@@ -38,7 +38,7 @@ const UserSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Profile', ProfileSchema);
 
 // Convert image to base64
 function imageToBase64(imagePath) {

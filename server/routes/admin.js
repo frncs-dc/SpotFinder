@@ -130,6 +130,7 @@ const authMiddleware = (req, res, next ) => {
   router.post('/HostForm', async (req, res) => {
     try {
       let newPost = new Post({
+        username: current_user.username,
         name: req.body.name,
         address__region: req.body.address__region,
         address__city: req.body.address__city,

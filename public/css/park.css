@@ -7,7 +7,7 @@ body {
 }
 
 header{
-  background-image: url('homepage.jpg');
+  background-image: url('../img/homepage.jpg');
   background-size: cover;
   background-position: center;   
   font-family: var(--main-font);    

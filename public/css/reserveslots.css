@@ -10,7 +10,7 @@ body {
 
 
 header{
-    background-image: url('customersupport.jpg');
+    background-image: url('../img/customersupport.jpg');
     background-size: cover;
     background-position: center;   
     font-family: var(--main-font);    
@@ -80,9 +80,6 @@ a{
     padding-left: 20px;
     padding-bottom: 5px;
     vertical-align: bottom;
-}
-div.title{
-
 }
 div.bodycontainer{
     display: flex;

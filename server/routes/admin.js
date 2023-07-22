@@ -79,54 +79,7 @@ const authMiddleware = (req, res, next ) => {
       console.log(error);
     }
   });
-
-  // router.post('/HostForm', async (req, res) => {
-  //   try {
-  //     // Extract data from the request body
-  //     const {
-  //       name,
-  //       address__region,
-  //       address__city,
-  //       address,
-  //       isAssignedParking,
-  //       total_capacity,
-  //       floors,
-  //       isCarSupported,
-  //       isMotorSupported,
-  //       isBikeSupported,
-  //       flat__amount,
-  //       flat__hours,
-  //       hour__amount,
-  //       hour__hours,
-  //     } = req.body;
-
-  //     // Create a new Post document
-  //     const post = await Post.create({
-  //       name,
-  //       address__region,
-  //       address__city,
-  //       address,
-  //       isAssignedParking,
-  //       total_capacity,
-  //       floors,
-  //       isCarSupported,
-  //       isMotorSupported,
-  //       isBikeSupported,
-  //       flat__amount,
-  //       flat__hours,
-  //       hour__amount,
-  //       hour__hours,
-  //     });
-
-
-
-  //     // Handle successful creation of the Post document
-  //     res.redirect('/Profile');
-  //   } catch (error) {
-  //     console.log("error");
-  //   }
-  // });
-
+  
   router.post('/HostForm', async (req, res) => {
     let flat__amount = 0;
     let flat__hours = 0;
@@ -173,11 +126,24 @@ const authMiddleware = (req, res, next ) => {
     }
   });
   
+
   router.get('/HostForm', async (req, res) => {
-    res.render('HostForm', {
-      current_user: current_user
-    });
+    var arrposts = Array();
+    let username = current_user.username;
+
+    try {
+      arrposts = await Post.find({ username });
+  
+      res.render('HostForm', {
+        current_user: current_user,
+        arr_posts: arrposts
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
   });
+  
 
   router.get('/park', async (req, res) => {
     res.render('park',{

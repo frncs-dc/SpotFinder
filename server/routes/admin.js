@@ -128,18 +128,22 @@ const authMiddleware = (req, res, next ) => {
   // });
 
   router.post('/HostForm', async (req, res) => {
+    let flat__amount = 0;
+    let flat__hours = 0;
+    let hour__amount = 0;
+    let hour__hours = 0;
 
-    if(req.body.flat__amount === ''){
-      flat__amount = 0;
+    if (req.body.flat__amount !== '') {
+      flat__amount = req.body.flat__amount;
     }
-    if(req.body.flat__hours === ''){
-      flat__hours = 0;
+    if (req.body.flat__hours !== '') {
+      flat__hours = req.body.flat__hours;
     }
-    if(req.body.hour__amount === ''){
-      hour__amount = 0;
+    if (req.body.hour__amount !== '') {
+      hour__amount = req.body.hour__amount;
     }
-    if(req.body.hour__hours === ''){
-      hour__hours = 0;
+    if (req.body.hour__hours !== '') {
+      hour__hours = req.body.hour__hours;
     }
 
     try {

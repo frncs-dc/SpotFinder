@@ -62,10 +62,10 @@ const PostSchema = new Schema({
   flat__hours: {
     type: Number
   },
-  hourly__amount: {
+  hour__amount: {
     type: Decimal128
   },
-  hourly__hours: {
+  hour__hours: {
     type: Number
   }
 });

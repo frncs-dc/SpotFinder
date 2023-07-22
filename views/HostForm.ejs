@@ -33,22 +33,22 @@
                 </div>
                 <!--Individual Form Inputs-->
                 <div class = "indivforms">
-                    <input id="#spotName" type="text" name="Enter-name" placeholder="NAME" required>
+                    <input id="spotName" type="text" name="Enter-name" placeholder="NAME" required>
                 </div>
     
                 <!--Multi-Form Inputs-->
                 <div class="formscontainer">
                     <div class="forms1">
-                        <input type="text" name="Enter-region" placeholder="REGION" required>
+                        <input id="region" type="text" name="Enter-region" placeholder="REGION" required>
                     </div>
                     <div class="forms2">
-                        <input type="text" name="Enter-city" placeholder="CITY" required>                
+                        <input id="city" type="text" name="Enter-city" placeholder="CITY" required>                
                     </div>
                 </div>
     
                 <!--Individual Form Inputs-->
                 <div class = "indivforms">
-                    <input type="text" name="Enter-name" placeholder="ADDRESS" required>
+                    <input id="address" type="text" name="Enter-name" placeholder="ADDRESS" required>
                 </div>
             </div>
             <br>
@@ -59,18 +59,18 @@
                 </div>
                 <!--Individual Form Inputs-->
                 <div class="indivforms">
-                    <input type="checkbox" id="is_public" />
-                    <label for="is_public">ASSIGNED PARKING?</label>
+                    <input type="checkbox" id="is_assigned" />
+                    <label for="is_assigned">ASSIGNED PARKING?</label>
                 </div>
     
                 <!--Multi-Form Inputs-->
                 <div class="formscontainer">
                     <div class="registerforms">
-                        <input class="capacity" type="text" placeholder="CAPACITY" />
+                        <input id="capacity" class="capacity" type="text" placeholder="CAPACITY" />
                     </div>
         
                     <div class="registerforms">
-                        <input class="floors" type="text" placeholder="FLOORS" />
+                        <input id="floors" class="floors" type="text" placeholder="FLOORS" />
                     </div>
                 </div>
     
@@ -78,15 +78,15 @@
                     SUPPORTED VEHICLES:
                 </div> 
                 <div class="indivforms">
-                    <input type="checkbox" id="is_public" />
+                    <input type="checkbox" id="isCars" />
                     <label for="is_public">CARS</label>
                 </div>
                 <div class="indivforms">
-                    <input type="checkbox" id="is_covered" />
+                    <input type="checkbox" id="isMotor" />
                     <label for="is_covered">MOTORCYCLES</label>
                 </div>
                 <div class="indivforms">
-                    <input type="checkbox" id="is_secure" />
+                    <input type="checkbox" id="isBikes" />
                     <label for="is_secure">BIKES</label>
                 </div>
                 <!-- <input type="button" value="EDIT MAP" class="edit-map" onclick="location.href='Host-Form Page 4.html'"/> -->
@@ -96,26 +96,26 @@
             <div class="maincontainer">
                 <div class="columnforms">
                     <div class="indivforms">
-                        <input type="checkbox"> 
+                        <input id="isFlatRate" type="checkbox"> 
                             FLAT RATE
                     </div>
                     <div class="indivforms">
-                        <input class="amount" type="text" placeholder="AMOUNT">
+                        <input id="flatAmt" class="amount" type="text" placeholder="AMOUNT">
                     </div>
                     <div class="indivforms">
-                        <input class="hours" type="text" placeholder="HOURS">
+                        <input id="flatHours" class="hours" type="text" placeholder="HOURS">
                     </div>
                 </div>
                 <div class="columnforms">
                     <div class="indivforms">
-                        <input type="checkbox"> 
+                        <input id="isHourRate" type="checkbox"> 
                             HOURLY RATE
                     </div>
                     <div class="indivforms">
-                        <input class="amount" type="text" placeholder="AMOUNT">
+                        <input id="isHourAmt" class="amount" type="text" placeholder="AMOUNT">
                     </div>
                     <div class="indivforms">
-                        <input class="hours" type="text" placeholder="HOURS">
+                        <input id="isHourHours" class="hours" type="text" placeholder="HOURS">
                     </div>
                 </div>
             </div>

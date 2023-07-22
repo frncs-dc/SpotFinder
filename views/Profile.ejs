@@ -40,6 +40,7 @@
                 <div class="SpotsTitle">
                     SPOTS
                 </div>
+                <!-- post preview template
                 <div class="spotshosted">
                     <div class="spotsdesc">
                         Manila, Philippines
@@ -47,40 +48,19 @@
                     <div class="spotsdisplay">
                         <a href="Host-Posting-Sample6.html"><img src="HostPost2img.jpg" class="spot"></a>
                     </div>
-                </div>
-                <div class="spotshosted">
-                    <div class="spotsdesc">
-                        Manila, Philippines
-                    </div>
-                    <div class="spotsdisplay">
-                        <a href="Host-Posting-Sample7.html"><img src="HostPost3img.jpg" class="spot"></a>
-                    </div>
-                </div>
-                <div class="spotshosted">
-                    <div class="spotsdesc">
-                        Manila, Philippines
-                    </div>
-                    <div class="spotsdisplay">
-                        <a href="Host-Posting-Sample8.html"><img src="HostPost4img.jpg" class="spot"></a>
-                    </div>
-                </div>
-                <div class="spotshosted">
-                    <div class="spotsdesc">
-                        Manila, Philippines
-                    </div>
-                    <div class="spotsdisplay">
-                        <a href="Host-Posting-Sample9.html"><img src="HostPost3img.jpg" class="spot"></a>
-                    </div>
-                </div>
-                <div class="spotshosted">
-                    <div class="spotsdesc">
-                        Manila, Philippines
-                    </div>
-                    <div class="spotsdisplay">
-                        <a href="Host-Posting-Sample10.html"><img src="HostPost5img.jpg" class="spot"></a>
-                    </div>
-                </div>
+                </div> -->
                 
+                
+                <% for (let i = 0; i < arr_posts.length; i++) { %>
+                    <div class="spotshosted">
+                        <div class="spotsdesc">
+                            <%= arr_posts[i].address__city %>, Philippines
+                        </div>
+                        <div class="spotsdisplay">
+                            <a href="Host-Posting-Sample6.html"><img src="HostPost2img.jpg" class="spot"></a>
+                        </div>
+                    </div>
+                <% } %>
             </div>
             <div class="rightpanel">
                 <button class="message" onclick="location.href='ReportAnalytics.html'">View Statistics</button>

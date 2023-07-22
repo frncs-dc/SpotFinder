@@ -10,7 +10,7 @@ body {
 }
 
 header{
-    background-image: url('analytics.jpg');
+    background-image: url('../img/analytics.jpg');
     background-size: cover;
     background-position: center; 
     font-family: var(--main-font);    

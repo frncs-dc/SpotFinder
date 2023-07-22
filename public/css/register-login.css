@@ -9,7 +9,7 @@ body {
     margin-bottom: 0;
     width: 100%;
     height: 100%;
-    background-image: url('login\ background.jpg');
+    background-image: url('../img/login background.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

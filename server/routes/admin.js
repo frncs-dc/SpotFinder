@@ -128,6 +128,20 @@ const authMiddleware = (req, res, next ) => {
   // });
 
   router.post('/HostForm', async (req, res) => {
+
+    if(req.body.flat__amount === ''){
+      const flat__amount = 0;
+    }
+    if(req.body.flat__hours === ''){
+      const flat__hours = 0;
+    }
+    if(req.body.hour__amount === ''){
+      const hour__amount = 0;
+    }
+    if(req.body.hour__hours === ''){
+      const hour__hours = 0;
+    }
+
     try {
       let newPost = new Post({
         username: current_user.username,
@@ -141,10 +155,10 @@ const authMiddleware = (req, res, next ) => {
         // isCarSupported: req.body.isCarSupported,
         // isMotorSupported: req.body.isMotorSupported,
         // isBikeSupported: req.body.isBikeSupported,
-        flat__amount: req.body.flat__amount,
-        flat__hours: req.body.flat__hours,
-        hour__amount: req.body.hour__amount,
-        hour__hours: req.body.hour__hours
+        flat__amount: flat__amount,
+        flat__hours: flat__hours,
+        hour__amount: hour__amount,
+        hour__hours: hour__hours
       });
     
       newPost.save();

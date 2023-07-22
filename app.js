@@ -62,25 +62,3 @@ app.get('/Profile', (req, res) => {
 app.get('/HostForm', (req, res) => {
   res.render('HostForm');
 });
-
-// app.post("/HostForm", (req, res) => {
-//   let newPost = new Post({
-//     address__region: req.body.address__region,
-//     address__city: req.body.address__city,
-//     address: req.body.address,
-//     isAssignedParking: req.body.isAssignedParking,
-//     total_capacity: req.body.total_capacity,
-//     floors: req.body.floors,
-//     isCarSupported: req.body.isCarSupported,
-//     isMotorSupported: req.body.isMotorSupported,
-//     isBikeSupported: req.body.isBikeSupported,
-//     flat__amount: req.body.flat__amount,
-//     flat__hours: req.body.flat__hours,
-//     hour__amount: req.body.hour__amount,
-//     hour__hours: req.body.hour__hours
-//   });
-
-//   newPost.save();
-
-//   res.redirect('/Profile');
-// }); 

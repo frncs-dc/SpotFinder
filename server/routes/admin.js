@@ -80,52 +80,80 @@ const authMiddleware = (req, res, next ) => {
     }
   });
 
+  // router.post('/HostForm', async (req, res) => {
+  //   try {
+  //     // Extract data from the request body
+  //     const {
+  //       name,
+  //       address__region,
+  //       address__city,
+  //       address,
+  //       isAssignedParking,
+  //       total_capacity,
+  //       floors,
+  //       isCarSupported,
+  //       isMotorSupported,
+  //       isBikeSupported,
+  //       flat__amount,
+  //       flat__hours,
+  //       hour__amount,
+  //       hour__hours,
+  //     } = req.body;
+
+  //     // Create a new Post document
+  //     const post = await Post.create({
+  //       name,
+  //       address__region,
+  //       address__city,
+  //       address,
+  //       isAssignedParking,
+  //       total_capacity,
+  //       floors,
+  //       isCarSupported,
+  //       isMotorSupported,
+  //       isBikeSupported,
+  //       flat__amount,
+  //       flat__hours,
+  //       hour__amount,
+  //       hour__hours,
+  //     });
+
+
+
+  //     // Handle successful creation of the Post document
+  //     res.redirect('/Profile');
+  //   } catch (error) {
+  //     console.log("error");
+  //   }
+  // });
+
   router.post('/HostForm', async (req, res) => {
     try {
-      // Extract data from the request body
-      const {
-        name,
-        address__region,
-        address__city,
-        address,
-        isAssignedParking,
-        total_capacity,
-        floors,
-        isCarSupported,
-        isMotorSupported,
-        isBikeSupported,
-        flat__amount,
-        flat__hours,
-        hour__amount,
-        hour__hours,
-      } = req.body;
-
-      // Create a new Post document
-      const post = await Post.create({
-        name,
-        address__region,
-        address__city,
-        address,
-        isAssignedParking,
-        total_capacity,
-        floors,
-        isCarSupported,
-        isMotorSupported,
-        isBikeSupported,
-        flat__amount,
-        flat__hours,
-        hour__amount,
-        hour__hours,
+      let newPost = new Post({
+        name: req.body.name,
+        address__region: req.body.address__region,
+        address__city: req.body.address__city,
+        address: req.body.address,
+        // isAssignedParking: req.body.isAssignedParking,
+        total_capacity: req.body.total_capacity,
+        floors: req.body.floors,
+        // isCarSupported: req.body.isCarSupported,
+        // isMotorSupported: req.body.isMotorSupported,
+        // isBikeSupported: req.body.isBikeSupported,
+        flat__amount: req.body.flat__amount,
+        flat__hours: req.body.flat__hours,
+        hour__amount: req.body.hour__amount,
+        hour__hours: req.body.hour__hours
       });
-
+    
+      newPost.save();
       // Handle successful creation of the Post document
       res.redirect('/Profile');
     } catch (error) {
       console.log("error");
     }
   });
-
-
+  
   router.get('/HostForm', async (req, res) => {
     res.render('HostForm', {
       current_user: current_user

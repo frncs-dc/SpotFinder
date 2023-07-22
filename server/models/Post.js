@@ -30,10 +30,10 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
-  isAssignedParking: {
-    type: Boolean,
-    required: true
-  },
+  // isAssignedParking: {
+  //   type: Boolean,
+  //   required: true
+  // },
   total_capacity: {
     type: Number,
     required: true
@@ -42,15 +42,15 @@ const PostSchema = new Schema({
     type: Number,
     required: true
   },
-  isCarSupported: {
-    type: Boolean,
-  },
-  isMotorSupported: {
-    type: Boolean,
-  },
-  isBikeSupported: {
-    type: Boolean,
-  },
+  // isCarSupported: {
+  //   type: Boolean,
+  // },
+  // isMotorSupported: {
+  //   type: Boolean,
+  // },
+  // isBikeSupported: {
+  //   type: Boolean,
+  // },
   /*map_file: {
     filename: String,
     data: Buffer,

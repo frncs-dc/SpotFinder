@@ -141,25 +141,32 @@
       
             // Get references to the fields
             const flatRateFields = document.getElementById('flatRateFields');
+            const flatHoursFields = document.getElementById('flatHoursFields');
             const flatAmt = document.getElementById('flatAmt');
             const flatHours = document.getElementById('flatHours');
+            
             const hourRateFields = document.getElementById('hourRateFields');
+            const hourHoursFields = document.getElementById('hourHoursFields');
             const hourAmt = document.getElementById('isHourAmt');
             const hourHours = document.getElementById('isHourHours');
       
             isFlatRate.addEventListener('change', () => {
               if (isFlatRate.checked) {
                 flatRateFields.classList.remove('hidden');
+                flatHoursFields.classList.remove('hidden');
               } else {
                 flatRateFields.classList.add('hidden');
+                flatHoursFields.classList.add('hidden');
               }
             });
       
             isHourRate.addEventListener('change', () => {
               if (isHourRate.checked) {
                 hourRateFields.classList.remove('hidden');
+                hourHoursFields.classList.remove('hidden');
               } else {
                 hourRateFields.classList.add('hidden');
+                hourHoursFields.classList.add('hidden');
               }
             });
           </script>

@@ -80,7 +80,6 @@ const authMiddleware = (req, res, next ) => {
     }
   });
 
-
   router.get('/HostForm', async (req, res) => {
     res.render('HostForm', {
       current_user: current_user

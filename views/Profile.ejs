@@ -50,19 +50,18 @@
                     </div>
                 </div> -->
                 
-                <% postList.forEach(element => { %>
-                    <p><%= element.name %></p>
+                <% postList.forEach(post => { 
+                    if(post.username === current_user.username){%>
+                        <div class="spotshosted">
+                            <div class="spotsdesc">
+                                <%= post.username %>. <%= post.name %> . <%= post.address__city %>
+                            </div>
+                            <div class="spotsdisplay">
+                                <a href="Host-Posting-Sample6.html"><img src="HostPost2img.jpg" class="spot"></a>
+                            </div>
+                        </div>
+                    <% } %>
                 <% }); %>
-                
-                    <div class="spotshosted">
-                        <div class="spotsdesc">
-                            
-                        </div>
-                        <div class="spotsdisplay">
-                            <a href="Host-Posting-Sample6.html"><img src="HostPost2img.jpg" class="spot"></a>
-                        </div>
-                    </div>
-                
             </div>
             <div class="rightpanel">
                 <button class="message" onclick="location.href='ReportAnalytics.html'">View Statistics</button>

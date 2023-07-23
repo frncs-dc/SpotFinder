@@ -66,9 +66,18 @@
                         <div class="subtitle">
                             CURRENT
                         </div>
-                        <div class="reservebody">
-                            <a class="reserved" href="Host-Posting-Sample1.html">Samantha Parking Space. <div class="details">10:00AM-11:00AM. June 30, 2023.</div></a>
-                        </div>
+                        
+                        <% postList.forEach(post => { %>
+                            <% if(post.username === current_user.username){%>
+                                <% for(i = 0; i < post.total_capacity; i++){ %>
+                                    <% if(post.parking_capacity[i].available === 0) { %>
+                                        <div class="reservebody">
+                                            <a class="reserved" href=""><%= post.name %> Parking Space at Slot <%= i+1 %> <div class="details">Wat</div></a>
+                                        </div>
+                                    <% } %>
+                                <% } %>    
+                            <% } %>
+                        <% }) %>
                         
                     </div>
                     <div class="past">
@@ -76,9 +85,7 @@
                             PREVIOUS
                         </div>
                         <div class="reservebody">
-                            <a class="reserved" href="Host-Posting-Sample2.html">Jennifer Parking Space. <div class="details">10:00AM-11:00AM. May 20, 2023.</div></a>
-                            <a class="reserved" href="Host-Posting-Sample4.html">Christopher Parking Space. <div class="details">10:00AM-11:00AM. March 30, 2023.</div></a> 
-                            <a class="reserved" href="Host-Posting-Sample5.html">love and peace Parking Space. <div class="details">10:00AM-11:00AM. March 20, 2023.</div></a>
+                            <a class="reserved" href="Host-Posting-Sample2.html"> <div class="details"></div></a>
                         </div>
                     </div>
                 </div>

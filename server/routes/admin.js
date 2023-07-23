@@ -168,11 +168,12 @@ const authMiddleware = (req, res, next ) => {
   });
 
 
-
   router.get('/park', async (req, res) => {
-    res.render('park',{
-        current_user: current_user
-      });
+    const postList = await Post.find();
+    res.render('park', {
+        current_user: current_user,
+        postList: postList,
+    })
   });
 
   router.get('/Profile', async (req, res) => {

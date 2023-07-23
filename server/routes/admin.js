@@ -4,6 +4,7 @@ const Post = require('../models/Post');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 
 const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
@@ -147,20 +148,29 @@ const authMiddleware = (req, res, next ) => {
     });
   });
 
-router.get('/Host-Posting/:_id', async (req, res) => {
-
-  let _id = req.params._id;
-  let post = await Post.findOne({ _id });
-
-  try {
-    res.render('Host-Posting', {
-      current_user: current_user,
-      post: post,
-    })
-  } catch (error) {
-    console.log("error");
-  }
-})
+  router.get('/Host-Posting/:_id', async (req, res) => {
+    let _id = req.params._id;
+    
+    try {
+      const objectId = new mongoose.Types.ObjectId(_id);
+      let post = await Post.findOne({ _id: objectId });
+  
+      if (!post) {
+        // If the post is not found, return a 404 response
+        return res.status(404).send('Post not found');
+      }
+      
+      // Assuming `current_user` is defined before this route handler
+      res.render('Host-Posting', {
+        current_user: current_user,
+        post: post,
+      });
+    } catch (error) {
+      // Log the actual error message and send a 500 response
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 
 router.get('/LogInPage', (req, res) => {
   res.render('LogInPage', {

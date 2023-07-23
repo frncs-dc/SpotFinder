@@ -103,9 +103,9 @@
                 <div id="Reviews">
                     <% if(reviews.length === 0 || !reviews) { %>
                         <div> No Reviews for this Post Yet</div>
-                    <% } else { 
-                        reviews.forEach(review => { 
-                            if(data._id.equals(review.post_id)){%>
+                    <% } else { %>
+                        <% reviews.forEach(review => { %>
+                            <% if(data._id.equals(review.post_id)){%>
                                 <div class="review">
                                     <img src="/img/profilepic1.png" class="review-image">
                                     <div>
@@ -120,7 +120,6 @@
                                 <% } %>
                             <% }); %>
                         <% } %>
-                    <%}%>
                 </div>
             </div>
         </div>

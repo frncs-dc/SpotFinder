@@ -148,14 +148,12 @@ const authMiddleware = (req, res, next ) => {
     });
   });
 
-  router.get('/Host-Posting/:_id', async (req, res) => {
-    let _id = req.params._id;
-    
+  router.get('/Host-Posting/:id', async (req, res) => {
     try {
-      const objectId = new mongoose.Types.ObjectId(_id);
-      let post = await Post.findOne({ _id: objectId });
+      let slug = req.params.id;
+      const data = await Post.findById({ _id: slug });
   
-      if (!post) {
+      if (!data) {
         // If the post is not found, return a 404 response
         return res.status(404).send('Post not found');
       }
@@ -163,7 +161,7 @@ const authMiddleware = (req, res, next ) => {
       // Assuming `current_user` is defined before this route handler
       res.render('Host-Posting', {
         current_user: current_user,
-        post: post,
+        data,
       });
     } catch (error) {
       // Log the actual error message and send a 500 response

@@ -10,10 +10,10 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
-  post__picture: {
-    data: Buffer,
-    contentType: String
-  },
+  // post__picture: {
+  //   data: Buffer,
+  //   contentType: String
+  // },
   post__description: {
     type: String,
   },

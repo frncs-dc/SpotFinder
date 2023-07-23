@@ -120,7 +120,7 @@
                             <div> No Reviews for this Post Yet</div>
                         <% } else { 
                             reviews.forEach(review => { 
-                                if(post._id === review.post_id){%>
+                                if(review._id === review.post_id){%>
                                     <div class="review">
                                         <img src="/img/profilepic1.png" class="review-image">
                                         <div>

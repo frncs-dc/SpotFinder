@@ -188,7 +188,7 @@ const authMiddleware = (req, res, next ) => {
     try {
       let slug = req.params.id;
       data = await Post.findById({ _id: slug });
-      reviews = await Review.findOne({ post_id: slug });
+      reviews = await Review.find({ post_id: slug });
   
       if (!data) {
         // If the post is not found, return a 404 response

@@ -10,7 +10,7 @@
             <a class="home">HOME</a>
             <a class="park">PARK</a>
             <input type="text" id="search" placeholder="Search">
-            <a class="profile"><%= current_user.username%></a>
+            <a class="profile">Juan Dela Cruz</a>
 
         </div>
 
@@ -84,7 +84,7 @@
 
                 <hr color="black">
                 <div class="addReview">
-                    <form action="/Host-Posting/<%= data._id %>/reviewProcessing" method="POST">
+                    <form action="/Host-Posting/<%= data._id%>/reviewProcessing" method="POST">
                         <div>
                             Select Rating:
                             <select name="rating">
@@ -116,6 +116,7 @@
                                 <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                             </div>
                         </div> -->
+<<<<<<< Updated upstream
                         <% if (reviews != null) {%>
                             <% if(reviews.length === 0) { %>
                                 <div> No Reviews for this Post Yet</div>
@@ -133,6 +134,23 @@
                                                 </div>
                                                 <div class="review-text"> <%= review.reviewbody %></div>
                                             </div>
+=======
+                        <% if(reviews.length === 0 || !reviews) { %>
+                            <div> No Reviews for this Post Yet</div>
+                        <% } else { 
+                            reviews.forEach(review => { 
+                                if(data._id.equals(review.post_id)){%>
+                                    <div class="review">
+                                        <img src="/img/profilepic1.png" class="review-image">
+                                        <div>
+                                            <div class="review-name"><%= review.username %> - <%= review.date %></div>
+                                            <div class="review-rating">
+                                                <% for( let i = 0; i < review.rating; i++) {%>
+                                                <span class="star">&#9733;</span>
+                                                <% } %>
+                                            </div>
+                                            <div class="review-text"> <%= review.reviewBody %></div>
+>>>>>>> Stashed changes
                                         </div>
                                     <% } %>
                                 <% }); %>

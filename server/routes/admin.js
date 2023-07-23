@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 const User = require('../models/User');
+const Review = require('../models/Review');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
@@ -11,6 +12,7 @@ const jwtSecret = process.env.JWT_SECRET;
 
 current_user = null;
 data = null;
+let reviews = null;
 
 /**
  * 
@@ -161,17 +163,56 @@ const authMiddleware = (req, res, next ) => {
     try {
       let slug = req.params.id;
       data = await Post.findById({ _id: slug });
+      reviews = await Review.findById({ post_id: slug });
   
       if (!data) {
         // If the post is not found, return a 404 response
         return res.status(404).send('Post not found');
       }
+      if (!reviews) {
+        // If the post is not found, return a 404 response
+        return res.status(404).send('Reviews not found');
+      }
+      // if (!reviews){
+      //   // If the post is not found, return a 404 response
+      //   return res.status(404).send('Post not found');
+      // }
       
       // Assuming `current_user` is defined before this route handler
+      // TODO: ADD REVIEWS IN THE RENDER
       res.render('Host-Posting', {
         current_user: current_user,
         data,
+        reviews,
       });
+    } catch (error) {
+      // Log the actual error message and send a 500 response
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  router.post('/Host-Posting/reviewProcessing', async (req, res) => {
+    try {
+      let slug = req.params.id;
+      data = await Post.findById({ _id: slug });
+  
+      if (!data) {
+        // If the post is not found, return a 404 response
+        return res.status(404).send('Post not found');
+      }
+      let newReview = new Review({
+        username: current_user.username,
+        post_id: slug,
+        rating: req.body.rating,
+        date: Date.now(),
+        reviewBody: req.body.reviewBody
+      });
+    
+      newReview.save();
+      // Handle successful creation of the Post document
+      res.redirect('/Host-Posting/:id');
+      // Assuming `current_user` is defined before this route handler
     } catch (error) {
       // Log the actual error message and send a 500 response
       console.error(error);

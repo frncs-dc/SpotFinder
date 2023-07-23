@@ -83,13 +83,26 @@
                 </div>
 
                 <hr color="black">
-
+                <div class="addReview">
+                    <form action="/Host-Posting/reviewProcessing" method="POST">
+                        <div>
+                            Select Rating:
+                            <select name="rating">
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                            <br>
+                            <input class="review" type="text" name="reviewbody" value="Enter Review">
+                            <input type="submit" name="SUBMIT">
+                        </div>
+                    </form>
+                </div>
                 <div id="Reviews">
-
-                    25 Recent reviews:
-                    <div id="PerReview">
+                        <!-- review template:
                         <div class="review">
-
                             <img src="/img/profilepic1.png" class="review-image">
                             <div>
                                 <div class="review-name">Frances Dela Cruz</div>
@@ -102,44 +115,23 @@
                                 </div>
                                 <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                             </div>
-
-                        </div>
-
-                        <div class="review">
-
-                            <img src="/img/profile.png" class="review-image">
-                            <div>
-                                <div class="review-name">Gabriel Muriel</div>
-                                <div class="review-rating">
-                                    <span class="star">&#9733;</span>
-                                    <span class="star">&#9733;</span>
-                                    <span class="star">&#9733;</span>
-                                    <span class="star">&#9733;</span>
-                                    <span class="star">&#9733;</span>
+                        </div> -->
+                        <% reviews.forEach(review => { 
+                            if(post._id === review.post_id){%>
+                                <div class="review">
+                                    <img src="/img/profilepic1.png" class="review-image">
+                                    <div>
+                                        <div class="review-name"><%= review.username %> - <%= review.date %></div>
+                                        <div class="review-rating">
+                                            <% for( let i = 0; i < review.rating; i++) {%>
+                                            <span class="star">&#9733;</span>
+                                            <% } %>
+                                        </div>
+                                        <div class="review-text"> <%= review.reviewbody %></div>
+                                    </div>
                                 </div>
-                                <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                            </div>
-
-                        </div>
-
-                        <div class="review">
-
-                            <img src="/img/profile_image.jpg" class="review-image">
-                            <div>
-                                <div class="review-name">Carl Matthew Verano</div>
-                                <div class="review-rating">
-                                    <span class="star">&#9733;</span>
-                                    <span class="star">&#9733;</span>
-                                    <span class="star">&#9733;</span>
-                                    <span class="star">&#9733;</span>
-                                    <span class="star">&#9733;</span>
-                                </div>
-                                <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                            </div>
-                            
-                        </div>
-                        <!--more Reviews here-->
-                    </div>
+                            <% } %>
+                        <% }); %>
                 </div>
             </div>
         </div>

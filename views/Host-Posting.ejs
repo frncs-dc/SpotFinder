@@ -116,26 +116,28 @@
                                 <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                             </div>
                         </div> -->
-                        <% if(reviews.length === 0) { %>
-                            <div> No Reviews for this Post Yet</div>
-                        <% } else { 
-                            reviews.forEach(review => { 
-                                if(review._id === review.post_id){%>
-                                    <div class="review">
-                                        <img src="/img/profilepic1.png" class="review-image">
-                                        <div>
-                                            <div class="review-name"><%= review.username %> - <%= review.date %></div>
-                                            <div class="review-rating">
-                                                <% for( let i = 0; i < review.rating; i++) {%>
-                                                <span class="star">&#9733;</span>
-                                                <% } %>
+                        <% if (reviews != null) {%>
+                            <% if(reviews.length === 0) { %>
+                                <div> No Reviews for this Post Yet</div>
+                            <% } else { 
+                                reviews.forEach(review => { 
+                                    if(review._id === review.post_id){%>
+                                        <div class="review">
+                                            <img src="/img/profilepic1.png" class="review-image">
+                                            <div>
+                                                <div class="review-name"><%= review.username %> - <%= review.date %></div>
+                                                <div class="review-rating">
+                                                    <% for( let i = 0; i < review.rating; i++) {%>
+                                                    <span class="star">&#9733;</span>
+                                                    <% } %>
+                                                </div>
+                                                <div class="review-text"> <%= review.reviewbody %></div>
                                             </div>
-                                            <div class="review-text"> <%= review.reviewbody %></div>
                                         </div>
-                                    </div>
-                                <% } %>
-                            <% }); %>
-                        <% } %>
+                                    <% } %>
+                                <% }); %>
+                            <% } %>
+                        <%}%>
                 </div>
             </div>
         </div>

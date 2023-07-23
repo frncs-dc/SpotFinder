@@ -158,9 +158,8 @@ const authMiddleware = (req, res, next ) => {
       // Save the updated post document to the database
       await post.save();
       
-      res.render('Host-Posting', {
+      res.render('Park', {
         current_user: current_user,
-        data,
       });
     } catch (error) {
       console.error(error);

@@ -137,6 +137,37 @@ const authMiddleware = (req, res, next ) => {
     }
   });
 
+
+  router.post('/reserveslots', async (req, res) => {
+    const selectedSlotId = req.body.selectedSlot; // Get the selected slotId from the request body
+  
+    try {
+      // Find the post by its ID and the selected slot by its _id
+      const post = await Post.findById(data);
+      const selectedSlot = post.parking_capacity.id(selectedSlotId);
+  
+      if (!selectedSlot) {
+        return res.status(404).json({ error: 'Selected slot not found.' });
+      }
+  
+      // Update the selected slot's availability to 0
+      selectedSlot.available = 0;
+  
+      // Save the updated post document to the database
+      await post.save();
+      
+      res.render('Host-Posting', {
+        current_user: current_user,
+        data,
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error updating parking slot.' });
+    }
+  });
+
+
+
   router.get('/park', async (req, res) => {
     res.render('park',{
         current_user: current_user
@@ -146,15 +177,9 @@ const authMiddleware = (req, res, next ) => {
   router.get('/Profile', async (req, res) => {
     const postList = await Post.find();
       res.render('Profile', {
-            current_user: current_user,
-            postList: postList,
+          current_user: current_user,
+          postList: postList,
       })
-  });
-
-  router.get('/Profile', (req, res) => {
-    res.render('Profile', {
-      currentRoute: '/Profile'
-    });
   });
 
   router.get('/Host-Posting/:id', async (req, res) => {
@@ -185,7 +210,9 @@ const authMiddleware = (req, res, next ) => {
         // If the post is not found, return a 404 response
         return res.status(404).send('Post not found');
       }
-      
+      let available = 0;
+      parking_capacity.
+
       // Assuming `current_user` is defined before this route handler
       res.render('reserveslots', {
         current_user: current_user,
@@ -227,6 +254,12 @@ router.get('', (req, res) => {
 router.get('reserveslots', (req, res) => {
   res.render('reserveslots', {
     currentRoute: '/reserveslots'
+  });
+});
+
+router.get('/Host-Posting', (req, res) => {
+  res.render('Host-Posting', {
+    currentRoute: '/Host-Posting'
   });
 });
 

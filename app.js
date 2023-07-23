@@ -73,3 +73,7 @@ app.get('', (req, res) => {
 app.get('/Host-Posting/', (req, res) => {
   res.render('Host-Posting');
 })
+
+app.get('/reserveslots/', (req, res) => {
+  res.render('reserveslots');
+})

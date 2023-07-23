@@ -194,6 +194,12 @@ router.get('', (req, res) => {
   });
 });
 
+router.get('reserveslots', (req, res) => {
+  res.render('reserveslots', {
+    currentRoute: '/reserveslots'
+  });
+});
+
 router.render
 
 module.exports = router;

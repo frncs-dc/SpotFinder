@@ -13,6 +13,7 @@ const jwtSecret = process.env.JWT_SECRET;
 current_user = null;
 data = null;
 let reviews = null;
+let postList = null;
 
 /**
  * 
@@ -158,8 +159,9 @@ const authMiddleware = (req, res, next ) => {
       // Save the updated post document to the database
       await post.save();
       
-      res.render('Park', {
+      res.render('Profile', {
         current_user: current_user,
+        postList
       });
     } catch (error) {
       console.error(error);
@@ -177,7 +179,7 @@ const authMiddleware = (req, res, next ) => {
   });
 
   router.get('/Profile', async (req, res) => {
-    const postList = await Post.find();
+      postList = await Post.find();
       res.render('Profile', {
           current_user: current_user,
           postList: postList,

@@ -69,3 +69,7 @@ app.get('/register', (req, res) => {
 app.get('', (req, res) => {
   res.render('index');
 });
+
+app.get('/Host-Posting/', (req, res) => {
+  res.render('Host-Posting');
+})

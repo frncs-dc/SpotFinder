@@ -141,11 +141,26 @@ const authMiddleware = (req, res, next ) => {
       })
   });
 
-router.get('/Profile', (req, res) => {
-  res.render('Profile', {
-    currentRoute: '/Profile'
+  router.get('/Profile', (req, res) => {
+    res.render('Profile', {
+      currentRoute: '/Profile'
+    });
   });
-});
+
+router.get('/Host-Posting/:_id', async (req, res) => {
+
+  let _id = req.params._id;
+  let post = await Post.findOne({ _id });
+
+  try {
+    res.render('Host-Posting', {
+      current_user: current_user,
+      post: post,
+    })
+  } catch (error) {
+    console.log("error");
+  }
+})
 
 router.get('/LogInPage', (req, res) => {
   res.render('LogInPage', {

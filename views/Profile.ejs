@@ -40,15 +40,6 @@
                 <div class="SpotsTitle">
                     SPOTS
                 </div>
-                <!-- post preview template
-                <div class="spotshosted">
-                    <div class="spotsdesc">
-                        Manila, Philippines
-                    </div>
-                    <div class="spotsdisplay">
-                        <a href="Host-Posting-Sample6.html"><img src="HostPost2img.jpg" class="spot"></a>
-                    </div>
-                </div> -->
                 
                 <% postList.forEach(post => { 
                     if(post.username === current_user.username){%>
@@ -57,11 +48,13 @@
                                 <%= post.username %>. <%= post.name %> . <%= post.address__city %>
                             </div>
                             <div class="spotsdisplay">
-                                <a href="Host-Posting-Sample6.html"><img src="HostPost2img.jpg" class="spot"></a>
+                                id: <%= post._id %>
+                                <a onclick="location.href='/Host-Posting/<%= post._id %>'"><img src="HostPost2img.jpg" class="spot"></a>
                             </div>
                         </div>
                     <% } %>
                 <% }); %>
+
             </div>
             <div class="rightpanel">
                 <button class="message" onclick="location.href='ReportAnalytics.html'">View Statistics</button>

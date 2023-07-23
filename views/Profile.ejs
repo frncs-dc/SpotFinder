@@ -6,7 +6,7 @@
 
     <body>
         <div class="tabs">
-            <a class="tab" onclick="location.href='/index'"">HOME</a>
+            <a class="tab" onclick="location.href='/index'">HOME</a>
             <a class="tab" onclick="location.href='/park'">PARK</a>
             <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
             <input type="text" class="search"></input>
@@ -50,17 +50,19 @@
                     </div>
                 </div> -->
                 
+                <% postList.forEach(element => { %>
+                    <p><%= element.name %></p>
+                <% }); %>
                 
-                <% for (let i = 0; i < arr_posts.length; i++) { %>
                     <div class="spotshosted">
                         <div class="spotsdesc">
-                            <%= arr_posts[i].address__city %>, Philippines
+                            
                         </div>
                         <div class="spotsdisplay">
                             <a href="Host-Posting-Sample6.html"><img src="HostPost2img.jpg" class="spot"></a>
                         </div>
                     </div>
-                <% } %>
+                
             </div>
             <div class="rightpanel">
                 <button class="message" onclick="location.href='ReportAnalytics.html'">View Statistics</button>

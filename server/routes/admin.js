@@ -41,7 +41,6 @@ const authMiddleware = (req, res, next ) => {
 
       try {
         const user = await User.create({ username, email, password:hashedPassword});
-        res.redirect('/park');
       } catch (error) {
         if(error.code === 11000) {
           res.redirect('/LogInPage')
@@ -69,7 +68,9 @@ const authMiddleware = (req, res, next ) => {
       if(!isPasswordValid) {
         return res.status(401).json( { message: 'Invalid credentials' } );
       } 
+
       current_user = user;
+
       const token = jwt.sign({ userId: user._id}, jwtSecret );
       res.cookie('token', token, { httpOnly: true });
       
@@ -125,25 +126,6 @@ const authMiddleware = (req, res, next ) => {
       console.log("error");
     }
   });
-  
-
-  router.get('/HostForm', async (req, res) => {
-    var arrposts = Array();
-    let username = current_user.username;
-
-    try {
-      arrposts = await Post.find({ username });
-  
-      res.render('HostForm', {
-        current_user: current_user,
-        arr_posts: arrposts
-      });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Internal Server Error');
-    }
-  });
-  
 
   router.get('/park', async (req, res) => {
     res.render('park',{
@@ -152,34 +134,41 @@ const authMiddleware = (req, res, next ) => {
   });
 
   router.get('/Profile', async (req, res) => {
-    res.render('Profile', {
-      current_user: current_user
-    });
+    const postList = await Post.find();
+      res.render('Profile', {
+            current_user: current_user,
+            postList: postList,
+      })
   });
-/**
- * DELETE /
- * Admin - Delete Post
-*/
-router.delete('/delete-post/:id', authMiddleware, async (req, res) => {
 
-  try {
-    await Post.deleteOne( { _id: req.params.id } );
-    res.redirect('/dashboard');
-  } catch (error) {
-    console.log(error);
-  }
-
+router.get('/Profile', (req, res) => {
+  res.render('Profile', {
+    currentRoute: '/Profile'
+  });
 });
 
+router.get('/LogInPage', (req, res) => {
+  res.render('LogInPage', {
+    currentRoute: '/LogInPage'
+  });
+});
 
-/**
- * GET /
- * Admin Logout
-*/
-router.get('/logout', (req, res) => {
-  res.clearCookie('token');
-  //res.json({ message: 'Logout successful.'});
-  res.redirect('/');
+router.get('/HostForm', (req, res) => {
+  res.render('HostForm', {
+    currentRoute: '/HostForm'
+  });
+});
+
+router.get('/Customer-Support', (req, res) => {
+  res.render('Customer-Support', {
+    currentRoute: '/Customer-Support'
+  });
+});
+
+router.get('', (req, res) => {
+  res.render('index', {
+    currentRoute: '/index'
+  });
 });
 
 router.render

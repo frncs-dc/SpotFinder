@@ -1,40 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,700&display=swap');
 
 body {
-    background-color: #92919121;
-    font-family: 'Josefin Sans', sans-serif;
-    margin: 0%;
-    padding: 0%;
-}
-a{
-    color: white;
-    text-decoration: none;
-}
-header {
-    background-color: #075526;
-    font-family: 'Josefin Sans', sans-serif;
-    background-size: cover;
-    background-position: center;
+    margin: 0;
+    padding: 0;
+    background-color: #F3F3F3;
+    --main-font:'Josefin Sans', sans-serif;
+    font-family: var(--main-font);
 }
 
-#tabs {
+header{
+    background-color: rgb(18, 134, 9,.7);
+    font-family: var(--main-font);    
+}
+div.tabs{
     display: flex;
     font-weight: lighter;
     color: white;
+    background-color: rgb(18, 134, 9,.7);
 }
-
 a.tab{
     margin: 20px;
 }
-
-a.profile {
-    margin-top: 20px;
+a.profile{
+    margin-top: 18px;
     margin-right: 5px;
     margin-left: 10px;
 }
-
-#search {
-    margin-top: 20px;
+img.profile{
+    margin-top: 18px;
+    height: 15px;
+}
+img.logout{
+    margin-top: 18px;
+    height: 15px;
+    margin-right: 20px;
+    margin-left: 3px;
+}
+textarea.search{
+    margin-top: 15px;
     margin-right: 10px;
     margin-left: auto;
     border-radius: 61px;
@@ -42,10 +45,9 @@ a.profile {
     resize: none;
 }
 
-a.profile{
-    margin-top: 20px;
-    margin-right: 5px;
-    margin-left: 10px;
+a{
+    color: white;
+    text-decoration: none;
 }
 img.profile{
     margin-top: 20px;
@@ -100,8 +102,8 @@ div.Park-profile {
     overflow: hidden;
 }
 
-#specification {
-    font-size: 2rem;
+#specifications {
+    padding: 10px;
     margin-top: 10px;
     margin-bottom: 2px;
     text-align: center;
@@ -134,7 +136,7 @@ div.SpotDetails {
     text-align: left;
 }
 
-button.message {
+.message {
     width: 150px;
     font-size: 1rem;
     background-color: #0C360C;
@@ -145,11 +147,10 @@ button.message {
     color: #ffffff;
     padding: 5px 40px;
     text-decoration: none;
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-button.message:hover {
+.message:hover {
     background-color: #5cbf2a;
     font-size: 1rem;
 }
@@ -186,11 +187,21 @@ img.spot {
     margin-top: 5px;
 }
 
-#Reviews {
+.reviews {
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
     margin-bottom: 20px;
     color: rgb(0, 0, 0);
     text-align: left;
+}
+
+.reviewInput {
+    display: flex;
+    width: 40%;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .review {

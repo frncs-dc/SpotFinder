@@ -5,13 +5,14 @@
 
     <header>
 
-        <div id="tabs">
-
-            <a class="home">HOME</a>
-            <a class="park">PARK</a>
-            <input type="text" id="search" placeholder="Search">
-            <a class="profile">Juan Dela Cruz</a>
-
+        <div class ="tabs">
+            <a class="tab" onclick="location.href=''"">HOME</a>
+            <a class="tab" onclick="location.href='/park'">PARK</a>
+            <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
+            <textarea class="search"></textarea>
+            <img src="/img/profile.png" class="profile">
+            <a class="profile" href="/Profile"><%= current_user.username %></a>
+            <img src="/img/logout.png" class="logout">
         </div>
 
     </header>
@@ -25,7 +26,7 @@
             </div>
 
             <div id="Parking-Descriptiom">
-                ABC city
+                <%= data.address__city%> city
             </div>
             
         </div>
@@ -35,13 +36,21 @@
             <div class="Park-profile">
                 <img src="/img/HostPost1img.jpg" class="profilepic">
                 <div id="specifications">
-                    specifications
+                    <b>Specifications:</b>
+                    <br>
+                    Total Capacity:  <%= data.total_capacity%>
+                    <br>
+                    Total Floors:  <%= data.total_floors%>
                 </div>
 
                 <!-- <button class="message">View Slots</button> -->
 
                 <div class="bio">
-                    Parking Rates
+                    <b>Parking Rates:</b>
+                    <br>
+                    Flat Rates: Php <%= data.flat__amount %> for first <%= data.flat__hours %> hours
+                    <br>
+                    Hourly Rates:<%= data.hour__amount %> for succeeding <%= data.hour__hours %> hours
                 </div>
 
                 <button class="message" input onclick="location.href='/reserveslots'">RESERVE</button>
@@ -51,30 +60,14 @@
             <div class="spots">
 
                 <div class="SpotDetails">
-                    Lorem ipsum dolor sit amet, 
-                    consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
-                <div id="Vehicles">
-                    Supported Vehicles: Sedan, SUV, Motorcycles, Bicycles
+                    <%= data.post__description %>
                 </div>
 
                 <div id="Host">
-
                     Hosted by:
                     <div id="hostProfile">
-                        Gabriel Muriel
+                        <%= data.username %>
                     </div>
-                    <div id="Activity">
-                        Active 3 hours ago
-                    </div>
-                    <div id="quickreply">
-                        *Host typically responds within an hour
-                    </div>
-
                 </div>
 
                 <hr color="black">
@@ -85,6 +78,7 @@
                 <hr color="black">
                 <div class="addReview">
                     <form action="/Host-Posting/<%= data._id%>/reviewProcessing" method="POST">
+                        <br>
                         <div>
                             Select Rating:
                             <select name="rating">
@@ -94,31 +88,33 @@
                                 <option value="2">2</option>
                                 <option value="1">1</option>
                             </select>
-                            <br>
-                            <input class="review" type="text" name="reviewBody" value="Enter Review">
-                            <input type="submit" name="SUBMIT">
+                            <input class="reviewInput" type="text" name="reviewBody" value="Enter Review">
+                            <input type="submit" class="message" name="SUBMIT">
                         </div>
                     </form>
                 </div>
+                <hr color="black">
                 <div id="Reviews">
-                    <% if(reviews.length === 0 || !reviews) { %>
-                        <div> No Reviews for this Post Yet</div>
-                    <% } else { %>
-                        <% reviews.forEach(review => { %>
-                            <% if(data._id.equals(review.post_id)){%>
-                                <div class="review">
-                                    <img src="/img/profilepic1.png" class="review-image">
-                                    <div>
-                                        <div class="review-name"><%= review.username %> - <%= review.date %></div>
-                                        <div class="review-rating">
-                                            <% for( let i = 0; i < review.rating; i++) {%>
-                                            <span class="star">&#9733;</span>
-                                            <% } %>
+                        <% if(reviews.length === 0 || !reviews) { %>
+                            <br>
+                            <div> No Reviews for this Post Yet</div>
+                        <% } else { 
+                            reviews.forEach(review => { 
+                                if(data._id.equals(review.post_id)){%>
+                                    <div class="review">
+                                        <img src="/img/profilepic1.png" class="review-image">
+                                        <div>
+                                            <div class="review-name"><%= review.username %> - <%= review.date %></div>
+                                            <div class="review-rating">
+                                                <% for( let i = 0; i < review.rating; i++) {%>
+                                                <span class="star">&#9733;</span>
+                                                <% } %>
+                                            </div>
+                                            <div class="review-text"> <%= review.reviewBody %></div>
                                         </div>
-                                        <div class="review-text"> <%= review.reviewBody %></div>
                                     </div>
-                                <% } %>
-                            <% }); %>
+                                    <% } %>
+                                <% }); %>
                         <% } %>
                 </div>
             </div>

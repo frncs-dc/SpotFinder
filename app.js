@@ -40,7 +40,6 @@ app.set('view engine', 'ejs');
 
 app.locals.isActiveRoute = isActiveRoute;
 
-app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/admin'));
 
 app.listen(PORT, ()=> {
@@ -61,4 +60,12 @@ app.get('/Profile', (req, res) => {
 
 app.get('/HostForm', (req, res) => {
   res.render('HostForm');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
+app.get('', (req, res) => {
+  res.render('index');
 });

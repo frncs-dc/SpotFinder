@@ -18,7 +18,7 @@
             <div class="profile"> 
                 <img src="/img/sample.png" class="profilepic">
                 <div class="profilename">
-                    Juan Dela Cruz
+                    <%= current_user.firstname %> <%= current_user.lastname %> 
                 </div>
                 <div class="ratings">
                     <img src="/img/coloredstar.png" class="star-colored">
@@ -29,10 +29,10 @@
                 </div>
                 <div class="contact">
                     <img src="/img/contacticon.png" class="phoneicon">
-                    <div class="contactno">+123456</div>
+                    <div class="contactno"> <%= current_user.mobileNo %></div>
                 </div>
                 <div class="bio">
-                    you need spot ba? cuz pare chong  I gotchu pare chong see my slots thanks my G, sheeeeeeesh.
+                    <%= current_user.bio %>
                 </div>
                 <button class="message" onclick="location.href='/HostForm'">Post a Host Spot</button>
             </div>
@@ -48,7 +48,6 @@
                                 <%= post.username %>. <%= post.name %> . <%= post.address__city %>
                             </div>
                             <div class="spotsdisplay">
-                                id: <%= post._id %>
                                 <a onclick="location.href='/Host-Posting/<%= post._id %>'"><img src="HostPost2img.jpg" class="spot"></a>
                             </div>
                         </div>

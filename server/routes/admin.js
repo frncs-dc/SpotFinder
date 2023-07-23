@@ -285,6 +285,7 @@ router.get('/Customer-Support', (req, res) => {
 
 router.get('', (req, res) => {
   res.render('index', {
+    current_user: current_user,
     currentRoute: '/index'
   });
 });

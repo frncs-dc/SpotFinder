@@ -22,7 +22,7 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  rating: {
+  mobileNo: {
     type: Number,
   },
   profilepicture: {

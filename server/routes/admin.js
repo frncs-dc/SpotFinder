@@ -10,6 +10,7 @@ const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
 
 current_user = null;
+data = null;
 
 /**
  * 
@@ -151,7 +152,7 @@ const authMiddleware = (req, res, next ) => {
   router.get('/Host-Posting/:id', async (req, res) => {
     try {
       let slug = req.params.id;
-      const data = await Post.findById({ _id: slug });
+      data = await Post.findById({ _id: slug });
   
       if (!data) {
         // If the post is not found, return a 404 response
@@ -169,6 +170,27 @@ const authMiddleware = (req, res, next ) => {
       res.status(500).send('Internal Server Error');
     }
   });
+
+  router.get('/reserveslots/:id', async (req, res) => {
+    try {
+      if (!data) {
+        // If the post is not found, return a 404 response
+        return res.status(404).send('Post not found');
+      }
+      
+      // Assuming `current_user` is defined before this route handler
+      res.render('reserveslots', {
+        current_user: current_user,
+        data,
+      });
+      
+    } catch (error) {
+      // Log the actual error message and send a 500 response
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
 
 router.get('/LogInPage', (req, res) => {
   res.render('LogInPage', {

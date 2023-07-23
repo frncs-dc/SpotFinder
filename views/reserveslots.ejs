@@ -1,4 +1,4 @@
-<html>
+<form action="/LogInPage" method="POST">
     <head>
         <link rel="stylesheet" href="/css/reserveslots.css">
     </head>
@@ -11,12 +11,12 @@
                 <a class="tab" href="Customer Support.html">CONTACT</a>
                 <textarea class="search"></textarea>
                 <img src="profile.png" class="profile">
-                <a class="profile" href="Profile.html">Juan Dela Cruz</a>
+                <a class="profile" href="Profile.html"><%= current_user.username%></a>
                 <img src="logout.png" class="logout">
             </div>
 
             <div id="Title-section">
-                Reserve Your Slot
+                <%= data.name %>
             </div>
 
         </header>
@@ -78,180 +78,19 @@
                 </div>
                 <input type="submit" class="reserve" value="Reserve" onclick="location.href='profile.html'"></input>
                 <input type="submit" class="exit" value="Cancel" onclick="location.href='park.html'"></input>
+            
             </div>
-            <div class="mapeditor">
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
-                <div class="maprow">
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                    <button class="square"></button>
-                </div>
+
+            <div class = slotChoices>
+                <select id="cars" name="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                  <input type="submit">
             </div>
+
         </div>
     </body>
-</html>
+</form>

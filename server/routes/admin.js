@@ -163,27 +163,22 @@ const authMiddleware = (req, res, next ) => {
     try {
       let slug = req.params.id;
       data = await Post.findById({ _id: slug });
-      reviews = await Review.findById({ post_id: slug });
+      reviews = await Review.findOne({ post_id: slug });
   
       if (!data) {
         // If the post is not found, return a 404 response
         return res.status(404).send('Post not found');
       }
-      if (!reviews) {
-        // If the post is not found, return a 404 response
-        return res.status(404).send('Reviews not found');
-      }
-      // if (!reviews){
-      //   // If the post is not found, return a 404 response
-      //   return res.status(404).send('Post not found');
-      // }
       
+      if (!reviews) {
+        reviews = [];
+      }
       // Assuming `current_user` is defined before this route handler
       // TODO: ADD REVIEWS IN THE RENDER
       res.render('Host-Posting', {
         current_user: current_user,
         data,
-        reviews,
+        reviews: reviews,
       });
     } catch (error) {
       // Log the actual error message and send a 500 response
@@ -192,7 +187,7 @@ const authMiddleware = (req, res, next ) => {
     }
   });
 
-  router.post('/Host-Posting/reviewProcessing', async (req, res) => {
+  router.post('/Host-Posting/:id/reviewProcessing', async (req, res) => {
     try {
       let slug = req.params.id;
       data = await Post.findById({ _id: slug });
@@ -209,9 +204,9 @@ const authMiddleware = (req, res, next ) => {
         reviewBody: req.body.reviewBody
       });
     
-      newReview.save();
+      await newReview.save();
       // Handle successful creation of the Post document
-      res.redirect('/Host-Posting/:id');
+      res.redirect(`/Host-Posting/${slug}`);
       // Assuming `current_user` is defined before this route handler
     } catch (error) {
       // Log the actual error message and send a 500 response

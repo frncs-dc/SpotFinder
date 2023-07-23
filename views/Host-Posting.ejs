@@ -84,7 +84,7 @@
 
                 <hr color="black">
                 <div class="addReview">
-                    <form action="/Host-Posting/reviewProcessing" method="POST">
+                    <form action="/Host-Posting/<%= data._id %>/reviewProcessing" method="POST">
                         <div>
                             Select Rating:
                             <select name="rating">
@@ -95,7 +95,7 @@
                                 <option value="1">1</option>
                             </select>
                             <br>
-                            <input class="review" type="text" name="reviewbody" value="Enter Review">
+                            <input class="review" type="text" name="reviewBody" value="Enter Review">
                             <input type="submit" name="SUBMIT">
                         </div>
                     </form>
@@ -116,22 +116,26 @@
                                 <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                             </div>
                         </div> -->
-                        <% reviews.forEach(review => { 
-                            if(post._id === review.post_id){%>
-                                <div class="review">
-                                    <img src="/img/profilepic1.png" class="review-image">
-                                    <div>
-                                        <div class="review-name"><%= review.username %> - <%= review.date %></div>
-                                        <div class="review-rating">
-                                            <% for( let i = 0; i < review.rating; i++) {%>
-                                            <span class="star">&#9733;</span>
-                                            <% } %>
+                        <% if(reviews.length === 0) { %>
+                            <div> No Reviews for this Post Yet</div>
+                        <% } else { 
+                            reviews.forEach(review => { 
+                                if(post._id === review.post_id){%>
+                                    <div class="review">
+                                        <img src="/img/profilepic1.png" class="review-image">
+                                        <div>
+                                            <div class="review-name"><%= review.username %> - <%= review.date %></div>
+                                            <div class="review-rating">
+                                                <% for( let i = 0; i < review.rating; i++) {%>
+                                                <span class="star">&#9733;</span>
+                                                <% } %>
+                                            </div>
+                                            <div class="review-text"> <%= review.reviewbody %></div>
                                         </div>
-                                        <div class="review-text"> <%= review.reviewbody %></div>
                                     </div>
-                                </div>
-                            <% } %>
-                        <% }); %>
+                                <% } %>
+                            <% }); %>
+                        <% } %>
                 </div>
             </div>
         </div>

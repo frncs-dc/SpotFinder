@@ -41,6 +41,13 @@ const PostSchema = new Schema({
     type: Number,
     required: true
   },
+  parking_capacity: {
+    type: [
+      {
+        available: {type: Number}
+      }
+    ],
+  },
   // isCarSupported: {
   //   type: Boolean,
   // },

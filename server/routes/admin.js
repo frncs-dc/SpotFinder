@@ -88,6 +88,13 @@ const authMiddleware = (req, res, next ) => {
     let flat__hours = 0;
     let hour__amount = 0;
     let hour__hours = 0;
+    let parking_capacity = [];
+
+  if (req.body.total_capacity > 0) {
+    for (let i = 0; i < req.body.total_capacity; i++) {
+      parking_capacity.push({ available: 1 });
+    }
+  }
 
     if (req.body.flat__amount !== '') {
       flat__amount = req.body.flat__amount;
@@ -118,7 +125,8 @@ const authMiddleware = (req, res, next ) => {
         flat__amount: flat__amount,
         flat__hours: flat__hours,
         hour__amount: hour__amount,
-        hour__hours: hour__hours
+        hour__hours: hour__hours,
+        parking_capacity: parking_capacity
       });
     
       newPost.save();
@@ -183,7 +191,7 @@ const authMiddleware = (req, res, next ) => {
         current_user: current_user,
         data,
       });
-      
+
     } catch (error) {
       // Log the actual error message and send a 500 response
       console.error(error);

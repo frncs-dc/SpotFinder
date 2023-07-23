@@ -41,17 +41,11 @@ const authMiddleware = (req, res, next ) => {
 */
   router.post('/register', async (req, res) => {
     try {
-      const { username, email, password } = req.body;
+      const { username, lastname, firstname, mobileNo, bio, email, password } = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      try {
-        const user = await User.create({ username, email, password:hashedPassword});
-      } catch (error) {
-        if(error.code === 11000) {
-          res.redirect('/LogInPage')
-        }
-       
-      }
+      const user = await User.create({ username, lastname, firstname, mobileNo, bio, email, password:hashedPassword});
+      res.redirect('/LogInPage')
 
     } catch (error) {
       console.log("error");

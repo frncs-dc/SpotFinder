@@ -14,9 +14,11 @@ const UserSchema = new Schema({
   },
   lastname: {
     type: String,
+    required: true
   },
   firstname: {
     type: String,
+    required: true
   },
   password: {
     type: String,
@@ -24,12 +26,15 @@ const UserSchema = new Schema({
   },
   mobileNo: {
     type: Number,
+    required: true,
+    unique: true
   },
   profilepicture: {
     type: String,
   },
   bio: {
     type: String,
+    required: true
   } 
 });
 

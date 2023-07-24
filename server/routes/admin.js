@@ -271,7 +271,6 @@ const authMiddleware = (req, res, next ) => {
         // If the post is not found, return a 404 response
         return res.status(404).send('Post not found');
       }
-      parking_capacity.
 
       // Assuming `current_user` is defined before this route handler
       res.render('reserveslots', {

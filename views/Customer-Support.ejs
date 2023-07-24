@@ -31,14 +31,16 @@
         <div class="containercontent">
             <img src="/img/contact_pic.png" class="contactpic">
             <div class="customersupport">
-                <div class="feelfree">
-                    Feel free to contact us.
-                </div>
-                <input class="email" placeholder="EMAIL">
-                <input class="subject" placeholder="SUBJECT">
-                <textarea class="message" placeholder="MESSAGE"></textarea>
-                <input type="button" class="send" value="SEND" onclick="location.href='Customer Support.html'">
-                <input type="button" class="cancel" value="CANCEL" onclick="location.href='Customer Support.html'">
+                <form onsubmit="SendEmail(); reset(); return false;">
+                    <div class="feelfree">
+                        Feel free to contact us.
+                    </div>
+                    <input type="text" class="email" id="email" placeholder="EMAIL">
+                    <input type="text" id="subject" class="subject" placeholder="SUBJECT">
+                    <textarea type="text" id="message" class="message" placeholder="MESSAGE"></textarea>
+                    <button type="submit" class="send" value="SEND">SEND</button>
+                    <input type="button" class="cancel" value="CANCEL">
+                </form> 
             </div>
         </div>
         <div class="aboutus">
@@ -47,5 +49,21 @@
                 A group of 2nd Year Undergraduates taking Computer Science at De La Salle University - Manila who aims to make parking easier and more accessible.
             </div>
         </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function SendEmail(){
+                Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "spotdfindercustomerservices@gmail.com",
+                    Password : "SpotFinder101",
+                    To : 'spotdfindercustomerservices@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "New Contact From Enquiry",
+                    Body : "And this is the body"
+                    }).then(
+                    message => alert(message)
+                    );
+            }
+        </script>
     </body>
 </html>

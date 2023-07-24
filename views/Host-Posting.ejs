@@ -32,8 +32,7 @@
             </div>
 
             <div id="Parking-Descriptiom">
-                <%= data.post__description%>
-                <%= data.address__city%> city
+                <%= data.address__city %>, <%= data.address__region %> . <%= data.address %>
             </div>
             
         </div>
@@ -120,7 +119,7 @@
                             reviews.forEach(review => { 
                                 if(data._id.equals(review.post_id)){%>
                                     <div class="review">
-                                        <img src="/img/profilepic1.png" class="review-image">
+                                        <img src="/img/amogus.jpg" class="review-image">
                                         <div>
                                             <div class="review-name"><%= review.username %> - <%= review.date %></div>
                                             <div class="review-rating">

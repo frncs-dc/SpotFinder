@@ -30,26 +30,15 @@
     <form action="/reserveslots" method="POST">
         <div class="bodycontainer">
             <div class="details">
-                <div class="legends">
-                    <div class="rowlegend">
-                        <div class="occupiedlegend"></div> Occupied
-                    </div>
-                    <div class="rowlegend">
-                        <div class="availablelegend"></div> Available
-                    </div>
-                    <div class="rowlegend">
-                        <div class="pathlegend"></div> Path/Road/Walkway
-                    </div>
-                </div>
                 <div class="mapdetails">
-                    STATUS: AVAILABLE <br>
-                    NAME: A1 <br>
-                    <!-- TODO: the math for this pls hehe -->
-                    COST: Php 90.00 <br> 
-                    M.O.P.: Over the Counter <br> <br>
+                    <b>COST:</b> <br>
+                    Flat Rates: Php <%= data.flat__amount %> for first <%= data.flat__hours %> hours
+                    <br>
+                    Hourly Rates: <%= data.hour__amount %> for succeeding <%= data.hour__hours %> hours
                     <!-- TODO: ADD DATE -->
-                    START:
-                    <select>
+                    <br><br>
+                    <b>START:</b>
+                    <select class="time">
                         <option>9:00AM</option>
                         <option>10:00AM</option>
                         <option>11:00AM</option>
@@ -66,8 +55,8 @@
                         <option>10:00PM</option>
                         <option>11:00PM</option>
                     </select>
-                    END: 
-                    <select>
+                    <b>END: </b>
+                    <select class="time">
                         <option>9:00AM</option>
                         <option>10:00AM</option>
                         <option>11:00AM</option>
@@ -85,20 +74,19 @@
                         <option>11:00PM</option>
                     </select>
                 </div>
-                <input type="submit" class="reserve" value="Reserve"></input>
-                <input type="submit" class="exit" value="Cancel" onclick="location.href='/Host-Posting/<%= data._id %>'"></input>
-            
-            </div>
-
-            <div class = slotChoices>
+                <b>SELECT YOUR SLOT:</b>
                 <select id="cars" name="selectedSlot">
                     <% for(i = 0; i < data.total_capacity; i++){ %>
                         <% if(data.parking_capacity[i].available === 1) { %>
                         <option value="<%= data.parking_capacity[i]._id %>">Slot <%= i + 1 %> </option>
                         <% } %>
                     <% } %>
-                    </select>
+                </select>
+                <input type="submit" class="reserve" value="Reserve"></input>
+                <input type="submit" class="exit" value="Cancel" onclick="location.href='/Host-Posting/<%= data._id %>'"></input>
+            
             </div>
+
 
         </div>
     </form>

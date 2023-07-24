@@ -126,6 +126,7 @@ div.cards-section {
 .cardimg{
   width: 90%;
   border-radius: 10px;
+  height: 80%;
 }
 
 .card:hover{

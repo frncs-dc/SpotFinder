@@ -83,13 +83,18 @@ a{
 }
 div.bodycontainer{
     display: flex;
-    flex-direction: row;;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    width: fit-content;
+    column-gap: 20px;
 }
 div.mapdetails{
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    row-gap: 4px;
     width: fit-content;
     height: fit-content;
     align-items: center;
@@ -97,22 +102,31 @@ div.mapdetails{
     padding: 20px;
     text-align: center;
     margin-top: 10px;
+    align-self: center;
+    row-gap: 10px;
 }
 
 div.slotChoices{
     border-radius: 8px;
-    flex: 1;
-    flex-direction: column;
-    row-gap: 4px;
-    width: fit-content;
-    height: fit-content;
-    align-items: center;
     background-color: #f5ffee;
     padding: 20px;
     text-align: center;
     margin-top: 10px;
+    margin-right: right;
 }
 
+.details{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    row-gap: 10px;
+}
+
+select{
+    width: 100%;
+    font-family: var(--main-font);
+}
 /* div.mapeditor{
     margin-left: auto;
     margin-top: 20px;
@@ -140,12 +154,7 @@ button.square:focus{
     background-color: green;
 } */
 
-.details{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-left: auto;
-}
+
 
 .legends{
     display: flex;
@@ -182,7 +191,6 @@ button.square:focus{
 input.reserve,
 input.exit {
     border-radius: 8px;
-    height: 40px;
     box-shadow: 3px 3px 3px rgba(66, 66, 66, 0.28);
     color: white;
     font-family: var(--main-font);

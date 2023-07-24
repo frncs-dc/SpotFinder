@@ -66,12 +66,11 @@
             </div>
             <% if(userProfile.username === current_user.username){ %>
                     <div class="rightpanel">
-                        <button class="message" onclick="location.href='ReportAnalytics.html'">View Statistics</button>
-                        <hr>
                         <div class="reservations">
                             <div class="titlereservation">
                                 RESERVATIONS
                             </div>
+                            <hr>
                             <div class="current">
                                 <div class="subtitle">
                                     CURRENT
@@ -89,14 +88,6 @@
                                     <% } %>
                                 <% }) %>
                                 
-                            </div>
-                            <div class="past">
-                                <div class="subtitle">
-                                    PREVIOUS
-                                </div>
-                                <div class="reservebody">
-                                    <a class="reserved" href="Host-Posting-Sample2.html"> <div class="details"></div></a>
-                                </div>
                             </div>
                         </div>
                     </div>

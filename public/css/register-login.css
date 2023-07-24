@@ -12,18 +12,31 @@ body {
     background-image: url('../img/login background.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: stretch;
 }
 
-div.main-container{
+label{
+    color: white;
+    font-family: var(--main-font);
+}
+
+div.main-container-login{
     display: flex;
-    margin: auto;
     margin: 0;
+    background-color: rgba(45, 155, 62, 0.65);
+    width: 100%;
     height: 100%;
 }
 
-div.left-side{
+div.main-container-register{
+    display: flex;
+    margin: 0;
     background-color: rgba(45, 155, 62, 0.65);
+    width: 100%;
+    height: auto;
+}
+
+div.left-side{
     flex: 1;
     background-size: cover;
     height: 100%;
@@ -32,12 +45,13 @@ div.left-side{
 div.right-side{
     flex: 1;
     background-color: rgba(10, 110, 25, 0.75);
-    height: 100%;
+    height: auto;
 }
 
 div.detail-container{
     margin-left: 10rem;
     margin-right: 10rem;
+    height: auto;
 }
 
 div.login-detail-container{
@@ -77,23 +91,23 @@ input[type=text]{
     height: 30px;
 }
 
-button[type=button]{
-    background-color: #235325;
-    border: none;
+input.btn {
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+    box-shadow: 3px 3px 3px rgba(66, 66, 66, 0.28);
     color: white;
-    padding: 15px 40px;
-    text-decoration: none;
-    font-size: 1.5625rem;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 1.6rem;
     font-family: var(--main-font);
+    border: none;
+    background-color: #0C360C;
+    padding-bottom: 2px;
+    padding-top: 5px;
+    font-size: 24px;
+    margin-right: 10px;
 }
 
-div.reg-button{
-    text-align: center;
-    margin: auto;
-    padding-top: 5%;
+input.btn:hover {
+    background-color: #04AA04;
 }
 
 h1{
@@ -172,6 +186,7 @@ div.existing-account{
     font-family: var(--main-font);
     margin-top: 3%;
     text-align: center;
+    padding-bottom: 30px;
 }
 
 a{

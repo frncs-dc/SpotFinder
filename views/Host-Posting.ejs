@@ -68,7 +68,7 @@
                     <button class="message" input onclick="location.href='/HostFormEdit/<%= data._id %>'">EDIT POST</button>
                     <!-- Assuming the 'data' variable contains the post details -->
                     <form action="/delete-spot/<%= data._id %>?_method=DELETE" method="POST">
-                        <button type="submit">Delete</button>
+                        <button class="message" type="submit">Delete</button>
                     </form>
                 <% } %>
                  
@@ -84,19 +84,13 @@
                 <div id="Host">
                     Hosted by:
                     <div id="hostProfile">
-                        <a href="/Profile/<%=data.username %>"><%= data.username %></a>
+                        <a href="/Profile/<%=data.username %>" class="hostname"><%= data.username %></a>
                     </div>
-                </div>
-
-                <hr color="black">
-                <div class="Review-title">
-                    30 People have parked here
                 </div>
 
                 <% if(!current_user){ %>
                     <button class="message" input onclick="location.href='/LogInPage'">Log In To Add Review</button>
                 <% } else if(current_user.username !== data.username){ %>
-                    <hr color="black">
                     <div class="addReview">
                         <form action="/Host-Posting/<%= data._id%>/reviewProcessing" method="POST">
                             <br>
@@ -109,7 +103,7 @@
                                     <option value="2">2</option>
                                     <option value="1">1</option>
                                 </select>
-                                <input class="reviewInput" type="text" name="reviewBody" value="Enter Review">
+                                <input class="reviewInput" type="text" name="reviewBody" placeholder="Enter Review">
                                 <input type="submit" class="message" name="SUBMIT">
                             </div>
                         </form>
@@ -141,6 +135,7 @@
                                 <% }); %>
                         <% } %>
                 </div>
+                <hr color="black">
             </div>
         </div>
     </body>

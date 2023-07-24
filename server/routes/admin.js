@@ -115,7 +115,7 @@ const authMiddleware = (req, res, next ) => {
         address__region: req.body.address__region,
         address__city: req.body.address__city,
         address: req.body.address,
-        post__description: req.post__description,
+        post__description: req.body.post__description,
         // isAssignedParking: req.body.isAssignedParking,
         total_capacity: req.body.total_capacity,
         floors: req.body.floors,
@@ -131,7 +131,7 @@ const authMiddleware = (req, res, next ) => {
     
       newPost.save();
       // Handle successful creation of the Post document
-      res.redirect('/Profile/${usernamePost}');
+      res.redirect(`/Profile/${usernamePost}`);
     } catch (error) {
       console.log("error");
     }
@@ -155,11 +155,12 @@ const authMiddleware = (req, res, next ) => {
   
       // Save the updated post document to the database
       await post.save();
-      
-      res.render('Profile', {
-        current_user: current_user,
-        postList
-      });
+      // res.render('Profile', {
+      //   current_user: current_user,
+      //   postList
+      // });
+      // #TODO: i tried to redirect to the current_user profile but reservations wont reflect
+      res.redirect(`/Profile/${current_user.username}`);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Error updating parking slot.' });

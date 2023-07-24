@@ -169,6 +169,23 @@ const authMiddleware = (req, res, next ) => {
   });
 
 
+  router.post('/search', async (req, res) => {
+    try{
+      let searchTerm = req.body.searchTerm;
+      const searchNoSpecialChar = searchTerm.replace(/[^a-zA-Z0-9]/g, "")
+      
+      const searching = await Post.find({
+        name: { $regex: new RegExp(searchNoSpecialChar, 'i') },
+      })
+      res.render("search", {
+        searching
+      });
+    } catch(error){
+      console.log(error);
+    }
+  });
+
+
   router.get('/park', async (req, res) => {
     const postList = await Post.find();
     res.render('park', {

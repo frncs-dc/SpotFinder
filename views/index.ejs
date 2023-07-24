@@ -8,7 +8,10 @@
             <a class="tab" onclick="location.href='/index'">HOME</a>
             <a class="tab" onclick="location.href='/park'">PARK</a>
             <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
-            <input type="text" class="search"></input>
+            <form action = "/search" method="POST" role="search" class = "search">
+                <input type="search" name = "searchTerm" placeholder= "search" class="search"></input>
+            </form>
+            
             <img src="/img/profile.png" class="profile">
             <% if(!current_user){ %>
                 <a class="profile" href="/LogInPage">Log In/Register</a>

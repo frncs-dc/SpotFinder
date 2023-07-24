@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>SPOTFINDER</title>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+        <div class="tabs">
+            <a class="tab" onclick="location.href='/index'">HOME</a>
+            <a class="tab" onclick="location.href='/park'">PARK</a>
+            <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
+            <input type="text" class="search"></input>
+            <img src="/img/profile.png" class="profile">
+            <% if(!current_user){ %>
+                <a class="profile" href="/LogInPage">Log In/Register</a>
+            <% } else { %>
+                <a class="profile" href="/LogInPage"><%=current_user.username %></a>
+            <% } %>
+            <a href="Log In Page.html"><img src="/img/logout.png" class="logout"></a>
+        </div>
+        
+        <div class="section-green">
+            <ul class="article-ul">
+                <% searching.forEach(post => { %>
+                  <li>
+                    <a href="/Host-Posting/<%= post._id %>">
+                      <span><%= post.name %></span>
+                    </a>
+                  </li>
+                <% }) %>
+            </ul>
+        </div>
+    </body>
+</html>

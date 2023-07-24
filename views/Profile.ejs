@@ -11,14 +11,18 @@
             <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
             <input type="text" class="search"></input>
             <img src="/img/profile.png" class="profile">
-            <a class="profile" href="/Profile"><%= current_user.username %></a>
+            <% if(!current_user){ %>
+                <a class="profile" href="/LogInPage">Log In/Register</a>
+            <% } else { %>
+                <a class="profile" href="/LogInPage"><%=current_user.username %></a>
+            <% } %>
             <a href="Log In Page.html"><img src="/img/logout.png" class="logout"></a>
         </div>
         <div class="content">
             <div class="profile"> 
                 <img src="/img/sample.png" class="profilepic">
                 <div class="profilename">
-                    <%= current_user.firstname %> <%= current_user.lastname %> 
+                    <%= userProfile.firstname %> <%= userProfile.lastname %> 
                 </div>
                 <div class="ratings">
                     <img src="/img/coloredstar.png" class="star-colored">
@@ -29,12 +33,15 @@
                 </div>
                 <div class="contact">
                     <img src="/img/contacticon.png" class="phoneicon">
-                    <div class="contactno"> <%= current_user.mobileNo %></div>
+                    <div class="contactno"> <%= userProfile.mobileNo %></div>
                 </div>
                 <div class="bio">
-                    <%= current_user.bio %>
+                    <%= userProfile.bio %>
                 </div>
-                <button class="message" onclick="location.href='/HostForm'">Post a Host Spot</button>
+                <% if(userProfile.username === current_user.username){ %>
+                    <button class="message" onclick="location.href='/HostForm'">Post a Host Spot</button>
+                <% } %>
+                
             </div>
             <div class="spots">
                 <div class="SpotsTitle">
@@ -42,7 +49,7 @@
                 </div>
                 
                 <% postList.forEach(post => { 
-                    if(post.username === current_user.username){%>
+                    if(post.username === userProfile){%>
                         <div class="spotshosted">
                             <div class="spotsdesc">
                                 <%= post.username %>. <%= post.name %> . <%= post.address__city %>

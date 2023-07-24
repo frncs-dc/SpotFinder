@@ -14,6 +14,7 @@ current_user = null;
 data = null;
 let reviews = null;
 let postList = null;
+let userProfile = null;
 
 /**
  * 
@@ -86,6 +87,7 @@ const authMiddleware = (req, res, next ) => {
     let hour__amount = 0;
     let hour__hours = 0;
     let parking_capacity = [];
+    let usernamePost = current_user.username;
 
   if (req.body.total_capacity > 0) {
     for (let i = 0; i < req.body.total_capacity; i++) {
@@ -108,7 +110,7 @@ const authMiddleware = (req, res, next ) => {
 
     try {
       let newPost = new Post({
-        username: current_user.username,
+        username: usernamePost,
         name: req.body.name,
         address__region: req.body.address__region,
         address__city: req.body.address__city,
@@ -128,7 +130,7 @@ const authMiddleware = (req, res, next ) => {
     
       newPost.save();
       // Handle successful creation of the Post document
-      res.redirect('/Profile');
+      res.redirect('/Profile/${usernamePost}');
     } catch (error) {
       console.log("error");
     }
@@ -172,11 +174,14 @@ const authMiddleware = (req, res, next ) => {
     })
   });
 
-  router.get('/Profile', async (req, res) => {
+  router.get('/Profile/:username', async (req, res) => {
       postList = await Post.find();
+      let usernameProfile = req.params.username
+      userProfile = await User.findOne({username: usernameProfile});
       res.render('Profile', {
           current_user: current_user,
           postList: postList,
+          userProfile: userProfile,
       })
   });
 

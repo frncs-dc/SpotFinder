@@ -43,7 +43,7 @@ const authMiddleware = (req, res, next ) => {
 */
   router.post('/register', async (req, res) => {
     try {
-      const { username, lastname, firstname, mobileNo, bio, profilepicture, email, password } = req.body;
+      const { username, lastname, firstname, mobileNo, bio,   profilepicture, email, password } = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);
 
       const user = await User.create({ username, lastname, firstname, mobileNo, bio, profilepicture, email, password:hashedPassword});

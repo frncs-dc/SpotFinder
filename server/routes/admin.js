@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
+
 const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
 
@@ -393,6 +394,22 @@ router.get('/Host-Posting', (req, res) => {
   res.render('Host-Posting', {
     currentRoute: '/Host-Posting'
   });
+});
+
+router.delete('/delete-spot/:id', async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const post = await Post.findByIdAndDelete(postId);
+
+    if (!post) {
+      return res.status(404).send('Post not found');
+    }
+
+    res.redirect(`/Profile/${current_user.username}`);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 router.render

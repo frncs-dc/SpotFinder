@@ -1,0 +1,143 @@
+<head>
+    <title>SPOT FINDER</title>
+    <link rel="stylesheet" href="/css/HostForm.css">
+    </head>
+    
+    <body>
+        <header>
+    
+            <!--Just Tabs-->
+            <div class ="tabs">
+                <a class="tab" onclick="location.href=''"">HOME</a>
+                <a class="tab" onclick="location.href='/park'">PARK</a>
+                <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
+                <form action = "/search" method="POST" role="search" class = "search">
+                    <input type="search" name = "searchTerm" value= "search" class="search"></input>
+                </form>
+                <img src="/img/profile.png" class="profile">
+                <% if(!current_user){ %>
+                    <a class="profile" href="/LogInPage">Log In/Register</a>
+                <% } else { %>
+                    <a class="profile" href="/Profile/<%=current_user.username %>"><%=current_user.username %></a>
+                <% } %>
+                <img src="/img/logout.png" onclick="location.href='/logout'" class="logout"> 
+            </div>
+    
+            <!--Title-->
+            <div id="Title-section">
+                Host your parking slot.
+            </div>
+        </header>
+    
+        <!--Body-->
+        <!-- #TODO: ADD POST DESCRIPTION HERE !! -->
+        <form action="/HostFormEdit/<%= post._id %>/editprocessing" method="POST">
+            <div class="maincontainer">
+                <div class="title">
+                    BASIC DETAILS
+                </div>
+                <!--Individual Form Inputs-->
+                <div class = "indivforms">
+                    <input id="spotName" type="text" name="name" value="<%= post.name %>">
+                </div>
+    
+                <!--Multi-Form Inputs-->
+                <div class="formscontainer">
+                    <div class="forms1">
+                        <input id="region" type="text" name="address__region" value="<%= post.address__region %>">
+                    </div>
+                    <div class="forms2">
+                        <input id="city" type="text" name="address__city" value="<%= post.address__city %>">                
+                    </div>
+                </div>
+    
+                <!--Individual Form Inputs-->
+                <div class = "indivforms">
+                    <input id="address" type="text" name="address" value="<%= post.address %>">
+                </div>
+    
+                <div class = "indivforms">
+                    <input id="address" type="text" name="post__description" value="<%= post.post__description %>">
+                </div>
+                <div class="indivforms">
+                    <label for="post__picture"><b>Profile Picture</b></label>
+                    <input type="text" value="<%= post.post__picture %>" name="post__picture">
+                </div>
+                
+            </div>
+            <br>
+            <hr class="border">
+            <div class="maincontainer">
+                <div class="title">
+                    PARKING DETAILS
+                </div>
+                <!--Individual Form Inputs-->
+                <div class="indivforms">
+                    <input type="checkbox" id="is_assigned" name = "isAssignedParking"/>
+                    <label for="is_assigned">ASSIGNED PARKING?</label>
+                </div>
+    
+                <!--Multi-Form Inputs-->
+                <div class="formscontainer">
+                    <div class="registerforms">
+                        <input id="capacity" name = "total_capacity" class="capacity" type="text" value="<%= post.total_capacity %>" />
+                    </div>
+        
+                    <div class="registerforms">
+                        <input id="floors" name = "floors" class="floors" type="text" value="<%= post.floors %>" />
+                    </div>
+                </div>
+    
+                <div class="indivforms">
+                    SUPPORTED VEHICLES:
+                </div> 
+                <div class="indivforms">
+                    <input type="checkbox" id="isCars" name = "isCarSupported"/>
+                    <label for="is_public">CARS</label>
+                </div>
+                <div class="indivforms">
+                    <input type="checkbox" id="isMotor" name = "isMotorSupported"/>
+                    <label for="is_covered">MOTORCYCLES</label>
+                </div>
+                <div class="indivforms">
+                    <input type="checkbox" id="isBikes" name = "isBikeSupported"/>
+                    <label for="is_secure">BIKES</label>
+                </div>
+                <!-- <input type="button" value="EDIT MAP" class="edit-map" onclick="location.href='Host-Form Page 4.html'"/> -->
+            </div>
+            <br>
+            <hr class="border">
+            <div class="maincontainer">
+                <div class="columnforms">
+                    <div class="indivforms">
+                        FLAT RATE
+                    </div>
+                    <div id="flatRateFields" class="indivforms hidden">
+                        <input id="flatAmt" name = "flat__amount" class="amount" type="text" value="<%= post.flat__amount %>">
+                    </div>
+                    <div id="flatHoursFields" class="indivforms hidden">
+                        <input id="flatHours" name = "flat__hours" class="hours" type="text" value="<%= post.flat__hours %>">
+                    </div>
+                </div>
+                
+                <div class="columnforms">
+                    <div class="indivforms">
+                    HOURLY RATE
+                    </div>
+                    <div id="hourRateFields" class="indivforms hidden">
+                    <input id="isHourAmt" name = "hour__amount" class="amount" type="text" value="<%= post.hour__amount %>">
+                    </div>
+                    <div id="hourHoursFields" class="indivforms hidden">
+                    <input id="isHourHours" name = "hour__hours" class="hours" type="text" value="<%= post.hour__hours %>">
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div class="navigation-buttons">
+                <input class="prev" onclick="location.href='/Profile'" type="button" value="EXIT">
+                <input class="next" type="submit" value="SAVE">
+            </div>
+        </form>
+    </body>
+    

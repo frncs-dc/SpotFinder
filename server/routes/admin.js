@@ -271,7 +271,6 @@ const authMiddleware = (req, res, next ) => {
         // If the post is not found, return a 404 response
         return res.status(404).send('Post not found');
       }
-      let available = 0;
       parking_capacity.
 
       // Assuming `current_user` is defined before this route handler
@@ -287,6 +286,81 @@ const authMiddleware = (req, res, next ) => {
     }
   });
 
+  router.get('/HostFormEdit/:_id', async (req, res) => {
+    try{
+      let slug = req.params._id;
+      let post = await Post.findById({ _id: slug });
+
+      res.render('HostFormEdit', {
+        current_user: current_user,
+        post: post,
+      });
+
+    } catch(error){
+      console.error(error);
+      res.status(500).send('No Post Found');
+    }
+  });
+
+  router.post('/HostFormEdit/:_id/editprocessing', async (req, res) => {
+
+    let slug = req.params._id;
+    let post = await Post.findById({ _id: slug });
+
+    let flat__amount = 0;
+    let flat__hours = 0;
+    let hour__amount = 0;
+    let hour__hours = 0;
+    let parking_capacity = [];
+
+    if (req.body.total_capacity > 0) {
+      for (let i = 0; i < req.body.total_capacity; i++) {
+        parking_capacity.push({ available: 1 });
+      }
+    }
+    if (req.body.flat__amount !== '') {
+      flat__amount = req.body.flat__amount;
+    }
+    if (req.body.flat__hours !== '') {
+      flat__hours = req.body.flat__hours;
+    }
+    if (req.body.hour__amount !== '') {
+      hour__amount = req.body.hour__amount;
+    }
+    if (req.body.hour__hours !== '') {
+      hour__hours = req.body.hour__hours;
+    }
+
+      try {
+        post.username = current_user.username;
+        post.name = req.body.name;
+        post.address__region = req.body.address__region;
+        post.address__city = req.body.address__city;
+        post.address = req.body.address;
+        post.post__description = req.body.post__description;
+        post.post__picture = req.body.post__picture;
+        // post.isAssignedParking = req.body.isAssignedParking;
+        post.total_capacity = req.body.total_capacity;
+        post.floors = req.body.floors;
+        post.flat__amount = flat__amount;
+        post.flat__hours = flat__hours;
+        post.hour__amount = hour__amount;
+        post.hour__hours = hour__hours;
+        post.parking_capacity = parking_capacity;
+        // post.isCarSupported = (req.body.isCarSupported);
+        // post.isMotorSupported = (req.body.isMotorSupported);
+        // post.isBikeSupported = (req.body.isBikeSupported);
+
+        post.save();
+        // Handle successful creation of the Post document
+        res.redirect(`/Host-Posting/${slug}`);
+        // Assuming `current_user` is defined before this route handler
+    } catch (error) {
+      // Log the actual error message and send a 500 response
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 
 router.get('/LogInPage', (req, res) => {
   res.render('LogInPage', {
@@ -296,7 +370,7 @@ router.get('/LogInPage', (req, res) => {
 
 router.get('/HostForm', (req, res) => {
   res.render('HostForm', {
-    currentRoute: '/HostForm'
+    currentRoute: '/HostForm',
   });
 });
 

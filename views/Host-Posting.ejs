@@ -63,8 +63,12 @@
                 <% if(!current_user){ %>
                     <button class="message" input onclick="location.href='/LogInPage'">Log In To Reserve</button>
                 <% } else if(current_user.username !== data.username) { %>
-                    <button class="message" input onclick="location.href='/reserveslots'">RESERVE</button>  
+                    <button class="message" input onclick="location.href='/reserveslots'">RESERVE</button>
+                <% } else { %>
+                    <button class="message" input onclick="location.href='/HostFormEdit/<%= data._id %>'">EDIT POST</button>
+                    <button class="message" input onclick="location.href='/reserveslots'">DELETE POST</button>
                 <% } %>
+                 
                 
             </div>
 

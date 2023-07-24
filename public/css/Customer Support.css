@@ -127,7 +127,7 @@ input.email, input.subject, textarea.message{
     border: none;
     box-shadow: 3px 3px 3px rgba(66,66,66,.28);
 }
-input.send, input.cancel{
+button.send, input.cancel{
     font-family: var(--main-font);
     border-radius: 8px;
     width: 100%;
@@ -138,7 +138,7 @@ input.send, input.cancel{
     border: none;
 }
 
-input.send{
+button.send{
     margin-top: 30px;
     background-color: #0C360C;
 }

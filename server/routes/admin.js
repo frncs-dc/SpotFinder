@@ -138,6 +138,10 @@ const authMiddleware = (req, res, next ) => {
     }
   });
 
+  router.get('/logout', async (req, res) => {
+    current_user = null;
+    res.redirect('/LogInPage');
+  });
 
   router.post('/reserveslots', async (req, res) => {
     const selectedSlotId = req.body.selectedSlot; // Get the selected slotId from the request body

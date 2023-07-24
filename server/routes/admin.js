@@ -15,7 +15,7 @@ data = null;
 let reviews = null;
 let postList = null;
 let userProfile = null;
-
+let selectedSlotId = null;
 /**
  * 
  * Check Login
@@ -144,7 +144,7 @@ const authMiddleware = (req, res, next ) => {
   });
 
   router.post('/reserveslots', async (req, res) => {
-    const selectedSlotId = req.body.selectedSlot; // Get the selected slotId from the request body
+    selectedSlotId = req.body.selectedSlot; // Get the selected slotId from the request body
   
     try {
       // Find the post by its ID and the selected slot by its _id
@@ -160,10 +160,7 @@ const authMiddleware = (req, res, next ) => {
   
       // Save the updated post document to the database
       await post.save();
-      res.render('Profile/', {
-        current_user: current_user,
-        postList
-      });
+      res.redirect(`/Profile/${current_user.username}`);
       // #TODO: i tried to redirect to the current_user profile but reservations wont reflect
       // res.redirect(`/Profile/${current_user.username}`);
     } catch (error) {
@@ -267,7 +264,7 @@ const authMiddleware = (req, res, next ) => {
 
   router.get('/reserveslots/:id', async (req, res) => {
     try {
-      if (!data) {
+      if (!selectedSlotId) {
         // If the post is not found, return a 404 response
         return res.status(404).send('Post not found');
       }
@@ -277,7 +274,7 @@ const authMiddleware = (req, res, next ) => {
       // Assuming `current_user` is defined before this route handler
       res.render('reserveslots', {
         current_user: current_user,
-        data,
+        selectedSlotId,
       });
 
     } catch (error) {

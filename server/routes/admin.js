@@ -115,6 +115,7 @@ const authMiddleware = (req, res, next ) => {
         address__region: req.body.address__region,
         address__city: req.body.address__city,
         address: req.body.address,
+        post__description: req.post__description,
         // isAssignedParking: req.body.isAssignedParking,
         total_capacity: req.body.total_capacity,
         floors: req.body.floors,

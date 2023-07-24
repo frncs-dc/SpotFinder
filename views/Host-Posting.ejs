@@ -58,8 +58,10 @@
                     Hourly Rates:<%= data.hour__amount %> for succeeding <%= data.hour__hours %> hours
                 </div>
 
-                <% if(current_user.username !== data.username){ %>
-                    <button class="message" input onclick="location.href='/reserveslots'">RESERVE</button>
+                <% if(!current_user){ %>
+                    <button class="message" input onclick="location.href='/LogInPage'">Log In To Reserve</button>
+                <% } else if(current_user.username !== data.username) { %>
+                    <button class="message" input onclick="location.href='/reserveslots'">RESERVE</button>  
                 <% } %>
                 
             </div>
@@ -82,8 +84,9 @@
                     30 People have parked here
                 </div>
 
-                
-                <% if(current_user.username !== data.username){ %>
+                <% if(!current_user){ %>
+                    <button class="message" input onclick="location.href='/LogInPage'">Log In To Add Review</button>
+                <% } else if(current_user.username !== data.username){ %>
                     <hr color="black">
                     <div class="addReview">
                         <form action="/Host-Posting/<%= data._id%>/reviewProcessing" method="POST">
@@ -101,8 +104,9 @@
                                 <input type="submit" class="message" name="SUBMIT">
                             </div>
                         </form>
-                    </div>
+                    </div>  
                 <% } %>
+                 
                 
                 <hr color="black">
                 <div id="Reviews">

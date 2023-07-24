@@ -14,8 +14,11 @@
                 <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
                 <textarea class="search"></textarea>
                 <img src="/img/profile.png" class="profile">
-                <a class="profile" href="/Profile/<%=current_user.username %>"><%=current_user.username %></a>
-                <img src="/img/logout.png" class="logout">
+                <% if(!current_user){ %>
+                    <a class="profile" href="/LogInPage">Log In/Register</a>
+                <% } else { %>
+                    <a class="profile" href="/Profile/<%=current_user.username %>"><%=current_user.username %></a>
+                <% } %>
             </div>
 
             <!--Title-->

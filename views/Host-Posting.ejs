@@ -9,7 +9,9 @@
             <a class="tab" onclick="location.href=''">HOME</a>
             <a class="tab" onclick="location.href='/park'">PARK</a>
             <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
-            <textarea class="search"></textarea>
+            <form action = "/search" method="POST" role="search" class = "search">
+                <input type="search" name = "searchTerm" placeholder= "search" class="search"></input>
+            </form>
             <img src="/img/profile.png" class="profile">
             <% if(!current_user){ %>
                 <a class="profile" href="/LogInPage">Log In/Register</a>

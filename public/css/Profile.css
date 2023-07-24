@@ -30,13 +30,14 @@ img.logout{
     height: 15px;
     margin-right: 20px;
 }
-input.search{
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: auto;
-    border-radius: 61px;
-    height: 20px;
-    resize: none;
+.search{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  margin-left: auto;
+  border-radius: 61px;
+  height: 20px;
+  resize: none;
 }
 div.content{
     display: flex;

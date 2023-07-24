@@ -20,7 +20,7 @@
         </div>
         <div class="content">
             <div class="profile"> 
-                <img src="/img/sample.png" class="profilepic">
+                <img src="<%= userProfile.profilepicture  %>" class="profilepic">
                 <div class="profilename">
                     <%= userProfile.firstname %> <%= userProfile.lastname %> 
                 </div>
@@ -55,7 +55,7 @@
                                 <%= post.username %>. <%= post.name %> . <%= post.address__city %>
                             </div>
                             <div class="spotsdisplay">
-                                <a onclick="location.href='/Host-Posting/<%= post._id %>'"><img src="HostPost2img.jpg" class="spot"></a>
+                                <a onclick="location.href='/Host-Posting/<%= post._id %>'"><img src="<%= post.post__picture %>" class="spot"></a>
                             </div>
                         </div>
                     <% } %>

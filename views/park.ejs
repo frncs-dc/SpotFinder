@@ -48,7 +48,7 @@
                 <a onclick="location.href='/Host-Posting/<%= post._id %>'">
                     <div class="card">
                         <h2><%= post.name %></h2>
-                        <img src="/img/HostPost1img.jpg" class="cardimg">
+                        <img src="<%= post.post__picture %>" class="cardimg">
                         <p><%=post.address__city%>, <%=post.address__region%>. <%=post.post__description%></p>
                     </div>
                 </a>

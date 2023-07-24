@@ -39,8 +39,8 @@ img.logout{
     margin-right: 20px;
     margin-left: 3px;
 }
-textarea.search{
-    margin-top: 15px;
+.search{
+    margin-top: auto;
     margin-right: 10px;
     margin-left: auto;
     border-radius: 61px;

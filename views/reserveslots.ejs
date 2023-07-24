@@ -1,32 +1,33 @@
-<form action="/reserveslots" method="POST">
-    <head>
-        <link rel="stylesheet" href="/css/reserveslots.css">
-    </head>
-    <body>
-        <header>
 
-            <div class="tabs">
-                <a class="tab" onclick="location.href='/index'">HOME</a>
-                <a class="tab" onclick="location.href='/park'">PARK</a>
-                <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
-                <form action = "/search" method="POST" role="search" class = "search">
-                    <input type="search" name = "searchTerm" placeholder= "search" class="search"></input>
-                </form>
-                
-                <img src="/img/profile.png" class="profile">
-                <% if(!current_user){ %>
-                    <a class="profile" href="/LogInPage">Log In/Register</a>
-                <% } else { %>
-                    <a class="profile" href="/LogInPage"><%=current_user.username %></a>
-                <% } %>
-                <img src="/img/logout.png" onclick="location.href='/logout'" class="logout"> 
-            </div>
+<head>
+    <link rel="stylesheet" href="/css/reserveslots.css">
+</head>
+<body>
+    <header>
 
-            <div id="Title-section">
-                <%= data.name %>
-            </div>
+        <div class="tabs">
+            <a class="tab" onclick="location.href='/index'">HOME</a>
+            <a class="tab" onclick="location.href='/park'">PARK</a>
+            <a class="tab" onclick="location.href='/Customer-Support'">CONTACT</a>
+            <form action = "/search" method="POST" role="search" class = "search">
+                <input type="search" name = "searchTerm" placeholder= "search" class="search"></input>
+            </form>
+            
+            <img src="/img/profile.png" class="profile">
+            <% if(!current_user){ %>
+                <a class="profile" href="/LogInPage">Log In/Register</a>
+            <% } else { %>
+                <a class="profile" href="/LogInPage"><%=current_user.username %></a>
+            <% } %>
+            <img src="/img/logout.png" onclick="location.href='/logout'" class="logout"> 
+        </div>
 
-        </header>
+        <div id="Title-section">
+            <%= data.name %>
+        </div>
+
+    </header>
+    <form action="/reserveslots" method="POST">
         <div class="bodycontainer">
             <div class="details">
                 <div class="legends">
@@ -92,13 +93,13 @@
             <div class = slotChoices>
                 <select id="cars" name="selectedSlot">
                     <% for(i = 0; i < data.total_capacity; i++){ %>
-                      <% if(data.parking_capacity[i].available === 1) { %>
+                        <% if(data.parking_capacity[i].available === 1) { %>
                         <option value="<%= data.parking_capacity[i]._id %>">Slot <%= i + 1 %> </option>
-                      <% } %>
+                        <% } %>
                     <% } %>
-                  </select>
+                    </select>
             </div>
 
         </div>
-    </body>
-</form>
+    </form>
+</body>

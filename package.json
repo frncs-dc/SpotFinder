@@ -24,7 +24,6 @@
     "method-override": "^3.0.0",
     "mongodb": "4.9",
     "mongoose": "^7.3.4"
-    // "parser": "^0.1.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

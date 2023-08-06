@@ -73,7 +73,11 @@ const authMiddleware = (req, res, next ) => {
       current_user = user;
 
       const token = jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: '1d' });
-      res.cookie('token', token, { httpOnly: true, maxAge: 604800000 });
+      res.cookie('token', token, {
+        httpOnly: true,
+        maxAge: 604800000, // 7 days
+        domain: '.yourdomain.com' // Set your actual domain here
+      });
       
       res.redirect('/park');
   

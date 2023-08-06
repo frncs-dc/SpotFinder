@@ -412,6 +412,12 @@ router.delete('/delete-spot/:id', async (req, res) => {
   }
 });
 
+router.get('/about', (req, res) => {
+  res.render('about', {
+    currentRoute: '/about'
+  });
+});
+
 router.render
 
 module.exports = router;

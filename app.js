@@ -77,3 +77,7 @@ app.get('/Host-Posting/', (req, res) => {
 app.get('/reserveslots/', (req, res) => {
   res.render('reserveslots');
 })
+
+app.get('/about/', (req, res) => {
+  res.render('about');
+})
